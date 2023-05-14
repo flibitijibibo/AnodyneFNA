@@ -57,7 +57,8 @@ namespace AnodyneSharp.Registry
 #elif DEBUG
                 "./";
 #else
-                Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData,Environment.SpecialFolderOption.Create),"AnodyneFanRemake/");
+                SDL2.SDL.SDL_GetPrefPath(null, "AnodyneFNA");
+                // Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData,Environment.SpecialFolderOption.Create),"AnodyneFanRemake/");
 #endif
 
 
