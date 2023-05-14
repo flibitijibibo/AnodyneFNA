@@ -89,7 +89,14 @@ static class StaticOverloads
         Effect effect = null,
         Matrix? transformMatrix = null
     ) {
-        batch.Begin(sortMode, blendState, samplerState, depthStencilState, rasterizerState, effect, transformMatrix);
+        if (transformMatrix.HasValue)
+        {
+            batch.Begin(sortMode, blendState, samplerState, depthStencilState, rasterizerState, effect, transformMatrix.Value);
+        }
+        else
+        {
+            batch.Begin(sortMode, blendState, samplerState, depthStencilState, rasterizerState, effect);
+        }
     }
 }
 
@@ -100,19 +107,24 @@ namespace AnodyneSharp.Multiplatform
         [STAThread]
         static void Main()
         {
+#if !DEBUG
             try
             {
+#endif
+                DebugLogger.Init();
+
                 ResourceManager.GetDirectories = GetDirectories;
                 ResourceManager.GetFiles = GetFiles;
 
                 using AnodyneGame game = new AnodyneGame();
                 game.Run();
+#if !DEBUG
             }
             catch (Exception ex)
             {
                 DebugLogger.AddException(ex);
             }
-
+#endif
         }
 
         public static DirectoryInfo[] GetDirectories(string fullPath)

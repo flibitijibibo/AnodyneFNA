@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anodyne.FNA", "Anodyne.FNA.csproj", "{D7E92850-4DF7-470B-ADE6-5E8D76942840}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anodyne.FNA", "AnodyneSharp\AnodyneSharp.Shared\Anodyne.FNA.csproj", "{D7E92850-4DF7-470B-ADE6-5E8D76942840}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNA", "..\FNA\FNA.csproj", "{35253CE1-C864-4CD3-8249-4D1319748E8F}"
 EndProject

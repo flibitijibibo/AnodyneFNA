@@ -1,0 +1,583 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <ProjectGuid>{D7E92850-4DF7-470B-ADE6-5E8D76942840}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AnodyneSharp</RootNamespace>
+    <AssemblyName>AnodyneSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <LangVersion>9.0</LangVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DocumentationFile>
+    </DocumentationFile>
+    <PlatformTarget>x64</PlatformTarget>
+    <IntermediateOutputPath>
+    </IntermediateOutputPath>
+    <ConsolePause>true</ConsolePause>
+    <ExternalConsole>false</ExternalConsole>
+    <Commandlineparameters>
+    </Commandlineparameters>
+    <RunWithWarnings>true</RunWithWarnings>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <NoStdLib>false</NoStdLib>
+    <WarningsNotAsErrors>
+    </WarningsNotAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Fluent-State-Machine\State.cs" />
+    <Compile Include="..\..\Fluent-State-Machine\StateBuilder.cs" />
+    <Compile Include="..\..\Fluent-State-Machine\StateMachineBuilder.cs" />
+    <Compile Include="..\AnodyneSharp.Multiplatform\Program.cs" />
+    <Compile Include="AnodyneGame.cs" />
+    <Compile Include="GameTimes.cs" />
+    <Compile Include="Registry\Settings.cs" />
+    <Compile Include="Registry\GameConstants.cs" />
+    <Compile Include="Registry\InventoryManager.cs" />
+    <Compile Include="Registry\GlobalState.cs" />
+    <Compile Include="Registry\EventRegister.cs" />
+    <Compile Include="Entities\EntityManager.cs" />
+    <Compile Include="Entities\CollisionGroups.cs" />
+    <Compile Include="Entities\DoorPair.cs" />
+    <Compile Include="Entities\Base\Shadow.cs" />
+    <Compile Include="Entities\Base\Interactable.cs" />
+    <Compile Include="Entities\Base\NamedEntity.cs" />
+    <Compile Include="Entities\Base\Parabola_Thing.cs" />
+    <Compile Include="Entities\Base\AlwaysSpawnAttribute.cs" />
+    <Compile Include="Entities\Base\EntityPreset.cs" />
+    <Compile Include="Entities\Base\HealthDropper.cs" />
+    <Compile Include="Entities\Base\CollisionAttribute.cs" />
+    <Compile Include="Entities\Base\Entity.cs" />
+    <Compile Include="Entities\Base\EntityPool.cs" />
+    <Compile Include="Entities\Base\GameObject.cs" />
+    <Compile Include="Entities\Base\Rendering\RenderProperties.cs" />
+    <Compile Include="Entities\Base\Rendering\CompositeSpriteRenderer.cs" />
+    <Compile Include="Entities\Base\Rendering\ISpriteRenderer.cs" />
+    <Compile Include="Entities\Base\Rendering\SolidColorRenderer.cs" />
+    <Compile Include="Entities\Base\Rendering\AnimatedSpriteRenderer.cs" />
+    <Compile Include="Entities\Base\Rendering\LayerType.cs" />
+    <Compile Include="Entities\Base\Rendering\StaticSpriteRenderer.cs" />
+    <Compile Include="Entities\Gadget\Door.cs" />
+    <Compile Include="Entities\Gadget\GoHappyBlocker.cs" />
+    <Compile Include="Entities\Gadget\SoundTestConsole.cs" />
+    <Compile Include="Entities\Gadget\HealthEntity.cs" />
+    <Compile Include="Entities\Gadget\SpringPad.cs" />
+    <Compile Include="Entities\Gadget\GoDetector.cs" />
+    <Compile Include="Entities\Gadget\TreasureChest.cs" />
+    <Compile Include="Entities\Gadget\Explosion.cs" />
+    <Compile Include="Entities\Gadget\GoQuestDoorBlocker.cs" />
+    <Compile Include="Entities\Gadget\Button.cs" />
+    <Compile Include="Entities\Gadget\Gate.cs" />
+    <Compile Include="Entities\Gadget\DashPad.cs" />
+    <Compile Include="Entities\Gadget\Propelled.cs" />
+    <Compile Include="Entities\Gadget\Key.cs" />
+    <Compile Include="Entities\Gadget\Dust.cs" />
+    <Compile Include="Entities\Gadget\JumpTrigger.cs" />
+    <Compile Include="Entities\Gadget\Console.cs" />
+    <Compile Include="Entities\Gadget\Blockers.cs" />
+    <Compile Include="Entities\Gadget\WaterAnim.cs" />
+    <Compile Include="Entities\Gadget\Gates\SmallKeyGate.cs" />
+    <Compile Include="Entities\Gadget\Gates\KeyBlockSentinel.cs" />
+    <Compile Include="Entities\Gadget\Gates\BigCardGate.cs" />
+    <Compile Include="Entities\Gadget\Gates\BigGate.cs" />
+    <Compile Include="Entities\Gadget\Gates\BigKeyGate.cs" />
+    <Compile Include="Entities\Gadget\Gates\KeyCardGate.cs" />
+    <Compile Include="Entities\Gadget\Holes\Hole.cs" />
+    <Compile Include="Entities\Gadget\Holes\CrackedTile.cs" />
+    <Compile Include="Entities\Gadget\Switches\PillarSwitch.cs" />
+    <Compile Include="Entities\Gadget\Switches\SwitchPillar.cs" />
+    <Compile Include="Entities\Gadget\Doors\OneWayDoor.cs" />
+    <Compile Include="Entities\Gadget\Doors\DirectionalDoor.cs" />
+    <Compile Include="Entities\Gadget\Doors\NexusPad.cs" />
+    <Compile Include="Entities\Gadget\Doors\NoMoveDoor.cs" />
+    <Compile Include="Entities\Gadget\Doors\WhirlPool.cs" />
+    <Compile Include="Entities\Gadget\Doors\BlankPortal.cs" />
+    <Compile Include="Entities\Gadget\Doors\FallDoor.cs" />
+    <Compile Include="Entities\Gadget\Doors\NexusDoor.cs" />
+    <Compile Include="Entities\Gadget\Treasures\BootsTreasure.cs" />
+    <Compile Include="Entities\Gadget\Treasures\BroomTreasure.cs" />
+    <Compile Include="Entities\Gadget\Treasures\CardTreasure.cs" />
+    <Compile Include="Entities\Gadget\Treasures\SecretTreasure.cs" />
+    <Compile Include="Entities\Gadget\Treasures\KeyTreasure.cs" />
+    <Compile Include="Entities\Gadget\Treasures\Base\Treasure.cs" />
+    <Compile Include="Entities\Gadget\Treasures\Base\BaseTreasure.cs" />
+    <Compile Include="Entities\Enemy\EnemyAttribute.cs" />
+    <Compile Include="Entities\Enemy\Etc\FollowerBro.cs" />
+    <Compile Include="Entities\Enemy\Etc\SageBoss.cs" />
+    <Compile Include="Entities\Enemy\Etc\SpaceFace.cs" />
+    <Compile Include="Entities\Enemy\Cell\Chaser.cs" />
+    <Compile Include="Entities\Enemy\Bedroom\Shieldy.cs" />
+    <Compile Include="Entities\Enemy\Bedroom\PewLaser.cs" />
+    <Compile Include="Entities\Enemy\Bedroom\Seer.cs" />
+    <Compile Include="Entities\Enemy\Bedroom\Annoyer.cs" />
+    <Compile Include="Entities\Enemy\Bedroom\Slime.cs" />
+    <Compile Include="Entities\Enemy\Hotel\SteamPipe.cs" />
+    <Compile Include="Entities\Enemy\Hotel\Burst_Plant.cs" />
+    <Compile Include="Entities\Enemy\Hotel\Dustmaid.cs" />
+    <Compile Include="Entities\Enemy\Hotel\Boss\WaterPhase.cs" />
+    <Compile Include="Entities\Enemy\Hotel\Boss\EnemyMarker.cs" />
+    <Compile Include="Entities\Enemy\Hotel\Boss\LandPhase.cs" />
+    <Compile Include="Entities\Enemy\Go\HappyThorn.cs" />
+    <Compile Include="Entities\Enemy\Go\BriarBossFight.cs" />
+    <Compile Include="Entities\Enemy\Go\BriarBossBody.cs" />
+    <Compile Include="Entities\Enemy\Go\BriarBossMain.cs" />
+    <Compile Include="Entities\Enemy\Go\BlueThorn.cs" />
+    <Compile Include="Entities\Enemy\Go\BigThorn.cs" />
+    <Compile Include="Entities\Enemy\Suburb\SuburbKiller.cs" />
+    <Compile Include="Entities\Enemy\Apartment\Dash_Trap.cs" />
+    <Compile Include="Entities\Enemy\Apartment\GasGuy.cs" />
+    <Compile Include="Entities\Enemy\Apartment\Silverfish.cs" />
+    <Compile Include="Entities\Enemy\Apartment\SplitBoss.cs" />
+    <Compile Include="Entities\Enemy\Apartment\Rat.cs" />
+    <Compile Include="Entities\Enemy\Apartment\TeleGuy.cs" />
+    <Compile Include="Entities\Enemy\Circus\FirePillar.cs" />
+    <Compile Include="Entities\Enemy\Circus\CircusFolks.cs" />
+    <Compile Include="Entities\Enemy\Circus\Contort.cs" />
+    <Compile Include="Entities\Enemy\Circus\Lion.cs" />
+    <Compile Include="Entities\Enemy\Crowd\WallBoss.cs" />
+    <Compile Include="Entities\Enemy\Crowd\Person.cs" />
+    <Compile Include="Entities\Enemy\Crowd\Frog.cs" />
+    <Compile Include="Entities\Enemy\Crowd\Dog.cs" />
+    <Compile Include="Entities\Enemy\Crowd\SpikeRoller.cs" />
+    <Compile Include="Entities\Enemy\Crowd\Rotator.cs" />
+    <Compile Include="Entities\Enemy\Redcave\Red_Boss.cs" />
+    <Compile Include="Entities\Enemy\Redcave\Slasher.cs" />
+    <Compile Include="Entities\Enemy\Redcave\OnOffLaser.cs" />
+    <Compile Include="Entities\Enemy\Redcave\Mover.cs" />
+    <Compile Include="Entities\Enemy\Redcave\Four_Shooter.cs" />
+    <Compile Include="Entities\Interactive\Red_Pillar.cs" />
+    <Compile Include="Entities\Interactive\Elevator.cs" />
+    <Compile Include="Entities\Interactive\HealthPickup.cs" />
+    <Compile Include="Entities\Interactive\DungeonStatue.cs" />
+    <Compile Include="Entities\Interactive\HealthUpgrade\HealthCicadaSentinel.cs" />
+    <Compile Include="Entities\Interactive\HealthUpgrade\HealthCicada.cs" />
+    <Compile Include="Entities\Interactive\Npc\Sage.cs" />
+    <Compile Include="Entities\Interactive\Npc\Mitra.cs" />
+    <Compile Include="Entities\Interactive\Npc\Statue.cs" />
+    <Compile Include="Entities\Interactive\Npc\DeathPlace.cs" />
+    <Compile Include="Entities\Interactive\Npc\Rock.cs" />
+    <Compile Include="Entities\Interactive\Npc\ShadowBriar.cs" />
+    <Compile Include="Entities\Interactive\Npc\DevEaster.cs" />
+    <Compile Include="Entities\Interactive\Npc\Big_Key.cs" />
+    <Compile Include="Entities\Interactive\Npc\Blue\BlueBriar.cs" />
+    <Compile Include="Entities\Interactive\Npc\Blue\Dam.cs" />
+    <Compile Include="Entities\Interactive\Npc\Blue\Snowman.cs" />
+    <Compile Include="Entities\Interactive\Npc\Blank\BlankConsole.cs" />
+    <Compile Include="Entities\Interactive\Npc\Cell\CellBody.cs" />
+    <Compile Include="Entities\Interactive\Npc\Street\Sadbro.cs" />
+    <Compile Include="Entities\Interactive\Npc\EasterEggs\RedCaveEaster.cs" />
+    <Compile Include="Entities\Interactive\Npc\EasterEggs\ApartmentEaster.cs" />
+    <Compile Include="Entities\Interactive\Npc\Beach\BeachBriar.cs" />
+    <Compile Include="Entities\Interactive\Npc\Beach\Fisherman.cs" />
+    <Compile Include="Entities\Interactive\Npc\RedSea\BombDude.cs" />
+    <Compile Include="Entities\Interactive\Npc\RedSea\RedWalker.cs" />
+    <Compile Include="Entities\Interactive\Npc\RedSea\HairDude.cs" />
+    <Compile Include="Entities\Interactive\Npc\Hotel\HotelGuy.cs" />
+    <Compile Include="Entities\Interactive\Npc\Hotel\EyebossPreview.cs" />
+    <Compile Include="Entities\Interactive\Npc\Go\PostBlue.cs" />
+    <Compile Include="Entities\Interactive\Npc\Go\EndingSage.cs" />
+    <Compile Include="Entities\Interactive\Npc\Happy\HappyNPC.cs" />
+    <Compile Include="Entities\Interactive\Npc\Happy\HappyBriar.cs" />
+    <Compile Include="Entities\Interactive\Npc\Happy\HappyEventTrigger.cs" />
+    <Compile Include="Entities\Interactive\Npc\QuestNPCs\ForestQuest.cs" />
+    <Compile Include="Entities\Interactive\Npc\QuestNPCs\FieldsQuest.cs" />
+    <Compile Include="Entities\Interactive\Npc\QuestNPCs\GoQuest.cs" />
+    <Compile Include="Entities\Interactive\Npc\QuestNPCs\CellQuest.cs" />
+    <Compile Include="Entities\Interactive\Npc\QuestNPCs\CliffQuest.cs" />
+    <Compile Include="Entities\Interactive\Npc\QuestNPCs\SuburbQuest.cs" />
+    <Compile Include="Entities\Interactive\Npc\QuestNPCs\QuestNPCHelper.cs" />
+    <Compile Include="Entities\Interactive\Npc\QuestNPCs\BeachQuest.cs" />
+    <Compile Include="Entities\Interactive\Npc\QuestNPCs\SpaceQuest.cs" />
+    <Compile Include="Entities\Interactive\Npc\Windmill\Shell.cs" />
+    <Compile Include="Entities\Interactive\Npc\Windmill\Console.cs" />
+    <Compile Include="Entities\Interactive\Npc\Suburb\SuburbBlocker.cs" />
+    <Compile Include="Entities\Interactive\Npc\Suburb\SuburbWalker.cs" />
+    <Compile Include="Entities\Interactive\Npc\Suburb\SuburbIndoors.cs" />
+    <Compile Include="Entities\Interactive\Npc\Cliff\CliffDog.cs" />
+    <Compile Include="Entities\Interactive\Npc\Space\SpaceNPC.cs" />
+    <Compile Include="Entities\Interactive\Npc\Space\CubeKing.cs" />
+    <Compile Include="Entities\Interactive\Npc\Forest\Mushroom.cs" />
+    <Compile Include="Entities\Interactive\Npc\Forest\Bunny.cs" />
+    <Compile Include="Entities\Interactive\Npc\Forest\ForestBriar.cs" />
+    <Compile Include="Entities\Interactive\Npc\Forest\SkittishSecret.cs" />
+    <Compile Include="Entities\Interactive\Npc\Forest\HugeFuckingStag.cs" />
+    <Compile Include="Entities\Interactive\Npc\Forest\Thorax.cs" />
+    <Compile Include="Entities\Interactive\Npc\Circus\ArthurDanger.cs" />
+    <Compile Include="Entities\Interactive\Npc\Circus\JavieraDanger.cs" />
+    <Compile Include="Entities\Interactive\Npc\Circus\CircusFolksDead.cs" />
+    <Compile Include="Entities\Interactive\Npc\Crowd\BioFilm.cs" />
+    <Compile Include="Entities\Interactive\Npc\Fields\FieldsEaster.cs" />
+    <Compile Include="Entities\Interactive\Npc\Fields\Olive.cs" />
+    <Compile Include="Entities\Interactive\Npc\Debug\Black_Thing.cs" />
+    <Compile Include="Entities\Interactive\Npc\Debug\TestNPC.cs" />
+    <Compile Include="Entities\Interactive\Npc\Debug\Big_Door.cs" />
+    <Compile Include="Entities\Interactive\Npc\RunningTradeNPCs\InsideMonster.cs" />
+    <Compile Include="Entities\Interactive\Npc\RunningTradeNPCs\MiaoXiao.cs" />
+    <Compile Include="Entities\Interactive\Npc\RunningTradeNPCs\ShopKeep.cs" />
+    <Compile Include="Entities\Interactive\Npc\RunningTradeNPCs\OutsideMonster.cs" />
+    <Compile Include="Entities\Interactive\Npc\RunningTradeNPCs\Icky.cs" />
+    <Compile Include="Entities\Events\VolumeEvent.cs" />
+    <Compile Include="Entities\Events\FadeSwitchSong.cs" />
+    <Compile Include="Entities\Events\BossKeyReset.cs" />
+    <Compile Include="Entities\Events\DungeonEntrance.cs" />
+    <Compile Include="Entities\Events\DoorToggle.cs" />
+    <Compile Include="Entities\Events\Checkpoint.cs" />
+    <Compile Include="Entities\Decorations\RedCaveEntrance.cs" />
+    <Compile Include="Entities\Decorations\DeathFadeIn.cs" />
+    <Compile Include="Entities\Decorations\Eye_Light.cs" />
+    <Compile Include="Entities\Decorations\Sign.cs" />
+    <Compile Include="Entities\Decorations\BigTree.cs" />
+    <Compile Include="Entities\Decorations\NonSolid.cs" />
+    <Compile Include="Entities\Lights\Light.cs" />
+    <Compile Include="Entities\Player\PlayerReflection.cs" />
+    <Compile Include="Entities\Player\Player.cs" />
+    <Compile Include="Entities\Player\PlayerDieDummy.cs" />
+    <Compile Include="Entities\Player\Transformer.cs" />
+    <Compile Include="Entities\Player\Foot_Overlay.cs" />
+    <Compile Include="Entities\Player\Broom.cs" />
+    <Compile Include="Dialogue\DialogueManager.cs" />
+    <Compile Include="Dialogue\Tree\DialogueScene.cs" />
+    <Compile Include="Dialogue\Tree\DialogueArea.cs" />
+    <Compile Include="Dialogue\Tree\DialogueState.cs" />
+    <Compile Include="Dialogue\Tree\DialogueNPC.cs" />
+    <Compile Include="Sounds\SoundManager.cs" />
+    <Compile Include="Sounds\SongPlayer.cs" />
+    <Compile Include="Sounds\SFXLimiter.cs" />
+    <Compile Include="Cheatz\CheatAttribute.cs" />
+    <Compile Include="Cheatz\CheatzManager.cs" />
+    <Compile Include="FSM\TimerState.cs" />
+    <Compile Include="FSM\CollisionEvent.cs" />
+    <Compile Include="Utilities\AssemblyReaderUtil.cs" />
+    <Compile Include="Utilities\MapUtilities.cs" />
+    <Compile Include="Utilities\CoroutineUtils.cs" />
+    <Compile Include="Utilities\MathUtilities.cs" />
+    <Compile Include="Utilities\GrowableResourceList.cs" />
+    <Compile Include="Utilities\TextUtilities.cs" />
+    <Compile Include="Resources\CardDataManager.cs" />
+    <Compile Include="Resources\ContentWriter.cs" />
+    <Compile Include="Resources\ContentLoader.cs" />
+    <Compile Include="Resources\ResourceManager.cs" />
+    <Compile Include="Resources\Loading\InputConfigLoader.cs" />
+    <Compile Include="Resources\Writing\InputConfigWriter.cs" />
+    <Compile Include="MapData\MinimapTracker.cs" />
+    <Compile Include="MapData\MapLoader.cs" />
+    <Compile Include="MapData\MapSettings.cs" />
+    <Compile Include="MapData\Map.cs" />
+    <Compile Include="MapData\Minimap.cs" />
+    <Compile Include="MapData\SwapperControl.cs" />
+    <Compile Include="MapData\TileMap.cs" />
+    <Compile Include="MapData\Tiles\AnimatedTile.cs" />
+    <Compile Include="MapData\Tiles\CollissionData.cs" />
+    <Compile Include="MapData\Tiles\TileData.cs" />
+    <Compile Include="MapData\Tiles\Tile.cs" />
+    <Compile Include="GameEvents\EntityEventRegistry.cs" />
+    <Compile Include="GameEvents\Events.cs" />
+    <Compile Include="GameEvents\EventsAttribute.cs" />
+    <Compile Include="States\DeathState.cs" />
+    <Compile Include="States\DialogueState.cs" />
+    <Compile Include="States\IntroState.cs" />
+    <Compile Include="States\PauseState.cs" />
+    <Compile Include="States\CreditsState.cs" />
+    <Compile Include="States\PlayState.cs" />
+    <Compile Include="States\CutsceneState.cs" />
+    <Compile Include="States\Base\State.cs" />
+    <Compile Include="States\MenuSubstates\ConfigSubstate.cs" />
+    <Compile Include="States\MenuSubstates\ConfigSubstates\GraphicsMenu.cs" />
+    <Compile Include="States\MenuSubstates\ConfigSubstates\ControlsSubstate.cs" />
+    <Compile Include="States\MenuSubstates\ConfigSubstates\GameplayMenu.cs" />
+    <Compile Include="States\MenuSubstates\PauseMenu\SaveSubstate.cs" />
+    <Compile Include="States\MenuSubstates\PauseMenu\CardSubstate.cs" />
+    <Compile Include="States\MenuSubstates\PauseMenu\CheatzSubstate.cs" />
+    <Compile Include="States\MenuSubstates\PauseMenu\EquipSubstate.cs" />
+    <Compile Include="States\MenuSubstates\PauseMenu\SecretSubstate.cs" />
+    <Compile Include="States\MenuSubstates\PauseMenu\MapSubstate.cs" />
+    <Compile Include="States\MenuSubstates\BaseSubstates\DialogueSubstate.cs" />
+    <Compile Include="States\MenuSubstates\BaseSubstates\GridSubstate.cs" />
+    <Compile Include="States\MenuSubstates\BaseSubstates\Substate.cs" />
+    <Compile Include="States\MenuSubstates\BaseSubstates\ListSubstate.cs" />
+    <Compile Include="States\MenuSubstates\MainMenu\FileSubstate.cs" />
+    <Compile Include="States\MainMenu\TitleState.cs" />
+    <Compile Include="States\MainMenu\MainMenuState.cs" />
+    <Compile Include="Input\KeyInput.cs" />
+    <Compile Include="Input\Buttons\RebindableKey.cs" />
+    <Compile Include="Input\Buttons\PlayerButton.cs" />
+    <Compile Include="Input\Mouse\MouseButton.cs" />
+    <Compile Include="UI\UIEntity.cs" />
+    <Compile Include="UI\UILabel.cs" />
+    <Compile Include="UI\DustIcon.cs" />
+    <Compile Include="UI\TextBox.cs" />
+    <Compile Include="UI\Health\HealthBar.cs" />
+    <Compile Include="UI\Health\HealthBarPiece.cs" />
+    <Compile Include="UI\Font\FontManager.cs" />
+    <Compile Include="UI\Font\SpriteFont.cs" />
+    <Compile Include="UI\Font\Writing\TextCharacter.cs" />
+    <Compile Include="UI\Font\Writing\TextWriter.cs" />
+    <Compile Include="UI\PauseMenu\Equipment.cs" />
+    <Compile Include="UI\PauseMenu\PauseMenuSelector.cs" />
+    <Compile Include="UI\PauseMenu\MenuSelector.cs" />
+    <Compile Include="UI\PauseMenu\Config\OptionSelector.cs" />
+    <Compile Include="UI\PauseMenu\Config\ActionOption.cs" />
+    <Compile Include="UI\PauseMenu\Config\SubstateOption.cs" />
+    <Compile Include="UI\PauseMenu\Config\AudioSlider.cs" />
+    <Compile Include="UI\PauseMenu\Config\TextSelector.cs" />
+    <Compile Include="UI\PauseMenu\Config\CheckBox.cs" />
+    <Compile Include="UI\PauseMenu\Config\UIOption.cs" />
+    <Compile Include="Drawing\Camera.cs" />
+    <Compile Include="Drawing\DrawingUtilities.cs" />
+    <Compile Include="Drawing\ScrollingTex.cs" />
+    <Compile Include="Drawing\SpriteDrawer.cs" />
+    <Compile Include="Drawing\Effects\FG_Blend.cs" />
+    <Compile Include="Drawing\Effects\ScreenShake.cs" />
+    <Compile Include="Drawing\Effects\FadeEffect.cs" />
+    <Compile Include="Drawing\Effects\Static.cs" />
+    <Compile Include="Drawing\Effects\Blend.cs" />
+    <Compile Include="Drawing\Effects\Darkness.cs" />
+    <Compile Include="Drawing\Effects\IFullScreenEffect.cs" />
+    <Compile Include="Drawing\Effects\TitleScreenOverlay.cs" />
+    <Compile Include="Drawing\Effects\GrayScale.cs" />
+    <Compile Include="Drawing\Effects\FlashEffect.cs" />
+    <Compile Include="Drawing\Effects\Wave.cs" />
+    <Compile Include="Drawing\Effects\Glitch.cs" />
+    <Compile Include="Drawing\Effects\Pixelate.cs" />
+    <Compile Include="Drawing\Spritesheet\Anim.cs" />
+    <Compile Include="Drawing\Spritesheet\Spritesheet.cs" />
+    <Compile Include="Logger\LogLine.cs" />
+    <Compile Include="Logger\DebugLogger.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Content\Maps\APARTMENT\BG.csv" />
+    <EmbeddedResource Include="Content\Maps\APARTMENT\BG2.csv" />
+    <EmbeddedResource Include="Content\Maps\APARTMENT\FG.csv" />
+    <EmbeddedResource Include="Content\Maps\BEACH\BG.csv" />
+    <EmbeddedResource Include="Content\Maps\BEDROOM\BG.csv" />
+    <EmbeddedResource Include="Content\Maps\BLANK\BG.csv" />
+    <EmbeddedResource Include="Content\Maps\BLUE\BG.csv" />
+    <EmbeddedResource Include="Content\Maps\BLUE\BG2.csv" />
+    <EmbeddedResource Include="Content\Maps\BLUE\TileAnims\go_anims.dat" />
+    <EmbeddedResource Include="Content\Maps\BOSSRUSH\TileAnims\conveyer_anim_tiles.dat" />
+    <EmbeddedResource Include="Content\Maps\BOSSRUSH\TileAnims\go_anims.dat" />
+    <EmbeddedResource Include="Content\Maps\BOSSRUSH\TileAnims\water_edges.dat" />
+    <EmbeddedResource Include="Content\Maps\BOSSRUSH\TileData.col" />
+    <EmbeddedResource Include="Content\Maps\CELL\TileAnims\cell_anims.dat" />
+    <EmbeddedResource Include="Content\Maps\CIRCUS\BG.csv" />
+    <EmbeddedResource Include="Content\Maps\CIRCUS\TileAnims\conveyer_anim_tiles.dat" />
+    <EmbeddedResource Include="Content\Maps\CIRCUS\TileAnims\torch_pillars.dat" />
+    <EmbeddedResource Include="Content\Maps\CLIFF\BG.csv" />
+    <EmbeddedResource Include="Content\Maps\CROWD\BG.csv" />
+    <EmbeddedResource Include="Content\Maps\CROWD\BG2.csv" />
+    <EmbeddedResource Include="Content\Maps\DEBUG\BG.csv" />
+    <EmbeddedResource Include="Content\Maps\DEBUG\BG2.csv" />
+    <EmbeddedResource Include="Content\Maps\DEBUG\FG.csv" />
+    <EmbeddedResource Include="Content\Maps\DEBUG\TileAnims\conveyer_anim_tiles.dat" />
+    <EmbeddedResource Include="Content\Maps\DRAWER\BG.csv" />
+    <EmbeddedResource Include="Content\Maps\FIELDS\BG.csv" />
+    <EmbeddedResource Include="Content\Maps\FIELDS\FG.csv" />
+    <EmbeddedResource Include="Content\Maps\FIELDS\TileAnims\conveyer_anim_tiles.dat" />
+    <EmbeddedResource Include="Content\Maps\FIELDS\TileAnims\fields_anims.dat" />
+    <EmbeddedResource Include="Content\Maps\FOREST\BG.csv" />
+    <EmbeddedResource Include="Content\Maps\FOREST\BG2.csv" />
+    <EmbeddedResource Include="Content\Maps\FOREST\FG.csv" />
+    <EmbeddedResource Include="Content\Maps\FOREST\TileAnims\forest_anims.dat" />
+    <EmbeddedResource Include="Content\Maps\GO\BG.csv" />
+    <EmbeddedResource Include="Content\Maps\GO\BG2.csv" />
+    <EmbeddedResource Include="Content\Maps\GO\TileAnims\go_anims.dat" />
+    <EmbeddedResource Include="Content\Maps\HAPPY\BG.csv" />
+    <EmbeddedResource Include="Content\Maps\HAPPY\BG2.csv" />
+    <EmbeddedResource Include="Content\Maps\HAPPY\TileAnims\happy_anims.dat" />
+    <EmbeddedResource Include="Content\Maps\HAPPY\TileAnims\go_anims.dat" />
+    <EmbeddedResource Include="Content\Maps\HOTEL\BG.csv" />
+    <EmbeddedResource Include="Content\Maps\HOTEL\BG2.csv" />
+    <EmbeddedResource Include="Content\Maps\HOTEL\TileAnims\conveyer_anim_tiles.dat" />
+    <EmbeddedResource Include="Content\Maps\HOTEL\TileAnims\water_edges.dat" />
+    <EmbeddedResource Include="Content\Maps\REDCAVE\TileAnims\water_edges.dat" />
+    <EmbeddedResource Include="Content\Maps\REDCAVE\TileAnims\flame_anims.dat" />
+    <EmbeddedResource Include="Content\Maps\REDCAVE\TileAnims\conveyer_anim_tiles.dat" />
+    <EmbeddedResource Include="Content\Maps\SUBURB\TileAnims\suburbs_anims.dat" />
+    <EmbeddedResource Include="Content\Maps\TERMINAL\TileAnims\terminal.dat" />
+    <EmbeddedResource Include="Content\Maps\WINDMILL\TileAnims\windmill_drops.dat" />
+    <EmbeddedResource Include="Content\Maps\NEXUS\BG.csv" />
+    <EmbeddedResource Include="Content\Maps\OVERWORLD\BG.csv" />
+    <EmbeddedResource Include="Content\Maps\OVERWORLD\BG2.csv" />
+    <EmbeddedResource Include="Content\Maps\REDCAVE\BG.csv" />
+    <EmbeddedResource Include="Content\Maps\REDCAVE\BG2.csv" />
+    <EmbeddedResource Include="Content\Maps\REDSEA\BG.csv" />
+    <EmbeddedResource Include="Content\Maps\REDSEA\FG.csv" />
+    <EmbeddedResource Include="Content\Maps\SPACE\BG.csv" />
+    <EmbeddedResource Include="Content\Maps\SPACE\BG2.csv" />
+    <EmbeddedResource Include="Content\Maps\SPACE\FG.csv" />
+    <EmbeddedResource Include="Content\Maps\STREET\BG.csv" />
+    <EmbeddedResource Include="Content\Maps\STREET\BG2.csv" />
+    <EmbeddedResource Include="Content\Maps\STREET\FG.csv" />
+    <EmbeddedResource Include="Content\Maps\SUBURB\BG.csv" />
+    <EmbeddedResource Include="Content\Maps\TERMINAL\BG.csv" />
+    <EmbeddedResource Include="Content\Maps\TERMINAL\BG2.csv" />
+    <EmbeddedResource Include="Content\Maps\CELL\BG.csv" />
+    <EmbeddedResource Include="Content\Maps\WINDMILL\BG.csv" />
+    <EmbeddedResource Include="Content\Maps\WINDMILL\BG2.csv" />
+    <EmbeddedResource Include="Content\Maps\SPACE\TileData.col" />
+    <EmbeddedResource Include="Content\Maps\BLUE\TileData.col" />
+    <EmbeddedResource Include="Content\Maps\DRAWER\TileData.col" />
+    <EmbeddedResource Include="Content\Maps\CLIFF\TileData.col" />
+    <EmbeddedResource Include="Content\Maps\GO\TileData.col" />
+    <EmbeddedResource Include="Content\Maps\SUBURB\TileData.col" />
+    <EmbeddedResource Include="Content\Maps\CELL\TileData.col" />
+    <EmbeddedResource Include="Content\Maps\WINDMILL\TileData.col" />
+    <EmbeddedResource Include="Content\Maps\REDCAVE\TileData.col" />
+    <EmbeddedResource Include="Content\Maps\FOREST\TileData.col" />
+    <EmbeddedResource Include="Content\Maps\BEACH\TileData.col" />
+    <EmbeddedResource Include="Content\Maps\BLANK\TileData.col" />
+    <EmbeddedResource Include="Content\Maps\NEXUS\TileData.col" />
+    <EmbeddedResource Include="Content\Maps\HAPPY\TileData.col" />
+    <EmbeddedResource Include="Content\Maps\BEDROOM\TileData.col" />
+    <EmbeddedResource Include="Content\Maps\CROWD\TileData.col" />
+    <EmbeddedResource Include="Content\Maps\APARTMENT\TileData.col" />
+    <EmbeddedResource Include="Content\Maps\CIRCUS\TileData.col" />
+    <EmbeddedResource Include="Content\Maps\HOTEL\TileData.col" />
+    <EmbeddedResource Include="Content\Maps\DEBUG\TileData.col" />
+    <EmbeddedResource Include="Content\Maps\FIELDS\TileData.col" />
+    <EmbeddedResource Include="Content\Maps\REDSEA\TileData.col" />
+    <EmbeddedResource Include="Content\Maps\TERMINAL\TileData.col" />
+    <EmbeddedResource Include="Content\Maps\STREET\TileData.col" />
+    <EmbeddedResource Include="Content\Entities.xml" />
+    <EmbeddedResource Include="Content\Maps\OVERWORLD\TileData.col" />
+    <EmbeddedResource Include="Content\CardLookup.card" />
+    <EmbeddedResource Include="Content\Dialogue\dialogue_EN.txt" />
+    <EmbeddedResource Include="Content\Dialogue\dialogue_ES.txt" />
+    <EmbeddedResource Include="Content\Dialogue\dialogue_IT.txt" />
+    <EmbeddedResource Include="Content\Dialogue\dialogue_JP.txt" />
+    <EmbeddedResource Include="Content\Dialogue\dialogue_PT_BR.txt" />
+    <EmbeddedResource Include="Content\Dialogue\dialogue_ZH_CN.txt" />
+    <EmbeddedResource Include="Content\Dialogue\dialogue_KR.txt" />
+    <EmbeddedResource Include="Content\Maps\BOSSRUSH\Settings.json" />
+    <EmbeddedResource Include="Content\Maps\WINDMILL\Settings.json" />
+    <EmbeddedResource Include="Content\Maps\TERMINAL\Settings.json" />
+    <EmbeddedResource Include="Content\Maps\SUBURB\Settings.json" />
+    <EmbeddedResource Include="Content\Maps\STREET\Settings.json" />
+    <EmbeddedResource Include="Content\Maps\SPACE\Settings.json" />
+    <EmbeddedResource Include="Content\Maps\REDSEA\Settings.json" />
+    <EmbeddedResource Include="Content\Maps\REDCAVE\Settings.json" />
+    <EmbeddedResource Include="Content\Maps\FIELDS\Settings.json" />
+    <EmbeddedResource Include="Content\Maps\DRAWER\Settings.json" />
+    <EmbeddedResource Include="Content\Maps\DEBUG\Settings.json" />
+    <EmbeddedResource Include="Content\Maps\CROWD\Settings.json" />
+    <EmbeddedResource Include="Content\Maps\CLIFF\Settings.json" />
+    <EmbeddedResource Include="Content\Maps\CIRCUS\Settings.json" />
+    <EmbeddedResource Include="Content\Maps\CELL\Settings.json" />
+    <EmbeddedResource Include="Content\Maps\BLUE\Settings.json" />
+    <EmbeddedResource Include="Content\Maps\BLANK\Settings.json" />
+    <EmbeddedResource Include="Content\Maps\BEDROOM\Settings.json" />
+    <EmbeddedResource Include="Content\Maps\BEACH\Settings.json" />
+    <EmbeddedResource Include="Content\Maps\APARTMENT\Settings.json" />
+    <EmbeddedResource Include="Content\Maps\OVERWORLD\Settings.json" />
+    <EmbeddedResource Include="Content\Maps\NEXUS\Settings.json" />
+    <EmbeddedResource Include="Content\Maps\HOTEL\Settings.json" />
+    <EmbeddedResource Include="Content\Maps\FOREST\Settings.json" />
+    <EmbeddedResource Include="Content\Maps\GO\Settings.json" />
+    <EmbeddedResource Include="Content\Maps\HAPPY\Settings.json" />
+    <EmbeddedResource Include="Content\Maps\BEACH\TileAnims\shoreline.dat" />
+    <EmbeddedResource Include="Content\Maps\BEACH\TileAnims\beach_anims.dat" />
+    <EmbeddedResource Include="Content\MiniMaps\Minimap_APARTMENT.csv" />
+    <EmbeddedResource Include="Content\MiniMaps\Minimap_BEACH.csv" />
+    <EmbeddedResource Include="Content\MiniMaps\Minimap_BEDROOM.csv" />
+    <EmbeddedResource Include="Content\MiniMaps\Minimap_CELL.csv" />
+    <EmbeddedResource Include="Content\MiniMaps\Minimap_CIRCUS.csv" />
+    <EmbeddedResource Include="Content\MiniMaps\Minimap_CLIFF.csv" />
+    <EmbeddedResource Include="Content\MiniMaps\Minimap_CROWD.csv" />
+    <EmbeddedResource Include="Content\MiniMaps\Minimap_FIELDS.csv" />
+    <EmbeddedResource Include="Content\MiniMaps\Minimap_FOREST.csv" />
+    <EmbeddedResource Include="Content\MiniMaps\Minimap_HOTEL.csv" />
+    <EmbeddedResource Include="Content\MiniMaps\Minimap_OVERWORLD.csv" />
+    <EmbeddedResource Include="Content\MiniMaps\Minimap_REDCAVE.csv" />
+    <EmbeddedResource Include="Content\MiniMaps\Minimap_REDSEA.csv" />
+    <EmbeddedResource Include="Content\MiniMaps\Minimap_SPACE.csv" />
+    <EmbeddedResource Include="Content\MiniMaps\Minimap_STREET.csv" />
+    <EmbeddedResource Include="Content\MiniMaps\Minimap_SUBURB.csv" />
+    <EmbeddedResource Include="Content\MiniMaps\Minimap_TERMINAL.csv" />
+    <EmbeddedResource Include="Content\Maps\GO\Swapper.dat" />
+    <EmbeddedResource Include="Content\Maps\DRAWER\Swapper.dat" />
+    <EmbeddedResource Include="Content\Maps\DEBUG\Swapper.dat" />
+    <EmbeddedResource Include="Content\Maps\CIRCUS\Swapper.dat" />
+    <EmbeddedResource Include="Content\Maps\CELL\Swapper.dat" />
+    <EmbeddedResource Include="Content\Maps\BLANK\Swapper.dat" />
+    <EmbeddedResource Include="Content\Maps\APARTMENT\Swapper.dat" />
+    <EmbeddedResource Include="Content\Maps\SUBURB\Swapper.dat" />
+    <EmbeddedResource Include="Content\Maps\SPACE\Swapper.dat" />
+    <EmbeddedResource Include="Content\Maps\HOTEL\Swapper.dat" />
+    <EmbeddedResource Include="Content\Maps\NEXUS\Swapper.dat" />
+    <EmbeddedResource Include="Content\Maps\BOSSRUSH\BG.csv" />
+    <EmbeddedResource Include="Content\Maps\BOSSRUSH\BG2.csv" />
+    <EmbeddedResource Include="Content\Maps\BOSSRUSH\Swapper.dat" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\FNA\FNA.csproj">
+      <Project>{35253CE1-C864-4CD3-8249-4D1319748E8F}</Project>
+      <Name>FNA</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

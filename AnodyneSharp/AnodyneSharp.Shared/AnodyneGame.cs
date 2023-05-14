@@ -69,9 +69,8 @@ namespace AnodyneSharp
                 Directory.CreateDirectory(GameConstants.SavePath + "Saves/");
             }
 
-#if WINDOWS
-            InitGraphics();
-#endif
+            // Don't apply changes yet, the GDM will do this for us at Initialize()
+            InitGraphics(false);
         }
 
         /// <summary>
@@ -247,7 +246,7 @@ namespace AnodyneSharp
             }
         }
 
-        private void InitGraphics()
+        private void InitGraphics(bool applyChanges = true)
         {
 #if ANDROID
             GlobalState.settings.resolution = Resolution.Scaled;
@@ -288,7 +287,10 @@ namespace AnodyneSharp
                     break;
             }
 
-            graphics.ApplyChanges();
+            if (applyChanges)
+            {
+                graphics.ApplyChanges();
+            }
         }
 
         private void SetDefaultKeys()

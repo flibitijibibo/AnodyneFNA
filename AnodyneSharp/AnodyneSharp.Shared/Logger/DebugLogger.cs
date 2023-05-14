@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using AnodyneSharp.Registry;
+using Microsoft.Xna.Framework;
 
 namespace AnodyneSharp.Logging
 {
@@ -14,17 +15,20 @@ namespace AnodyneSharp.Logging
         private static readonly string LogPath = $"{GameConstants.SavePath}game.log";
 
         private static Queue<LogLine> DebugLog;
-        private static readonly int MaxLogs;
+        private const int MaxLogs = 10;
 
-        static DebugLogger()
+        public static void Init()
         {
             DebugLog = new Queue<LogLine>(2);
-            MaxLogs = 10;
 
             if (File.Exists(LogPath))
             {
                 File.Delete(LogPath);
             }
+
+            FNALoggerEXT.LogInfo += (s) => { AddInfo(s); };
+            FNALoggerEXT.LogWarn += (s) => { AddWarning(s); };
+            FNALoggerEXT.LogError += (s) => { AddError(s); };
         }
 
         public static void AddLog(LogLine logLine, bool showStack)
