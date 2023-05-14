@@ -333,7 +333,8 @@ namespace AnodyneSharp.UI.Text
             {
                 letterProgress++;
 
-                string s = Text.Substring(letterProgress, Text.IndexOf('♦', letterProgress + 1));
+                int nextGlyph = Text.IndexOf('♦', letterProgress + 1);
+                string s = Text.Substring(letterProgress, nextGlyph - letterProgress);
 
                 letterProgress += s.Length + 1;
 
