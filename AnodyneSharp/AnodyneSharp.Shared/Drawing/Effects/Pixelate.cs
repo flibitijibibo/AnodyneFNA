@@ -35,7 +35,7 @@ namespace AnodyneSharp.Drawing.Effects
 
         public void Render(SpriteBatch batch, Texture2D screen)
         {
-            effect.Parameters["Projection"].SetValue(SpriteDrawer.Projection(screen.Bounds.Size));
+            effect.Parameters["Projection"].SetValue(SpriteDrawer.Projection(new Point(screen.Width, screen.Height)));
             effect.Parameters["ScreenSize"].SetValue(new Vector2(screen.Width, screen.Height));
             batch.Begin(effect: effect);
             batch.Draw(screen, screen.Bounds, Color.White);

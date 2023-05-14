@@ -62,7 +62,7 @@ namespace AnodyneSharp.Entities.Enemy.Hotel.Boss
 
             p.grid_entrance = tl + new Vector2(80, 20);
             
-            bullets = new(8, () => new Bullet(new Rectangle(tl.ToPoint(), new Point(16 * 8, 16 * 9))));
+            bullets = new(8, () => new Bullet(new Rectangle((int) tl.X, (int) tl.Y, 16 * 8, 16 * 9)));
 
             state = State(tl, preset, p);
 
@@ -117,7 +117,8 @@ namespace AnodyneSharp.Entities.Enemy.Hotel.Boss
             while(health > 0)
             {
                 fight.MoveNext();
-                if(KeepInRect(this,new Rectangle(box_tl,box_br-box_tl)))
+                Point box_size = box_br - box_tl;
+                if(KeepInRect(this,new Rectangle(box_tl.X, box_tl.Y, box_size.X, box_size.Y)))
                 {
                     SoundManager.PlaySoundEffect("wb_tap_ground");
                 }

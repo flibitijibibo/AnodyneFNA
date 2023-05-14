@@ -130,7 +130,7 @@ namespace AnodyneSharp.Entities.Enemy.Go
             }
             {
                 bool flashed = false;
-                GlobalState.flash.Flash(1.5f, new(0xffff1111), () => flashed = true);
+                GlobalState.flash.Flash(1.5f, new(0x11, 0x11, 0xff, 0xff), () => flashed = true);
                 SoundManager.PlaySoundEffect("sun_guy_death_short");
                 while (!flashed) yield return null;
                 happy.exists = false;
@@ -146,7 +146,7 @@ namespace AnodyneSharp.Entities.Enemy.Go
             }
             {
                 bool flashed = false;
-                GlobalState.flash.Flash(1.5f, new(0xff1111ff), () => flashed = true);
+                GlobalState.flash.Flash(1.5f, new(0xff, 0x11, 0x11, 0xff), () => flashed = true);
                 SoundManager.PlaySoundEffect("sun_guy_death_short");
                 while (!flashed) yield return null;
                 blue.exists = false;

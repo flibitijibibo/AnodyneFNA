@@ -57,7 +57,8 @@ namespace AnodyneSharp.MapData.Tiles
 
             foreach (var path in assembly.GetManifestResourceNames().Where(p => p.StartsWith($"{ assembly.GetName().Name}.Content.Maps.{map}.TileAnims")))
             {
-                string texName = path.Split('.')[^2];
+                string[] texSplit = path.Split('.');
+                string texName = texSplit[texSplit.Length - 2];
 
                 using (Stream stream = assembly.GetManifestResourceStream(path))
                 {

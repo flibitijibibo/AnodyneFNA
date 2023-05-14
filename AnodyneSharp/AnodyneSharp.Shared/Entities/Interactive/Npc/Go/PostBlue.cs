@@ -145,8 +145,8 @@ namespace AnodyneSharp.Entities.Interactive.Npc.Go
 
             Action clampPlayer = () =>
             {
-                _player.Position.X = Math.Clamp(_player.Position.X, tl.X + 16, tl.X + 9 * 16);
-                _player.Position.Y = Math.Clamp(_player.Position.Y, tl.X + 16, tl.X + 9 * 16);
+                _player.Position.X = MathHelper.Clamp(_player.Position.X, tl.X + 16, tl.X + 9 * 16);
+                _player.Position.Y = MathHelper.Clamp(_player.Position.Y, tl.X + 16, tl.X + 9 * 16);
             };
 
             while (bullet._flickering)

@@ -16,6 +16,6 @@ namespace AnodyneSharp.Drawing.Effects
 
         public void Deactivate();
 
-        public void Update() { }
+        public void Update();
     }
 }

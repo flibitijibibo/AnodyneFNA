@@ -67,7 +67,7 @@ namespace AnodyneSharp.States.MenuSubstates
                 return Enum.GetName(typeof(Language), l).ToLower().Replace('_','-');
             }
 
-            string[] languageNames = Enum.GetValues<Language>().Where(l=>l == GlobalState.CurrentLanguage || (l != Language.JP && l!= Language.KR)).Select(l=>ToString(l)).ToArray();
+            string[] languageNames = ((Language[]) Enum.GetValues(typeof(Language))).Where(l=>l == GlobalState.CurrentLanguage || (l != Language.JP && l!= Language.KR)).Select(l=>ToString(l)).ToArray();
 
             var languageSetter = new TextSelector(new Vector2(x + languageLabel.Writer.WriteArea.Width - 8, languageLabel.Position.Y + GameConstants.LineOffset), GlobalState.CurrentLanguage == Language.ZH_CN ? 40 : 30, Array.FindIndex(languageNames,s=>s == ToString(GlobalState.CurrentLanguage)), true, languageNames)
             {
@@ -87,7 +87,7 @@ namespace AnodyneSharp.States.MenuSubstates
 
         private void LanguageValueChanged(string value, int index)
         {
-            Language lang = Enum.Parse<Language>(value.Replace('-', '_').ToUpper());
+            Language lang = (Language) Enum.Parse(typeof(Language), value.Replace('-', '_').ToUpper());
             GlobalState.settings.language = lang;
             DialogueManager.Reload();
 

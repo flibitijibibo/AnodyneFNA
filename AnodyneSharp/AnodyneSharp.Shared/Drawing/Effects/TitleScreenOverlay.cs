@@ -55,7 +55,7 @@ namespace AnodyneSharp.Drawing.Effects
             blend.Parameters["OverlayTex"].SetValue(Darkness);
             blend.Parameters["HardLight"].SetValue(false);
             blend.Parameters["DepthCutoff"].SetValue(1f);
-            blend.Parameters["Projection"].SetValue(SpriteDrawer.Projection(screen.Bounds.Size));
+            blend.Parameters["Projection"].SetValue(SpriteDrawer.Projection(new Point(screen.Width, screen.Height)));
             batch.Begin(samplerState: SamplerState.PointClamp, effect: blend);
             batch.Draw(screen, screen.Bounds, Color.White);
             batch.End();

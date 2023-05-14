@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <ProjectGuid>{D7E92850-4DF7-470B-ADE6-5E8D76942840}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>AnodyneSharp</RootNamespace>
+    <AssemblyName>Anodyne</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <LangVersion>9.0</LangVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DocumentationFile>
+    </DocumentationFile>
+    <PlatformTarget>x64</PlatformTarget>
+    <IntermediateOutputPath>
+    </IntermediateOutputPath>
+    <ConsolePause>true</ConsolePause>
+    <ExternalConsole>false</ExternalConsole>
+    <Commandlineparameters>
+    </Commandlineparameters>
+    <RunWithWarnings>true</RunWithWarnings>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <NoStdLib>false</NoStdLib>
+    <WarningsNotAsErrors>
+    </WarningsNotAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Fluent-State-Machine\State.cs" />
+    <Compile Include="Fluent-State-Machine\StateBuilder.cs" />
+    <Compile Include="Fluent-State-Machine\StateMachineBuilder.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Multiplatform\Program.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\AnodyneGame.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\GameTimes.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Registry\Settings.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Registry\GameConstants.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Registry\InventoryManager.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Registry\GlobalState.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Registry\EventRegister.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\EntityManager.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\CollisionGroups.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\DoorPair.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Base\Shadow.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Base\Interactable.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Base\NamedEntity.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Base\Parabola_Thing.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Base\AlwaysSpawnAttribute.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Base\EntityPreset.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Base\HealthDropper.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Base\CollisionAttribute.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Base\Entity.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Base\EntityPool.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Base\GameObject.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Base\Rendering\RenderProperties.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Base\Rendering\CompositeSpriteRenderer.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Base\Rendering\ISpriteRenderer.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Base\Rendering\SolidColorRenderer.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Base\Rendering\AnimatedSpriteRenderer.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Base\Rendering\LayerType.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Base\Rendering\StaticSpriteRenderer.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Door.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\GoHappyBlocker.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\SoundTestConsole.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\HealthEntity.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\SpringPad.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\GoDetector.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\TreasureChest.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Explosion.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\GoQuestDoorBlocker.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Button.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Gate.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\DashPad.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Propelled.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Key.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Dust.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\JumpTrigger.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Console.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Blockers.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\WaterAnim.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Gates\SmallKeyGate.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Gates\KeyBlockSentinel.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Gates\BigCardGate.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Gates\BigGate.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Gates\BigKeyGate.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Gates\KeyCardGate.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Holes\Hole.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Holes\CrackedTile.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Switches\PillarSwitch.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Switches\SwitchPillar.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Doors\OneWayDoor.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Doors\DirectionalDoor.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Doors\NexusPad.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Doors\NoMoveDoor.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Doors\WhirlPool.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Doors\BlankPortal.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Doors\FallDoor.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Doors\NexusDoor.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Treasures\BootsTreasure.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Treasures\BroomTreasure.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Treasures\CardTreasure.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Treasures\SecretTreasure.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Treasures\KeyTreasure.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Treasures\Base\Treasure.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Gadget\Treasures\Base\BaseTreasure.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\EnemyAttribute.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Etc\FollowerBro.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Etc\SageBoss.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Etc\SpaceFace.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Cell\Chaser.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Bedroom\Shieldy.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Bedroom\PewLaser.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Bedroom\Seer.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Bedroom\Annoyer.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Bedroom\Slime.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Hotel\SteamPipe.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Hotel\Burst_Plant.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Hotel\Dustmaid.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Hotel\Boss\WaterPhase.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Hotel\Boss\EnemyMarker.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Hotel\Boss\LandPhase.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Go\HappyThorn.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Go\BriarBossFight.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Go\BriarBossBody.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Go\BriarBossMain.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Go\BlueThorn.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Go\BigThorn.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Suburb\SuburbKiller.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Apartment\Dash_Trap.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Apartment\GasGuy.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Apartment\Silverfish.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Apartment\SplitBoss.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Apartment\Rat.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Apartment\TeleGuy.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Circus\FirePillar.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Circus\CircusFolks.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Circus\Contort.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Circus\Lion.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Crowd\WallBoss.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Crowd\Person.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Crowd\Frog.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Crowd\Dog.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Crowd\SpikeRoller.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Crowd\Rotator.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Redcave\Red_Boss.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Redcave\Slasher.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Redcave\OnOffLaser.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Redcave\Mover.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Enemy\Redcave\Four_Shooter.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Red_Pillar.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Elevator.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\HealthPickup.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\DungeonStatue.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\HealthUpgrade\HealthCicadaSentinel.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\HealthUpgrade\HealthCicada.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Sage.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Mitra.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Statue.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\DeathPlace.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Rock.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\ShadowBriar.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\DevEaster.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Big_Key.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Blue\BlueBriar.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Blue\Dam.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Blue\Snowman.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Blank\BlankConsole.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Cell\CellBody.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Street\Sadbro.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\EasterEggs\RedCaveEaster.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\EasterEggs\ApartmentEaster.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Beach\BeachBriar.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Beach\Fisherman.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\RedSea\BombDude.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\RedSea\RedWalker.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\RedSea\HairDude.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Hotel\HotelGuy.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Hotel\EyebossPreview.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Go\PostBlue.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Go\EndingSage.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Happy\HappyNPC.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Happy\HappyBriar.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Happy\HappyEventTrigger.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\QuestNPCs\ForestQuest.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\QuestNPCs\FieldsQuest.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\QuestNPCs\GoQuest.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\QuestNPCs\CellQuest.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\QuestNPCs\CliffQuest.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\QuestNPCs\SuburbQuest.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\QuestNPCs\QuestNPCHelper.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\QuestNPCs\BeachQuest.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\QuestNPCs\SpaceQuest.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Windmill\Shell.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Windmill\Console.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Suburb\SuburbBlocker.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Suburb\SuburbWalker.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Suburb\SuburbIndoors.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Cliff\CliffDog.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Space\SpaceNPC.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Space\CubeKing.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Forest\Mushroom.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Forest\Bunny.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Forest\ForestBriar.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Forest\SkittishSecret.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Forest\HugeFuckingStag.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Forest\Thorax.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Circus\ArthurDanger.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Circus\JavieraDanger.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Circus\CircusFolksDead.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Crowd\BioFilm.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Fields\FieldsEaster.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Fields\Olive.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Debug\Black_Thing.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Debug\TestNPC.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\Debug\Big_Door.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\RunningTradeNPCs\InsideMonster.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\RunningTradeNPCs\MiaoXiao.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\RunningTradeNPCs\ShopKeep.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\RunningTradeNPCs\OutsideMonster.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Interactive\Npc\RunningTradeNPCs\Icky.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Events\VolumeEvent.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Events\FadeSwitchSong.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Events\BossKeyReset.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Events\DungeonEntrance.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Events\DoorToggle.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Events\Checkpoint.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Decorations\RedCaveEntrance.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Decorations\DeathFadeIn.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Decorations\Eye_Light.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Decorations\Sign.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Decorations\BigTree.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Decorations\NonSolid.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Lights\Light.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Player\PlayerReflection.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Player\Player.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Player\PlayerDieDummy.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Player\Transformer.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Player\Foot_Overlay.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Entities\Player\Broom.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Dialogue\DialogueManager.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Dialogue\Tree\DialogueScene.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Dialogue\Tree\DialogueArea.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Dialogue\Tree\DialogueState.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Dialogue\Tree\DialogueNPC.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Sounds\SoundManager.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Sounds\SongPlayer.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Sounds\SFXLimiter.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Cheatz\CheatAttribute.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Cheatz\CheatzManager.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\FSM\TimerState.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\FSM\CollisionEvent.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Utilities\AssemblyReaderUtil.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Utilities\MapUtilities.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Utilities\CoroutineUtils.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Utilities\MathUtilities.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Utilities\GrowableResourceList.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Utilities\TextUtilities.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Resources\CardDataManager.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Resources\ContentWriter.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Resources\ContentLoader.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Resources\ResourceManager.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Resources\Loading\InputConfigLoader.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Resources\Writing\InputConfigWriter.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\MapData\MinimapTracker.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\MapData\MapLoader.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\MapData\MapSettings.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\MapData\Map.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\MapData\Minimap.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\MapData\SwapperControl.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\MapData\TileMap.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\MapData\Tiles\AnimatedTile.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\MapData\Tiles\CollissionData.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\MapData\Tiles\TileData.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\MapData\Tiles\Tile.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\GameEvents\EntityEventRegistry.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\GameEvents\Events.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\GameEvents\EventsAttribute.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\States\DeathState.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\States\DialogueState.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\States\IntroState.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\States\PauseState.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\States\CreditsState.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\States\PlayState.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\States\CutsceneState.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\States\Base\State.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\States\MenuSubstates\ConfigSubstate.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\States\MenuSubstates\ConfigSubstates\GraphicsMenu.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\States\MenuSubstates\ConfigSubstates\ControlsSubstate.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\States\MenuSubstates\ConfigSubstates\GameplayMenu.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\States\MenuSubstates\PauseMenu\SaveSubstate.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\States\MenuSubstates\PauseMenu\CardSubstate.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\States\MenuSubstates\PauseMenu\CheatzSubstate.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\States\MenuSubstates\PauseMenu\EquipSubstate.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\States\MenuSubstates\PauseMenu\SecretSubstate.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\States\MenuSubstates\PauseMenu\MapSubstate.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\States\MenuSubstates\BaseSubstates\DialogueSubstate.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\States\MenuSubstates\BaseSubstates\GridSubstate.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\States\MenuSubstates\BaseSubstates\Substate.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\States\MenuSubstates\BaseSubstates\ListSubstate.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\States\MenuSubstates\MainMenu\FileSubstate.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\States\MainMenu\TitleState.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\States\MainMenu\MainMenuState.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Input\KeyInput.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Input\Buttons\RebindableKey.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Input\Buttons\PlayerButton.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Input\Mouse\MouseButton.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\UI\UIEntity.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\UI\UILabel.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\UI\DustIcon.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\UI\TextBox.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\UI\Health\HealthBar.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\UI\Health\HealthBarPiece.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\UI\Font\FontManager.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\UI\Font\SpriteFont.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\UI\Font\Writing\TextCharacter.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\UI\Font\Writing\TextWriter.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\UI\PauseMenu\Equipment.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\UI\PauseMenu\PauseMenuSelector.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\UI\PauseMenu\MenuSelector.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\UI\PauseMenu\Config\OptionSelector.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\UI\PauseMenu\Config\ActionOption.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\UI\PauseMenu\Config\SubstateOption.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\UI\PauseMenu\Config\AudioSlider.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\UI\PauseMenu\Config\TextSelector.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\UI\PauseMenu\Config\CheckBox.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\UI\PauseMenu\Config\UIOption.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Drawing\Camera.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Drawing\DrawingUtilities.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Drawing\ScrollingTex.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Drawing\SpriteDrawer.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Drawing\Effects\FG_Blend.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Drawing\Effects\ScreenShake.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Drawing\Effects\FadeEffect.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Drawing\Effects\Static.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Drawing\Effects\Blend.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Drawing\Effects\Darkness.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Drawing\Effects\IFullScreenEffect.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Drawing\Effects\TitleScreenOverlay.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Drawing\Effects\GrayScale.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Drawing\Effects\FlashEffect.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Drawing\Effects\Wave.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Drawing\Effects\Glitch.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Drawing\Effects\Pixelate.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Drawing\Spritesheet\Anim.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Drawing\Spritesheet\Spritesheet.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Logger\LogLine.cs" />
+    <Compile Include="AnodyneSharp\AnodyneSharp.Shared\Logger\DebugLogger.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FNA\FNA.csproj">
+      <Project>{35253CE1-C864-4CD3-8249-4D1319748E8F}</Project>
+      <Name>FNA</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

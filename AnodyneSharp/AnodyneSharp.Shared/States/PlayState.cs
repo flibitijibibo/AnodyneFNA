@@ -234,8 +234,8 @@ namespace AnodyneSharp.States
             Minimap mm = GlobalState.CurrentMinimap;
             if (mm.tiles.Width > 0)
             {
-                int x = Math.Clamp(GlobalState.CURRENT_GRID_X - 2, 0, mm.tiles.Width - 5);
-                int y = Math.Clamp(GlobalState.CURRENT_GRID_Y - 1, 0, mm.tiles.Height - 4);
+                int x = (int) MathHelper.Clamp(GlobalState.CURRENT_GRID_X - 2, 0, mm.tiles.Width - 5);
+                int y = (int) MathHelper.Clamp(GlobalState.CURRENT_GRID_Y - 1, 0, mm.tiles.Height - 4);
 
                 mm.Draw(_miniminimap, new Vector2(55, 0) - new Vector2(x, y) * _miniminimap.Width, new Rectangle(x, y, 5, 4));
             }
@@ -490,9 +490,9 @@ namespace AnodyneSharp.States
                 Rectangle ret = e.Hitbox;
                 Vector2 facing_vec = -Entity.FacingDirection(_player.facing);
                 //Increase size in the correct dimension by 2 pixels
-                ret.Inflate(Math.Abs(facing_vec.X), Math.Abs(facing_vec.Y));
+                ret.Inflate((int) Math.Abs(facing_vec.X), (int) Math.Abs(facing_vec.Y));
                 //Move rectangle to have the two pixel buffer on the correct side.
-                ret.Offset(facing_vec.X, facing_vec.Y);
+                ret.Offset((int) facing_vec.X, (int) facing_vec.Y);
                 return ret;
             }
 

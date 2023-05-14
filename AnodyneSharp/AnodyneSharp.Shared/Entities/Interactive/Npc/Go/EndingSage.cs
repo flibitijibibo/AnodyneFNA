@@ -88,7 +88,7 @@ namespace AnodyneSharp.Entities.Interactive.Npc.Go
             while(_player.Position.Y > tl.Y+140 || _player.y_push < 14)
             {
                 _player.dontMove = false;
-                _player.Position.X = Math.Clamp(_player.Position.X, tl.X + 64, tl.X + 88);
+                _player.Position.X = MathHelper.Clamp(_player.Position.X, tl.X + 64, tl.X + 88);
                 _player.Position.Y = Math.Max(_player.Position.Y, tl.Y + 16 * 6);
                 yield return null;
             }
@@ -166,7 +166,7 @@ namespace AnodyneSharp.Entities.Interactive.Npc.Go
             {
                 _player.dontMove = false;
                 _player.y_push = 6;
-                _player.Position.X = Math.Clamp(_player.Position.X, tl.X + 64, tl.X + 88);
+                _player.Position.X = MathHelper.Clamp(_player.Position.X, tl.X + 64, tl.X + 88);
                 if (_player.Position.Y < tl.Y + 80)
                     MathUtilities.MoveTo(ref _player.opacity, 0, 0.3f);
                 yield return null;

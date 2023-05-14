@@ -106,7 +106,7 @@ namespace AnodyneSharp.Input
 
             for (int i = 0; i < ControllerState.Length; i++)
             {
-                GamePadState g = GamePad.GetState(i);
+                GamePadState g = GamePad.GetState((PlayerIndex) i);
 
                 var dic = ControllerState[i];
 
@@ -125,9 +125,9 @@ namespace AnodyneSharp.Input
 
             if (ControllerModeChanged)
             {
-                string displayName = (GamePad.GetCapabilities(PlayerIndex.One).DisplayName ?? "").ToLower();
+                string guid = GamePad.GetGUIDEXT(PlayerIndex.One);
 
-                if (displayName.Contains("nintendo"))
+                if (guid.StartsWith("7e05"))
                 {
                     ControllerButtonOffset = 26;
                     if (!FaceButtonsSwitched)
@@ -135,8 +135,7 @@ namespace AnodyneSharp.Input
                         SwapFaceButtons();
                     }
                 }
-                else if (displayName.Contains("sony") || displayName.Contains("playstation") || 
-                    displayName.Contains("ps3") || displayName.Contains("ps4") || displayName.Contains("ps5"))
+                else if (guid.StartsWith("4c05"))
                 {
                     ControllerButtonOffset = 52;
                     if (FaceButtonsSwitched)

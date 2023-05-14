@@ -42,8 +42,10 @@ namespace AnodyneSharp.MapData
 
         public void OnTransitionEnd()
         {
-            foreach((Point loc, int old) in oldChangedTiles)
+            foreach(KeyValuePair<Point, int> kvp in oldChangedTiles)
             {
+                Point loc = kvp.Key;
+                int old = kvp.Value;
                 tiles[loc.X + loc.Y * Width] = old;
             }
         }

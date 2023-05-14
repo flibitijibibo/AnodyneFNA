@@ -305,7 +305,7 @@ namespace AnodyneSharp.Registry
             }
             set
             {
-                _curHealth = Math.Clamp(value,0,MAX_HEALTH);
+                _curHealth = (int) MathHelper.Clamp(value,0,MAX_HEALTH);
             }
         }
 

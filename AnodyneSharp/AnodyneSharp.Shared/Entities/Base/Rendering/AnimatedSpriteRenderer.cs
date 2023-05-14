@@ -84,7 +84,7 @@ namespace AnodyneSharp.Entities.Base.Rendering
             Rectangle srect = sprite.GetRect(_curAnim.Frame);
             srect.Height -= y_push;
 
-            Point size = (srect.Size.ToVector2() * scale).ToPoint();
+            Point size = (new Vector2(srect.Width, srect.Height) * scale).ToPoint();
 
             batch.Draw(sprite.Tex,
                 MathUtilities.CreateRectangle(position.X + size.X / 2, position.Y + y_push + size.Y / 2, size.X, size.Y),

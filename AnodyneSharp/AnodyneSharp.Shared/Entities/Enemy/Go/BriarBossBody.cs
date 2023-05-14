@@ -94,7 +94,7 @@ namespace AnodyneSharp.Entities.Enemy.Go
             for (int i = 0; i < 8; ++i)
             {
                 int player_pos = (int)(player.Position.Y - Position.Y) / 16;
-                player_pos = Math.Clamp(player_pos, (i > 1 && i < 6) ? 4 : 5, 8);
+                player_pos = (int) MathHelper.Clamp(player_pos, (i > 1 && i < 6) ? 4 : 5, 8);
 
                 thorns.Spawn(t => t.Spawn(Position + new Vector2(i, player_pos) * 16, phase));
                 yield return null;

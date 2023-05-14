@@ -48,7 +48,7 @@ namespace AnodyneSharp.MapData
                 {
                     ArraySegment<string> rectString = new(line, 1, 4);
                     int[] rect = rectString.Select((s) => (int)float.Parse(s)).ToArray();
-                    regions.Add(new() { allow = Enum.Parse<State>(line[0]), area = new(rect[0], rect[1], rect[2], rect[3]) });
+                    regions.Add(new() { allow = (State) Enum.Parse(typeof(State), line[0]), area = new(rect[0], rect[1], rect[2], rect[3]) });
                 }
             }
         }

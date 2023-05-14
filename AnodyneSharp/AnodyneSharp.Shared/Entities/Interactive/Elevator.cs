@@ -40,8 +40,10 @@ namespace AnodyneSharp.Entities.Interactive
             menu = new(preset);
             elevator_frame = new(preset.Position, new StaticSpriteRenderer("elevator", 32, 32, preset.Frame), DrawOrder.ENTITIES);
 
-            openDetector = new(new((Position + Vector2.UnitY * 32).ToPoint(), new(width, height)));
-            menuDetector = new(new(Position.ToPoint(), new(32, 20)));
+            Point openDectectorVec = (Position + Vector2.UnitY * 32).ToPoint();
+            Point menuDetectorVec = Position.ToPoint();
+            openDetector = new PlayerDetector(new Rectangle(openDectectorVec.X, openDectectorVec.Y, width, height));
+            menuDetector = new PlayerDetector(new Rectangle(menuDetectorVec.X, menuDetectorVec.Y, 32, 20));
 
             _state = new StateMachineBuilder()
                 .State("Close")

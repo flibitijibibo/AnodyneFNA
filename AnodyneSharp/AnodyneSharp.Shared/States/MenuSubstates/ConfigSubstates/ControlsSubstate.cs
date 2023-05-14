@@ -241,8 +241,11 @@ namespace AnodyneSharp.States.MenuSubstates
                 KeyInput.SwapFaceButtons();
             }
 
-            foreach (var (keyFunction, change) in _changes)
+            foreach (KeyValuePair<KeyFunctions, InputChange> kvp in _changes)
             {
+                KeyFunctions keyFunction = kvp.Key;
+                InputChange change = kvp.Value;
+
                 var keyValue = KeyInput.RebindableKeys[keyFunction];
 
                 if (controllerMode)

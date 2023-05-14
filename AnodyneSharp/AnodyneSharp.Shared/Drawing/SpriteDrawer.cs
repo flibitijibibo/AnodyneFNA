@@ -68,7 +68,7 @@ namespace AnodyneSharp.Drawing
         public static void Load(ContentManager c)
         {
             _depthrender = c.Load<Effect>("effects/render_depth");
-            _depthrender.Parameters["Projection"].SetValue(Projection(new(160)));
+            _depthrender.Parameters["Projection"].SetValue(Projection(new Point(160, 160)));
             blend = c.Load<Effect>("effects/blend");
         }
 

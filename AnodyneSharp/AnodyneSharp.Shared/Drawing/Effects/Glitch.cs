@@ -69,7 +69,7 @@ namespace AnodyneSharp.Drawing.Effects
 
             public void Draw(SpriteBatch batch, Texture2D screen)
             {
-                batch.Draw(screen, new Rectangle(dest, source.Size), source, Color.White);
+                batch.Draw(screen, new Rectangle(dest.X, dest.Y, source.Width, source.Height), source, Color.White);
             }
 
         }

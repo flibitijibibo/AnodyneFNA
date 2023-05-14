@@ -29,7 +29,7 @@ namespace AnodyneSharp.Drawing.Effects
 
         public void ChangeAlpha(float speed)
         {
-            alpha = Math.Clamp(alpha + speed * GameTimes.DeltaTime, 0f, 1f);
+            alpha = MathHelper.Clamp(alpha + speed * GameTimes.DeltaTime, 0f, 1f);
         }
 
         public void Load(ContentManager content, GraphicsDevice graphicsDevice)
@@ -44,5 +44,8 @@ namespace AnodyneSharp.Drawing.Effects
         {
             alpha = 0;
         }
+
+        public void Update()
+        { }
     }
 }

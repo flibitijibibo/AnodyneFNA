@@ -46,7 +46,7 @@ namespace AnodyneSharp.Entities.Base.Rendering
             spritebatch.End();
 
             dev.SetRenderTargets(old_targets);
-            batch.Draw(target, position + target.Bounds.Size.ToVector2() / 2, null, Color*opacity, rotation, target.Bounds.Size.ToVector2() / 2, scale, flip, Layer.Z);
+            batch.Draw(target, position + new Vector2(target.Width, target.Height) / 2, null, Color*opacity, rotation, new Vector2(target.Width, target.Height) / 2, scale, flip, Layer.Z);
 
         }
 

@@ -43,11 +43,17 @@ namespace AnodyneSharp.Entities
         {
             get
             {
-                return EntityManager.State.GetValueOrDefault(EntityID)?.Alive ?? true;
+                EntityState s;
+                if (EntityManager.State.TryGetValue(EntityID, out s) && s != null)
+                {
+                    return s.Alive;
+                }
+                return true;
             }
             set
             {
-                EntityState s = EntityManager.State.GetValueOrDefault(EntityID);
+                EntityState s;
+                EntityManager.State.TryGetValue(EntityID, out s);
                 if (value && s != null)
                 {
                     s.Alive = true;
@@ -73,11 +79,17 @@ namespace AnodyneSharp.Entities
         {
             get
             {
-                return EntityManager.State.GetValueOrDefault(EntityID)?.Activated ?? false;
+                EntityState s;
+                if (EntityManager.State.TryGetValue(EntityID, out s) && s != null)
+                {
+                    return s.Activated;
+                }
+                return false;
             }
             set
             {
-                EntityState s = EntityManager.State.GetValueOrDefault(EntityID);
+                EntityState s;
+                EntityManager.State.TryGetValue(EntityID, out s);
                 if (!value && s != null)
                 {
                     s.Activated = false;

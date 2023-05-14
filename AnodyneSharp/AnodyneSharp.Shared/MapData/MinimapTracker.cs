@@ -17,8 +17,8 @@ namespace AnodyneSharp.MapData
                 return m;
             }
             TileMap minimap = MapLoader.GetMinimap(mapName);
-            List<int> inter = interest.GetValueOrDefault(mapName);
-            if(inter == null)
+            List<int> inter;
+            if (!interest.TryGetValue(mapName, out inter))
             {
                 inter = new(Enumerable.Repeat(0, minimap.Width * minimap.Height));
                 interest.Add(mapName, inter);

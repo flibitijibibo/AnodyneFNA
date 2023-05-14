@@ -1,11 +1,5 @@
-﻿extern alias MyVorbis;
-
-using Microsoft.Xna.Framework.Audio;
+﻿using Microsoft.Xna.Framework.Audio;
 using System;
-using System.Collections.Generic;
-using System.Text;
-using MyVorbis::NVorbis;
-using System.Linq;
 
 namespace AnodyneSharp.Sounds
 {
@@ -14,7 +8,6 @@ namespace AnodyneSharp.Sounds
         const int BufferMs = 128;
         
         DynamicSoundEffectInstance player;
-        VorbisReader reader;
 
         float[] vorbis_samples = new float[SoundEffect.GetSampleSizeInBytes(TimeSpan.FromMilliseconds(BufferMs),44100,AudioChannels.Stereo)];
 
@@ -35,26 +28,6 @@ namespace AnodyneSharp.Sounds
 
         private void BufferNeeded(object sender, EventArgs e)
         {
-            if (reader.IsEndOfStream)
-            {
-                _ = int.TryParse(reader.Tags.GetTagSingle("LOOPSTART"), out int startLoop);
-                reader.SeekTo(startLoop);
-            }
-            if (!reader.IsEndOfStream)
-            {
-                int total = reader.ReadSamples(vorbis_samples, 0, vorbis_samples.Length);
-
-                byte[] res = new byte[total * 2];
-                for(int i = 0; i < total; ++i)
-                {
-                    int tmp = (int)(short.MaxValue * vorbis_samples[i]);
-                    Math.Clamp(tmp, short.MinValue, short.MaxValue);
-                    short val = (short)tmp;
-                    res[i * 2] = (byte)(val & 0xFF);
-                    res[i * 2 + 1] = (byte)((val >> 8) & 0xFF);
-                }
-                player.SubmitBuffer(res);
-            }
         }
 
         internal float GetVolume()
@@ -65,8 +38,6 @@ namespace AnodyneSharp.Sounds
         public void Play(string song)
         {
             ResetPlayer();
-            if (reader != null) reader.Dispose();
-            reader = new VorbisReader(song);
             BufferNeeded(null, null);
             if(player.State != SoundState.Playing)
             {

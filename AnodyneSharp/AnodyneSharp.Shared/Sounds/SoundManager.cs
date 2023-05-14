@@ -1,6 +1,7 @@
 ﻿using AnodyneSharp.Logging;
 using AnodyneSharp.Registry;
 using AnodyneSharp.Resources;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Media;
 using System;
@@ -57,7 +58,7 @@ namespace AnodyneSharp.Sounds
 
         public static void SetMasterVolume(float volume)
         {
-            masterVolume = Math.Clamp(volume, 0, 1);
+            masterVolume = MathHelper.Clamp(volume, 0, 1);
             SetSongVolume(currentVolume);
         }
 
@@ -65,14 +66,14 @@ namespace AnodyneSharp.Sounds
 
         public static void SetSongVolume(float volume)
         {
-            currentVolume = Math.Clamp(volume,0,1);
+            currentVolume = MathHelper.Clamp(volume,0,1);
             bgm.SetVolume(masterVolume * currentVolume * GlobalState.settings.music_volume_scale);
             SetAmbienceVolume(ambienceVolume);
         }
 
         public static void SetAmbienceVolume(float volume)
         {
-            ambienceVolume = Math.Clamp(volume, 0, 1);
+            ambienceVolume = MathHelper.Clamp(volume, 0, 1);
             ambience.SetVolume(masterVolume * currentVolume * ambienceVolume * GlobalState.settings.music_volume_scale);
         }
 
