@@ -22,7 +22,8 @@ namespace AnodyneSharp.States.MainMenu
             Save1,
             Save2,
             Save3,
-            Settings
+            Settings,
+            Quit
         }
 
         private static MenuState _menuState;
@@ -31,6 +32,7 @@ namespace AnodyneSharp.States.MainMenu
         private UILabel _save2Label;
         private UILabel _save3Label;
         private UILabel _settingsLabel;
+        private UILabel _quitLabel;
 
         private UILabel _inputLabel;
 
@@ -162,6 +164,7 @@ namespace AnodyneSharp.States.MainMenu
             _save2Label.Draw();
             _save3Label.Draw();
             _settingsLabel.Draw();
+            _quitLabel.Draw();
 
             _inputLabel.Draw();
 
@@ -173,9 +176,16 @@ namespace AnodyneSharp.States.MainMenu
             if (KeyInput.JustPressedRebindableKey(KeyFunctions.Accept) || KeyInput.JustPressedRebindableKey(KeyFunctions.Right))
             {
                 SoundManager.PlaySoundEffect("menu_select");
-                _inSubstate = true;
-                _selector.Play("disabledRight");
-                _substate.GetControl();
+                if (_menuState == MenuState.Quit)
+                {
+                    GlobalState.ClosingGame = true;
+                }
+                else
+                {
+                    _inSubstate = true;
+                    _selector.Play("disabledRight");
+                    _substate.GetControl();
+                }
             }
             else if (KeyInput.JustPressedRebindableKey(KeyFunctions.Up))
             {
@@ -190,7 +200,7 @@ namespace AnodyneSharp.States.MainMenu
             }
             else if (KeyInput.JustPressedRebindableKey(KeyFunctions.Down))
             {
-                if (_menuState == MenuState.Settings)
+                if (_menuState == MenuState.Quit)
                 {
                     SoundManager.PlaySoundEffect("menu_move");
                     return;
@@ -206,6 +216,10 @@ namespace AnodyneSharp.States.MainMenu
         {
             _lastState = _menuState;
             _selector.Position = new Vector2(2 + xOffset, 34 + (int)_menuState * 16);
+            if (_menuState == MenuState.Quit)
+            {
+                _selector.Position.Y += 16 * 3; // This matches the position set in SetLabels below
+            }
 
             _substate = _menuState switch
             {
@@ -239,6 +253,7 @@ namespace AnodyneSharp.States.MainMenu
             _save2Label = new UILabel(new Vector2(x, startY + yStep), false, save + 2, color);
             _save3Label = new UILabel(new Vector2(x, startY + yStep * 2), false, save + 3, color);
             _settingsLabel = new UILabel(new Vector2(x, startY + yStep * 3), false, DialogueManager.GetDialogue("misc", "any", "config", 0), color);
+            _quitLabel = new UILabel(new Vector2(x, startY + yStep * 7), false, DialogueManager.GetDialogue("misc", "any", "save", 6), color);
 
             Vector2 inputPos = Vector2.Zero;
             if (GlobalState.CurrentLanguage == Language.ZH_CN)
