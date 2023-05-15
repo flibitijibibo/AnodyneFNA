@@ -69,15 +69,18 @@ namespace AnodyneSharp.Input
 
         private static Dictionary<Keys, InputState> KeyState;
         private static Dictionary<Buttons, InputState>[] ControllerState;
+        private static bool[] ControllerConnected;
+        private const int MaxControllers = 4;
 
         static KeyInput()
         {
             RebindableKeys = new Dictionary<KeyFunctions, RebindableKey>();
-            ControllerState = new Dictionary<Buttons, InputState>[4];
+            ControllerState = new Dictionary<Buttons, InputState>[MaxControllers];
+            ControllerConnected = new bool[MaxControllers];
 
             KeyState = Enumerable.ToDictionary(Enum.GetValues(typeof(Keys)) as IEnumerable<Keys>, k => k, k => InputState.NONE);
 
-            for (int i = 0; i < ControllerState.Length; i++)
+            for (int i = 0; i < MaxControllers; i++)
             {
                 ControllerState[i] = Enumerable.ToDictionary(Enum.GetValues(typeof(Buttons)) as IEnumerable<Buttons>, k => k, k => InputState.NONE);
             }
@@ -104,9 +107,17 @@ namespace AnodyneSharp.Input
                 }
             }
 
-            for (int i = 0; i < ControllerState.Length; i++)
+            for (int i = 0; i < MaxControllers; i++)
             {
                 GamePadState g = GamePad.GetState((PlayerIndex) i);
+
+                // Plugging in a controller should prompt GUI changes
+                if (g.IsConnected && !ControllerConnected[i])
+                {
+                    ControllerMode = true;
+                    ControllerModeChanged = true;
+                }
+                ControllerConnected[i] = g.IsConnected;
 
                 var dic = ControllerState[i];
 

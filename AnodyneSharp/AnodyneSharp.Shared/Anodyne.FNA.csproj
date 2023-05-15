@@ -276,6 +276,7 @@
     <Compile Include="Cheatz\CheatzManager.cs" />
     <Compile Include="FSM\TimerState.cs" />
     <Compile Include="FSM\CollisionEvent.cs" />
+    <Compile Include="UI\UIEntityInputSensitive.cs" />
     <Compile Include="Utilities\AssemblyReaderUtil.cs" />
     <Compile Include="Utilities\MapUtilities.cs" />
     <Compile Include="Utilities\CoroutineUtils.cs" />
