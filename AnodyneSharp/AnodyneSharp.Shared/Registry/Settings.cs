@@ -1,4 +1,5 @@
 ﻿using AnodyneSharp.Dialogue;
+using AnodyneSharp.Drawing;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -38,7 +39,7 @@ namespace AnodyneSharp.Registry
         public bool extended_coyote { get; set; } = false;
         public bool guaranteed_health { get; set; } = false;
         
-        public Resolution resolution { get; set; } = Resolution.Windowed;
+        public Resolution resolution { get; set; } = Resolution.Scaled;
         public int scale { get; set; } = 3;
 
         public FPS fps { get; set; } = FPS.Fixed;
@@ -56,7 +57,9 @@ namespace AnodyneSharp.Registry
             }
             catch
             {
-                return new();
+                Settings fresh = new();
+                fresh.scale = SpriteDrawer.MaxScale;
+                return fresh;
             }
         }
 
