@@ -33,7 +33,7 @@ static class MathF
 
     public static float Min(float x, float y)
     {
-        return (x > y) ? x : y;
+        return (x < y) ? x : y;
     }
 
     public static float Ceiling(float x)
