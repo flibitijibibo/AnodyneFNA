@@ -191,8 +191,12 @@ namespace AnodyneSharp.MapData
             }
             ignore_music = false;
             string darkness = MapSettings.Get(s => s.Darkness, priorities, "");
+            if (!GlobalState.darkness.SetTex(darkness))
+            {
+                // If the texture doesn't exist, assume it was all transparent anyway and ignore the map value -flibit
+                darkness = "";
+            }
             float target = GlobalState.InDeathRoom ? 0.8f : MapSettings.Get(s => s.DarknessAlpha, priorities, darkness == "" ? 0f : 1f);
-            GlobalState.darkness.SetTex(darkness);
             if(!screen_transition)
             {
                 GlobalState.darkness.ForceAlpha(target);
