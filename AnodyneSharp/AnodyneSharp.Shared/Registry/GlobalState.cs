@@ -128,7 +128,7 @@ namespace AnodyneSharp.Registry
             {
                 Achievements.Unlock("48");
             }
-            if (GlobalState.events.BossDefeated.Contains("GO"))
+            if (events.BossDefeated.Contains("GO"))
             {
                 Achievements.Unlock("briar");
             }

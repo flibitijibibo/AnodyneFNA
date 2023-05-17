@@ -1,5 +1,6 @@
 using System;
 using System.Runtime.InteropServices;
+using AnodyneSharp.Logging;
 
 namespace AnodyneSharp
 {
@@ -73,10 +74,12 @@ namespace AnodyneSharp
             try
             {
                 WasInit = SteamAPI_Init();
+                DebugLogger.AddInfo("Steamworks Initialized!");
             }
             catch
             {
                 WasInit = false;
+                DebugLogger.AddWarning("Steamworks failed to start!", true);
             }
             if (WasInit)
             {
