@@ -218,7 +218,7 @@ namespace AnodyneSharp.States.MainMenu
             _selector.Position = new Vector2(2 + xOffset, 34 + (int)_menuState * 16);
             if (_menuState == MenuState.Quit)
             {
-                _selector.Position.Y += 16 * 3; // This matches the position set in SetLabels below
+                _selector.Position.Y += 8 * 7; // This matches the position set in SetLabels below
             }
 
             _substate = _menuState switch
@@ -253,7 +253,7 @@ namespace AnodyneSharp.States.MainMenu
             _save2Label = new UILabel(new Vector2(x, startY + yStep), false, save + 2, color);
             _save3Label = new UILabel(new Vector2(x, startY + yStep * 2), false, save + 3, color);
             _settingsLabel = new UILabel(new Vector2(x, startY + yStep * 3), false, DialogueManager.GetDialogue("misc", "any", "config", 0), color);
-            _quitLabel = new UILabel(new Vector2(x, startY + yStep * 7), false, DialogueManager.GetDialogue("misc", "any", "save", 6), color);
+            _quitLabel = new UILabel(new Vector2(x, startY + yStep * 7.5f), false, DialogueManager.GetDialogue("misc", "any", "save", 6), color);
 
             Vector2 inputPos = Vector2.Zero;
             if (GlobalState.CurrentLanguage == Language.ZH_CN)
