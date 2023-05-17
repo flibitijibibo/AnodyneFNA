@@ -61,6 +61,7 @@
     <Compile Include="Achievements.cs" />
     <Compile Include="AnodyneGame.cs" />
     <Compile Include="GameTimes.cs" />
+    <Compile Include="RuntimeCompat.cs" />
     <Compile Include="Registry\Settings.cs" />
     <Compile Include="Registry\GameConstants.cs" />
     <Compile Include="Registry\InventoryManager.cs" />
