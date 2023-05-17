@@ -190,8 +190,12 @@ namespace AnodyneSharp.UI.Text
                         Vector2 pos;
                         if (CenterText)
                         {
-                            float width = GetLineWidth(i);
-                            pos = WriteAreaTopLeft + new Vector2(c.X, currentY) + new Vector2(GameConstants.SCREEN_WIDTH_IN_PIXELS / 2 - width / 2, 0);
+                            /* We need to round the center, otherwise we can get half-pixels which
+                             * mess with some drivers at this low a resolution!
+                             * -flibit
+                             */
+                            float center = GameConstants.SCREEN_WIDTH_IN_PIXELS / 2 - GetLineWidth(i) / 2;
+                            pos = WriteAreaTopLeft + new Vector2(c.X, currentY) + new Vector2(MathF.Round(center), 0);
                         }
                         else
                         {

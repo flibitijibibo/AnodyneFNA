@@ -41,6 +41,11 @@ static class MathF
         return (float) Math.Ceiling(x);
     }
 
+    public static float Round(float x)
+    {
+        return (float) Math.Round(x);
+    }
+
     public static float Sign(float x)
     {
         return Math.Sign(x);
