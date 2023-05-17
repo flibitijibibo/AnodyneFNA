@@ -1,14 +1,25 @@
 About the project
 -------------
-AnodyneSharp is a fan rewrite of the game Anodyne by Analgesic Productions in C# using MonoGame.
+AnodyneSharp is a fan rewrite of the game Anodyne by Analgesic Productions in C# using MonoGame. Anodyne: FNA Edition ports AnodyneSharp to [FNA](https://fna-xna.github.io/).
 
-It's based on the original game's source code, which can be found over here: https://github.com/analgesicproductions/Anodyne-1-Repo
+AnodyneSharp is based on the original game's source code, which can be found over here: https://github.com/analgesicproductions/Anodyne-1-Repo
 
 The aim is to be faithful to the original, with some UX improvements and a more modular/moddable codebase.
 
+Overview of FNA Edition changes
+---------------
+- Steam achievements and stats are supported once more!
+- Single-assembly portability. Both x86_64 and AArch64 are supported!
+- Support for multiple renderers. OpenGL, Vulkan, and D3D11 are supported!
+- Improved controller support:
+    - No Steam Input workarounds are necessary!
+    - Proper glyphs are now shown across the whole title
+- Added a Quit Game option to the main menu
+- By default, the game starts in fullscreen integer-scaled mode
+- Game storage can be located at `$XDG_DATA_HOME/AnodyneFNA/`
+
 Overview of changes
 ---------------
-
  - Render at 60 FPS using OpenGL/DirectX, effects are done using shaders instead of CPU-side computation
  - Controller support
    - Switch Pro controller support needs Steam to be active to work correctly
