@@ -81,7 +81,7 @@ namespace AnodyneSharp
             if (WasInit)
             {
                 IntPtr steamClient = SteamInternal_CreateInterface(
-                    "SteamClient017"
+                    "SteamClient020"
                 );
                 int steamUser = SteamAPI_GetHSteamUser();
                 int steamPipe = SteamAPI_GetHSteamPipe();
@@ -89,7 +89,7 @@ namespace AnodyneSharp
                     steamClient,
                     steamUser,
                     steamPipe,
-                    "STEAMUSERSTATS_INTERFACE_VERSION011"
+                    "STEAMUSERSTATS_INTERFACE_VERSION012"
                 );
                 SteamAPI_ISteamUserStats_RequestCurrentStats(steamUserStats);
             }
