@@ -1,6 +1,6 @@
 About the project
 -------------
-AnodyneSharp is a fan rewrite of the game Anodyne by Analgesic Productions in C# using MonoGame. Anodyne: FNA Edition ports AnodyneSharp to [FNA](https://fna-xna.github.io/).
+AnodyneSharp is a fan rewrite of the game Anodyne by Analgesic Productions in C# using MonoGame. _**Anodyne: FNA Edition**_ ports AnodyneSharp to [FNA](https://fna-xna.github.io/).
 
 AnodyneSharp is based on the original game's source code, which can be found over here: https://github.com/analgesicproductions/Anodyne-1-Repo
 
