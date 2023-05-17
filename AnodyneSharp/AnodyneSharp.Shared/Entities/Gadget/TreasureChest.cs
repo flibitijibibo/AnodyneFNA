@@ -200,6 +200,7 @@ namespace AnodyneSharp.Entities.Gadget
                 GlobalState.Dialogue = Dialogue.DialogueManager.GetDialogue("misc", "any", "treasure", 0);
                 return true;
             }
+            Achievements.Unlock("windmill");
             return base.PlayerInteraction(player_direction);
         }
     }

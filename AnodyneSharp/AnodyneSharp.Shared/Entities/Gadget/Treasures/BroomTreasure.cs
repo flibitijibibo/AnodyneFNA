@@ -41,6 +41,7 @@ namespace AnodyneSharp.Entities.Gadget.Treasures
                 case BroomType.Normal:
                     GlobalState.inventory.HasBroom = true;
                     GlobalState.inventory.EquippedBroom = BroomType.Normal;
+                    Achievements.Unlock("broom");
                     break;
                 case BroomType.Wide:
                     GlobalState.inventory.HasWiden = true;

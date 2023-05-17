@@ -86,6 +86,7 @@ namespace AnodyneSharp.Registry
 
         public static void SaveGame(int? id = null)
         {
+            UpdateItemRate();
             new Save().SaveTo(id ?? CurrentSaveGame);
         }
 
@@ -108,6 +109,30 @@ namespace AnodyneSharp.Registry
             MAX_HEALTH = s.max_health;
             CUR_HEALTH = s.current_health;
             DeathCount = s.deaths;
+
+            /* Double check achievements/stats from previous saves.
+             * Note that 100% is NOT checked, as this prevents a scenario where
+             * the boss is defeated once, then the game is 100%'d, then the game
+             * reloads. You _must_ defeat the boss _after_ 100%!
+             * -flibit
+             */
+            if (inventory.HasBroom)
+            {
+                Achievements.Unlock("broom");
+            }
+            if (Resources.CardDataManager.GotAllNormalCards("WINDMILL"))
+            {
+                Achievements.Unlock("windmill");
+            }
+            if (inventory.CardCount >= 48)
+            {
+                Achievements.Unlock("48");
+            }
+            if (GlobalState.events.BossDefeated.Contains("GO"))
+            {
+                Achievements.Unlock("briar");
+            }
+            UpdateItemRate();
         }
 
         public static void ResetValues()
@@ -142,6 +167,58 @@ namespace AnodyneSharp.Registry
             PauseState.Reset();
 
             disable_menu = false;
+        }
+
+        private static void UpdateItemRate()
+        {
+            // 36 Cards (+2) = 72
+            // 12 Cards (+4) = 48
+            // 10 health ups (+1) = 10
+            // 4 broom upgrades (+4) = 16
+            // Jump shoes (+2) = 2
+            int rate = 0;
+            for (int i = 0; i < inventory.CardStatus.Length; i += 1)
+            {
+                if (inventory.CardStatus[i])
+                {
+                    if (i < 36)
+                    {
+                        rate += 2;
+                    }
+                    else
+                    {
+                        rate += 4;
+                    }
+                }
+            }
+
+            rate += MAX_HEALTH - 6;
+
+            if (inventory.HasBroom)
+            {
+                rate += 4;
+            }
+            if (inventory.HasLengthen)
+            {
+                rate += 4;
+            }
+            if (inventory.HasWiden)
+            {
+                rate += 4;
+            }
+            if (inventory.HasTransformer)
+            {
+                rate += 4;
+            }
+
+            if (inventory.CanJump)
+            {
+                rate += 2;
+            }
+
+            DebugLogger.AddInfo($"Collection rate: {rate}");
+
+            Achievements.SetStat("item", rate);
         }
 
         private static TimeSpan _totalPreviously;

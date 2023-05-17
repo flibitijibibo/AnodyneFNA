@@ -142,6 +142,8 @@ namespace AnodyneSharp
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            Achievements.Update();
+
             GameTimes.TimeScale = 1;
 
             base.Update(gameTime);

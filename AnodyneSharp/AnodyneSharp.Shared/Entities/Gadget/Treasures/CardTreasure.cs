@@ -44,6 +44,10 @@ namespace AnodyneSharp.Entities.Gadget.Treasures
 
 
             GlobalState.inventory.CardStatus[Frame] = true;
+            if (GlobalState.inventory.CardCount >= 48)
+            {
+                Achievements.Unlock("48");
+            }
 
             DebugLogger.AddInfo($"Got card {Frame}");
         }

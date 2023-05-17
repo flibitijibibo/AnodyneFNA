@@ -117,12 +117,14 @@ namespace AnodyneSharp.Multiplatform
             {
 #endif
                 DebugLogger.Init();
+                Achievements.Init();
 
                 ResourceManager.GetDirectories = GetDirectories;
                 ResourceManager.GetFiles = GetFiles;
 
                 using AnodyneGame game = new AnodyneGame();
                 game.Run();
+                Achievements.Quit();
 #if !DEBUG
             }
             catch (Exception ex)

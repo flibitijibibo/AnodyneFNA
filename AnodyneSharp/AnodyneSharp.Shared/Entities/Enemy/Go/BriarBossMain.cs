@@ -169,6 +169,15 @@ namespace AnodyneSharp.Entities.Enemy.Go
             if (!bossRush)
             {
                 GlobalState.events.BossDefeated.Add(GlobalState.CURRENT_MAP_NAME);
+                Achievements.Unlock("briar");
+                if (GlobalState.inventory.CardCount >= 37 && GlobalState.inventory.HasEveryBroom && GlobalState.MAX_HEALTH >= 16)
+                {
+                    Achievements.Unlock("100");
+                    if (GlobalState.PlayTime <= TimeSpan.FromHours(3))
+                    {
+                        Achievements.Unlock("100fast");
+                    }
+                }
                 SoundManager.PlaySong("go");
             }
             else

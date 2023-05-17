@@ -58,6 +58,7 @@
     <Compile Include="..\..\Fluent-State-Machine\StateBuilder.cs" />
     <Compile Include="..\..\Fluent-State-Machine\StateMachineBuilder.cs" />
     <Compile Include="..\AnodyneSharp.Multiplatform\Program.cs" />
+    <Compile Include="Achievements.cs" />
     <Compile Include="AnodyneGame.cs" />
     <Compile Include="GameTimes.cs" />
     <Compile Include="Registry\Settings.cs" />
