@@ -17,6 +17,7 @@ Overview of FNA Edition changes
 - Added a Quit Game option to the main menu
 - By default, the game starts in fullscreen integer-scaled mode
 - Game storage can be located at `$XDG_DATA_HOME/AnodyneFNA/`
+    - Steam Cloud storage is not supported at this time
 
 Overview of changes
 ---------------
