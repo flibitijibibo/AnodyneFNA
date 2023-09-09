@@ -2245,7 +2245,7 @@ ANODYNE 镇痛
 原创游戏创始者:
 Melos Han-Tani
 Marina Kittaka 
-粉丝重置为:
+Remake by:
 Cynthia Steenvoorden
 Seph De Busser
 #any key
@@ -2290,7 +2290,7 @@ Seph De Busser
 #Press BACK again\nto exit.\nUnsaved progress\nwill be lost.
 注意事项\n\n如果你在游戏中遇到输入延迟\n你需要返回主界面\n重新进入《镇痛》\n\n按下C键以继续\n\n图形用户界面显示错误？\n按下下列键可重调设备。
 再次按下返回键可退出。\n未保存的进度将丢失。
-Anodyne 粉丝重置
+Anodyne (FNA Remake)
 		end scene
 		
 		scene gui
@@ -2673,7 +2673,7 @@ Adobe、Adam\nSaltsman、\nFlashDevelop\n开发者、\nREAPER开发者、\nDAME�
 Marina想感谢\n\nColin Meloy，\n扩展了我的词汇量\n\nTsugumo，问我\n“你想要成为一\n位像素艺术家吗”？\n\n我的家人，\n给予我支持与食物。\n\nDaniel，作为一名\n"独立游戏开发者"\n，一直伴随着我成长。
 Mo，给予我充分的信任。\n\nTina，\n介绍我与Melos认识。\n\nMelos，和我一同制作游戏\n并且给予我信任。
 #New credits
-Anodyne 粉丝重置\n-------\n\n\n\nCynthia\nSteenvoorden 和\nSeph\nDe Busser 制\n\n-------------
+Anodyne Remake\n-------\n\n\n\nCynthia\nSteenvoorden 和\nSeph\nDe Busser 制\n\n-------------
 Remake testers\n-------\n\n\nNoelle Suplex\nholocene.scenes\nsaladplainzone\ndaffodilian\n\n\nAdditional\ntranslations\n-------\n\n\nLisandro\nJohnston,\nAntonio\nNatilla,\nMichelle\nCaldeira,\nLyndon Ang\n\n
 感谢\n\nMelos 和 Marina\n的鼎立支持\n\nCynthia 感谢,\n父母\n支持我的Noelle\n和Lilly,\n还有小猫 Nixie
 Seph 感谢\n一直听我诉苦的\nGhlyffe,\n忠实的Twitch\n观众和期待这个重置的\nAnalgesic\nDiscord 观众

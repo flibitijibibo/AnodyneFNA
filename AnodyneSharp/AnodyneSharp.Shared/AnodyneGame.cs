@@ -100,7 +100,7 @@ namespace AnodyneSharp
 
             GlobalState.darkness.SetCamera(_camera);
 
-            Window.Title = "Anodyne Fan Remake";
+            Window.Title = "Anodyne";
 
             SetState(GameState.TitleScreen);
         }

@@ -2009,7 +2009,7 @@ ANODYNE
 Jogo Orginal por:
 Melos Han-Tani
 Marina Kittaka
-Remake de Fã Por:
+Remake Por:
 Cynthia Steenvoorden
 Seph De Busser
 #This is intentionally left in English 
@@ -2049,7 +2049,7 @@ AVISO\n\nSe estiver sofrendo atraso dos comandos durante o jogo,\nfeche e\nabra 
 #NOTE\n\nIf you have input\nlag during gameplay,\nreturn to your\nhome screen and\nre-enter Anodyne.\n\nPRESS C TO CONTINUE
 Pressione VOLTAR para sair.
 #Press BACK again\nto exit.\nUnsaved progress\nwill be lost.
-Anodyne Fan Remake
+Anodyne (FNA Remake)
 		end scene
  scene elevator
 Andar?
@@ -2391,7 +2391,7 @@ Adobe, Adam Saltsman,\ndevs do FlashDevelop,\ndevs do REAPER,\ncriador do DAME,\
 Marina gostaria de\nagradecer...\n\nColin Meloy, por\nexpandir\nmeu vocabulário\n\nTsugumo, por\n"So You Want to\nBe a Pixel Artist?"\n\nMinha família,\npelo apoio e comida.\n\nDaniel, por ser um\n"indie game dev"\ncomigo no passado.
 Mo, por acreditar\n em mim.\n\nTina, por me\napresentar ao Melos.\n\nMelos, por fazer\num jogo\ne confiar em mim\ncomo grande parte\ndo processo.
 #New credits
-Remake de fã de Anodyne\n-------\n\n\n\nFeito por\nCynthia Steenvoorden\ne Seph De Busser\n\n-------------
+Anodyne Remake\n-------\n\n\n\nFeito por\nCynthia Steenvoorden\ne Seph De Busser\n\n-------------
 #Remake testers\n-------\n\n\nNoelle Suplex\nholocene.scenes\nsaladplainzone\ndaffodilian\n\n\nAdditional\ntranslations\n-------\n\n\nLisandro Johnston\nAntonio Natilla\nMichelle Caldeira (Talking-Translation)\nLyndon Ang
 Testers do Remake\n-------\n\n\nNoelle Suplex,\nAa (holocene.scenes),\nMaddy (saladplainzone),\ndaffodilian\n\n\nTraduções\nAdicionais\n-------\n\n\nLisandro Johnston,\nAntonio Natilla,\nMichelle Caldeira\n(Talking-Translation),\nLyndon Ang\n\n
 Gostariamos de\nagradecer\n\nao Melos e à Marina\npor possibilitarem\neste projeto\n\nCynthia gostaria de\nagradecer\n\nà sua mãe ao seu\npai (descansem em Paz),\n\na Noelle e a Lilly por\nestarem sempre cá.\n\nÀ Nixie a gata.
