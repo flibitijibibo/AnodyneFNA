@@ -20,7 +20,8 @@ namespace AnodyneSharp.Registry
     {
         Fixed,
         VSync,
-        Unlocked
+        Unlocked,
+        FixedHalf
     }
 
     public class Settings

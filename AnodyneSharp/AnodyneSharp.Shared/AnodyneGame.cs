@@ -54,6 +54,7 @@ namespace AnodyneSharp
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
 
             graphics = new GraphicsDeviceManager(this);
+            graphics.PreparingDeviceSettings += OnPreparingDeviceSettings;
             Content.RootDirectory = "Content";
 
             _currentState = null;
@@ -71,6 +72,23 @@ namespace AnodyneSharp
 
             // Don't apply changes yet, the GDM will do this for us at Initialize()
             InitGraphics(false);
+        }
+
+        private void OnPreparingDeviceSettings(object sender, PreparingDeviceSettingsEventArgs e)
+        {
+            switch (GlobalState.settings.fps)
+            {
+                case FPS.Fixed:
+                case FPS.VSync:
+                    e.GraphicsDeviceInformation.PresentationParameters.PresentationInterval = PresentInterval.One;
+                    break;
+                case FPS.Unlocked:
+                    e.GraphicsDeviceInformation.PresentationParameters.PresentationInterval = PresentInterval.Immediate;
+                    break;
+                case FPS.FixedHalf:
+                    e.GraphicsDeviceInformation.PresentationParameters.PresentationInterval = PresentInterval.Two;
+                    break;
+            }
         }
 
         /// <summary>
@@ -281,6 +299,7 @@ namespace AnodyneSharp
             switch (GlobalState.settings.fps)
             {
                 case FPS.Fixed:
+                case FPS.FixedHalf:
                     IsFixedTimeStep = true;
                     graphics.SynchronizeWithVerticalRetrace = true;
                     break;

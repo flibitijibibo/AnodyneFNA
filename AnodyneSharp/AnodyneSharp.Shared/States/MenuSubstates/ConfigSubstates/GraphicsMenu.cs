@@ -66,7 +66,7 @@ namespace AnodyneSharp.States.MenuSubstates.ConfigSubstates
             };
 
             var fpsLabel = new UILabel(scalingLabel.Position + Vector2.UnitY * yStep, true, DialogueManager.GetDialogue("misc", "any", "graphics", 0), layer: DrawOrder.TEXT, forceEnglish: true);
-            var fpsSelect = new TextSelector(fpsLabel.Position + Vector2.UnitX * 30, 80, (int)GlobalState.settings.fps, true, DrawOrder.TEXT, DialogueManager.GetDialogue("misc", "any", "graphics", 1), DialogueManager.GetDialogue("misc", "any", "graphics", 2), DialogueManager.GetDialogue("misc", "any", "graphics", 3))
+            var fpsSelect = new TextSelector(fpsLabel.Position + Vector2.UnitX * 30, 80, (int)GlobalState.settings.fps, true, DrawOrder.TEXT, DialogueManager.GetDialogue("misc", "any", "graphics", 1), DialogueManager.GetDialogue("misc", "any", "graphics", 2), DialogueManager.GetDialogue("misc", "any", "graphics", 3), "30")
             {
                 ValueChangedEvent = (s, index) => { GlobalState.ResolutionDirty = GlobalState.settings.fps != (FPS)index; GlobalState.settings.fps = (FPS)index; }
             };
