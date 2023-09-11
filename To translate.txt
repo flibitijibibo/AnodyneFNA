@@ -12,7 +12,7 @@ Confirm
 
 	scene title
 Original game by:
-Remake by:
+Remaster by:
 Save 
 Copy save
 Cancel copy
@@ -44,7 +44,7 @@ Test
 Screen shake:
 
 	scene ending
-Anodyne Remake\n-------\n\n\n\nMade by\n\nCynthia Steenvoorden\n\nand\n\nSeph De Busser\n\n-------------
+Anodyne Remaster\n-------\n\n\n\nMade by\n\nCynthia Steenvoorden\n\nand\n\nSeph De Busser\n\n-------------
 Remake testers\n-------\n\n\nXXX, XXX, XXX\nXXX, XXX, XXX\n\n\nAdditional\ntranslations\n-------\n\n\nXXX
 We would like\nto thank:\n\nMelos and Marina\nfor making this\nproject possible\n\nCynthia would like\nto thank:\n\nMom and dad(rip),\n\nNoelle and Lilly for\nalways being\nsupportive,\n\nNixie the cat.
 Seph would like\n to thank:\n\nGhlyffe, for always\nlistening to my\ninfodumps about this\nproject,\n\nMy Twitch regulars, who\nkept me motivated\nto stream myself\nworking on this remake.\n\nThe Analgesic discord\ncommunity, who were\nalways hyped for new\nremake features.

@@ -2252,7 +2252,7 @@ ANODYNE
 Gioco originale creato da:
 Melos Han-Tani
 Marina Kittaka
-Remake a cura di:
+Remaster a cura di:
 Cynthia Steenvoorden
 Seph De Busser
 #any key
@@ -2297,7 +2297,7 @@ Anodyne supporta\nla maggior parte dei controller.\n\nNe userai uno?\n\nSì   No
 #NOTE\n\nIf you have input\nlag during gameplay,\nreturn to your\nhome screen and\nre-enter Anodyne.\n\nPRESS C TO CONTINUE\n\nGUI displaying wrong?\nPress button below\nthen reorient device.
 Press BACK again\nto exit.\nUnsaved progress\nwill be lost.
 NOTA\n\nSe ci sono lag di movimento\ndurante la partita,\nritorna alla schermata inziale e\nrientra in Anodyne.\n\nPREMI C PER CONTINUARE\n\nL'interfaccia grafica non appare come dovrebbe?\nPremi il tasto qui sotto\n\ne orienta di nuovo il dispositivo.
-Anodyne (FNA Remake)
+Anodyne Remaster
 		end scene
 		
 		scene gui
@@ -2679,7 +2679,7 @@ I ringraziamenti\n di Marina vanno a...\n\nColin Meloy, per\naver ampliato\nil m
 Mo, per aver creduto\n in me.\n\nTina, per\navermi presentato\na Melos.\n\nMelos, per aver creato\nun gioco e per esserti\nfidato così\ntanto\ndi me.
 #New credits
 #Anodyne Remake\n-------\n\n\n\nMade by\n\nCynthia Steenvoorden\n\nand\n\nSeph De Busser\n\n-------------
-Anodyne Remake\n-------\n\n\n\nProdotto da\n\nCynthia Steenvoorden\n\nand\n\nSeph De Busser\n\n-------------
+Anodyne Remaster\n-------\n\n\n\nProdotto da\n\nCynthia Steenvoorden\n\nand\n\nSeph De Busser\n\n-------------
 #Remake testers\n-------\n\n\nNoelle Suplex\nholocene.scenes\nsaladplainzone\ndaffodilian\n\n\nAdditional\ntranslations\n-------\n\n\nLisandro Johnston\nAntonio Natilla\nMichelle Caldeira (Talking-Translation)\nLyndon Ang\n\n
 Tester del remake\n-------\n\n\nNoelle Suplex,\nAa (holocene.scenes),\nMaddy (saladplainzone),\ndaffodilian\n\n\nTraduzioni\naggiuntive\n-------\n\n\nLisandro Johnston,\nAntonio Natilla,\nMichelle Caldeira\n(Talking-Translation),\nLyndon Ang
 #We would like\nto thank:\n\nMelos and Marina\nfor making this\nproject possible\n\nCynthia would like\nto thank:\n\nMom and dad(rip),\n\nNoelle and Lilly for\nalways being\nsupportive,\n\nNixie the cat.

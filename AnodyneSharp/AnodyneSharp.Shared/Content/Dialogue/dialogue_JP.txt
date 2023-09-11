@@ -2009,7 +2009,7 @@ ANODYNE
 Original game by:
 Melos Han-Tani
 Marina Kittaka
-Remake by:
+Remaster by:
 Cynthia Steenvoorden
 Seph De Busser
 #This is intentionally left in English 
@@ -2049,7 +2049,7 @@ Anodyneは\nコントローラー\nに対応しています\n\n使用します�
 #NOTE\n\nIf you have input\nlag during gameplay,\nreturn to your\nhome screen and\nre-enter Anodyne.\n\nPRESS C TO CONTINUE
 戻るをもう一度\n押すと終了します\n保存されてないデータは\n失われます
 #Press BACK again\nto exit.\nUnsaved progress\nwill be lost.
-Anodyne (FNA Remake)
+Anodyne Remaster
 		end scene
  scene elevator
 何階へ行きますか?
@@ -2404,7 +2404,7 @@ Molly へ\n信じてくれてありがとう\n\nTina へ\nMelos を紹介して�
 #Molly, for believing\n in me.\n\nTina, for introducing\nme\nto Melos.\n\nMelos, for making\na game\nand trusting me to\nbe a big part of it.
 出演\n----\n\n\nスライム\n\n\nじゃまなアレ\n\n\nポウポウ\n\n\nシールディ\n\n\n見通せし者
 #New credits
-Anodyne Remake\n-------\n\n\n\nMade by\n\nCynthia\nSteenvoorden\n\nand\n\nSeph De Busser\n\n-------------
+Anodyne Remaster\n-------\n\n\n\nMade by\n\nCynthia\nSteenvoorden\n\nand\n\nSeph De Busser\n\n-------------
 Remake testers\n-------\n\n\nNoelle Suplex,\nholocene.scenes,\nsaladplainzone,\ndaffodilian\n\n\nAdditional\ntranslations\n-------\n\n\nLisandro Johnston,\nAntonio Natilla,\nMichelle Caldeira,\nLyndon Ang\n\n
 We would like\nto thank:\n\nMelos and Marina\nfor making this\nproject possible\n\nCynthia would like\nto thank:\n\nMom and dad(rip),\n\nNoelle and\nLilly for\nalways being\nsupportive,\n\nNixie the cat.
 Seph would like\n to thank:\n\nGhlyffe, for always\nlistening to my\ninfodumps about\nthis project,\n\nMy Twitch regulars,\nwho kept me\nmotivated to\nstream myself\nworking on this\nremake.\n\nThe Analgesic\ndiscord community,\nwho were always\nhyped for new\nremake features.\n\n

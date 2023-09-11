@@ -2243,7 +2243,7 @@ ANODYNE
 Juego original de:
 Melos Han-Tani
 Marina Kittaka 
-Remake de:
+Remaster de:
 Cynthia Steenvoorden
 Seph De Busser
 #any key
@@ -2287,7 +2287,7 @@ Anodyne soporta\nla mayoría de los mandos.\n\n¿Vas a usar uno?\n\nSí   No\n\n
 #NOTE\n\nIf you have input\nlag during gameplay,\nreturn to your\nhome screen and\nre-enter Anodyne.\n\nPRESS C TO CONTINUE\n\nGUI displaying wrong?\nPress button below\nthen reorient device.
 Press BACK again\nto exit.\nUnsaved progress\nwill be lost.
 NOTA\n\nSi sufres de lag al pulsar las teclas\ndurante la partida,\nsal al escritorio y\nvuelve a abrir Anodyne.\n\nPULSA C PARA CONTINUAR\n\n¿La interfaz gráfica no aparece como debería?\nPulsa el botón de abajo\ny luego reorienta el dispositivo.
-Anodyne (FNA Remake)
+Anodyne Remaster
 		end scene
 		
 		scene gui
@@ -2664,7 +2664,7 @@ Adobe, Adam Saltsman,\nFlashDevelop devs,\nREAPER devs,\nDAME creator,\nDesura, 
 Agradecimientos de\nMarina a...\n\nColin Meloy, por\nexpandir mi\nvocabulario\n\nTsugumo, por\n"¿Así que quieres\nser un\nPixel Artist?"\n\nMi familia,\npor el apoyo\ny la comida.\n\nDaniel, por ser un\n"desarrollador de\njuegos indie"\ncreciendo juntos.
 Mo, por creer\n en mí.\n\nTina, por\npresentarme\na Melos.\n\nMelos, por hacer\nun juego y confiar\nen mí para que\nformara una parte\nimportante de él.
 #New credits
-Anodyne Remake\n-------\n\n\n\nCortesía de\n\nCynthia Steenvoorden\n\ny\n\nSeph De Busser\n\n-------------
+Anodyne Remaster\n-------\n\n\n\nCortesía de\n\nCynthia Steenvoorden\n\ny\n\nSeph De Busser\n\n-------------
 Testers del remake\n-------\n\n\nNoelle Suplex,\nAa (holocene.scenes),\nMaddy (saladplainzone),\ndaffodilian\n\n\nTraducciones\nadicionales\n-------\n\n\nLisandro Johnston,\nAntonio Natilla,\nMichelle Caldeira\n(Talking-Translation),\nLyndon Ang\n\n
 Quisiéramos\nagradecer a:\n\nMelos y Marina\npor hacer posible\npeste proyecto.\n\nCynthia quisiera\nagradecerle a:\n\nMamá y papá(qepd),\n\na Noelle y Lilly por\nsiempre apoyarle,\n\ny a Nixie la gata. 
 Seph quisiera\nagradecerle a:\n\nGhlyffe, por soportar\nmis infodumps sobre\neste proyecto,\n\na mis regulares de\nTwitch, quienes me\nmantuvieron motivada\npara stremearme\na mi misma\ntrabajando en\neste remake.\n\nA la comunidad de\ndiscord de Analgesic,\nque siempre se\nemocionaban por nuevas\nadiciones al remake.\n\n
