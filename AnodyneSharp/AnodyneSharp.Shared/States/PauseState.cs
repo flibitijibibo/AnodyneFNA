@@ -1,5 +1,6 @@
 ﻿using AnodyneSharp.Dialogue;
 using AnodyneSharp.Drawing;
+using AnodyneSharp.Drawing.Effects;
 using AnodyneSharp.Input;
 using AnodyneSharp.Registry;
 using AnodyneSharp.Resources;
@@ -60,6 +61,7 @@ namespace AnodyneSharp.States
 
             SetLabels();
             StateChanged();
+            GlobalState.screenShake.Pause();
 
             UpdateEntities = false;
         }
@@ -69,6 +71,7 @@ namespace AnodyneSharp.States
             if (GlobalState.CUR_HEALTH == 0)
             {
                 Exit = true;
+                GlobalState.screenShake.Resume();
                 return;
             }
 
@@ -92,6 +95,7 @@ namespace AnodyneSharp.States
             {
                 SoundManager.PlayPitchedSoundEffect("pause_sound", -0.1f);
                 Exit = true;
+                GlobalState.screenShake.Resume();
             }
             else if (!_inSubstate)
             {
@@ -109,6 +113,7 @@ namespace AnodyneSharp.States
                     if (GlobalState.WARP) //exit pause state if substate triggered a warp
                     {
                         Exit = true;
+                        GlobalState.screenShake.Resume();
                         return;
                     }
 

@@ -22,10 +22,11 @@ namespace AnodyneSharp.Drawing.Effects
         float _time = 0f;
         float _shakeUpdate = 0f;
         Vector2 _pos = new();
+        bool _isPaused = false;
 
         public bool Active()
         {
-            return _time > 0f;
+            return !_isPaused && _time > 0f;
         }
 
         public void Shake(float intensity, float time, Directions shakeDir = Directions.Both)
@@ -71,6 +72,16 @@ namespace AnodyneSharp.Drawing.Effects
         public void Deactivate()
         {
             _time = 0;
+        }
+
+        public void Pause()
+        {
+            _isPaused = true;
+        }
+
+        public void Resume()
+        {
+            _isPaused = false;
         }
     }
 }
