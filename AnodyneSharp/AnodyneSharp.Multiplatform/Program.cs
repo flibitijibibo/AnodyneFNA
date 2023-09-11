@@ -10,8 +10,15 @@ namespace AnodyneSharp.Multiplatform
     public static class Program
     {
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
+            foreach (string arg in args)
+            {
+                if (arg.Equals("--steamdebug"))
+                {
+                    Achievements.DebugMode = true;
+                }
+            }
 #if !DEBUG
             try
             {

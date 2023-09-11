@@ -170,6 +170,11 @@ namespace AnodyneSharp
                 GlobalState.ShowFPS = !GlobalState.ShowFPS;
             }
 
+            if (Achievements.DebugMode && KeyInput.JustPressedKey(Keys.F11))
+            {
+                Achievements.NukeAll();
+            }
+
             if (GlobalState.ClosingGame)
             {
                 Exit();

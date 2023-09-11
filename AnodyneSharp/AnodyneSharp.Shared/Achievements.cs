@@ -66,7 +66,16 @@ namespace AnodyneSharp
             int stat
         );
 
+        [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl)]
+        [return: MarshalAs(UnmanagedType.I1)]
+        private static extern bool SteamAPI_ISteamUserStats_ResetAllStats(
+            IntPtr instance,
+            [MarshalAs(UnmanagedType.I1)]
+                bool achievementsToo
+        );
+
         public static bool WasInit = false;
+        public static bool DebugMode = false;
         private static IntPtr steamUserStats;
 
         public static void Init()
@@ -130,6 +139,15 @@ namespace AnodyneSharp
             {
                 SteamAPI_ISteamUserStats_SetStatInt32(steamUserStats, name, stat);
                 SteamAPI_ISteamUserStats_StoreStats(steamUserStats);
+            }
+        }
+
+        public static void NukeAll()
+        {
+            if (WasInit && DebugMode)
+            {
+                SteamAPI_ISteamUserStats_ResetAllStats(steamUserStats, true);
+                DebugLogger.AddWarning("Nuking all Steam stats!!!");
             }
         }
     }
