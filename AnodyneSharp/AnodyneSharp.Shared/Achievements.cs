@@ -38,6 +38,15 @@ namespace AnodyneSharp
         );
 
         [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl)]
+        private static extern IntPtr SteamAPI_ISteamClient_GetISteamFriends(
+            IntPtr steamClient,
+            int steamUser,
+            int steamPipe,
+            [MarshalAs(UnmanagedType.LPStr)]
+                string pchVersion
+        );
+
+        [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl)]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool SteamAPI_ISteamUserStats_RequestCurrentStats(
             IntPtr instance
@@ -74,9 +83,18 @@ namespace AnodyneSharp
                 bool achievementsToo
         );
 
+        [DllImport("steam_api", CallingConvention = CallingConvention.Cdecl)]
+        [return: MarshalAs(UnmanagedType.I1)]
+        private static extern bool SteamAPI_ISteamFriends_ActivateGameOverlayToStore(
+            IntPtr instance,
+            uint appid,
+            uint flags
+        );
+
         public static bool WasInit = false;
         public static bool DebugMode = false;
         private static IntPtr steamUserStats;
+        private static IntPtr steamFriends;
 
         public static void Init()
         {
@@ -102,6 +120,12 @@ namespace AnodyneSharp
                     steamUser,
                     steamPipe,
                     "STEAMUSERSTATS_INTERFACE_VERSION012"
+                );
+                steamFriends = SteamAPI_ISteamClient_GetISteamFriends(
+                    steamClient,
+                    steamUser,
+                    steamPipe,
+                    "SteamFriends015"
                 );
                 SteamAPI_ISteamUserStats_RequestCurrentStats(steamUserStats);
             }
@@ -148,6 +172,14 @@ namespace AnodyneSharp
             {
                 SteamAPI_ISteamUserStats_ResetAllStats(steamUserStats, true);
                 DebugLogger.AddWarning("Nuking all Steam stats!!!");
+            }
+        }
+
+        public static void OpenSequelStorePage()
+        {
+            if (WasInit)
+            {
+                SteamAPI_ISteamFriends_ActivateGameOverlayToStore(steamFriends, 877810, 0);
             }
         }
     }

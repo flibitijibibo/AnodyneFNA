@@ -23,7 +23,8 @@ namespace AnodyneSharp.States.MainMenu
             Save2,
             Save3,
             Settings,
-            Quit
+            Quit,
+            Anodyne2
         }
 
         private static MenuState _menuState;
@@ -33,6 +34,7 @@ namespace AnodyneSharp.States.MainMenu
         private UILabel _save3Label;
         private UILabel _settingsLabel;
         private UILabel _quitLabel;
+        private UILabel _anodyne2Label;
 
         private UILabel _inputLabel;
 
@@ -165,6 +167,7 @@ namespace AnodyneSharp.States.MainMenu
             _save3Label.Draw();
             _settingsLabel.Draw();
             _quitLabel.Draw();
+            _anodyne2Label?.Draw();
 
             _inputLabel.Draw();
 
@@ -178,7 +181,19 @@ namespace AnodyneSharp.States.MainMenu
                 SoundManager.PlaySoundEffect("menu_select");
                 if (_menuState == MenuState.Quit)
                 {
-                    GlobalState.ClosingGame = true;
+                    // Special case: Right on Quit goes to Anodyne2
+                    if (Achievements.WasInit && KeyInput.JustPressedRebindableKey(KeyFunctions.Right))
+                    {
+                        _menuState++;
+                    }
+                    else
+                    {
+                        GlobalState.ClosingGame = true;
+                    }
+                }
+                else if (_menuState == MenuState.Anodyne2)
+                {
+                    Achievements.OpenSequelStorePage();
                 }
                 else
                 {
@@ -187,27 +202,32 @@ namespace AnodyneSharp.States.MainMenu
                     _substate.GetControl();
                 }
             }
+            else if (KeyInput.JustPressedRebindableKey(KeyFunctions.Left))
+            {
+                if (_menuState == MenuState.Anodyne2)
+                {
+                    _menuState--;
+                }
+            }
             else if (KeyInput.JustPressedRebindableKey(KeyFunctions.Up))
             {
-                if (_menuState == MenuState.Save1)
-                {
-                    SoundManager.PlaySoundEffect("menu_move");
-                    return;
-                }
-
                 SoundManager.PlaySoundEffect("menu_move");
-                _menuState--;
+                if (_menuState != MenuState.Save1)
+                {
+                    _menuState--;
+                }
             }
             else if (KeyInput.JustPressedRebindableKey(KeyFunctions.Down))
             {
-                if (_menuState == MenuState.Quit)
-                {
-                    SoundManager.PlaySoundEffect("menu_move");
-                    return;
-                }
-
                 SoundManager.PlaySoundEffect("menu_move");
-                _menuState++;
+                if (_menuState < MenuState.Quit)
+                {
+                    _menuState++;
+                }
+                else if (_menuState == MenuState.Quit && Achievements.WasInit)
+                {
+                    _menuState++;
+                }
             }
         }
 
@@ -219,6 +239,11 @@ namespace AnodyneSharp.States.MainMenu
             if (_menuState == MenuState.Quit)
             {
                 _selector.Position.Y += 8 * 7; // This matches the position set in SetLabels below
+            }
+            else if (_menuState == MenuState.Anodyne2)
+            {
+                _selector.Position.X = 80;
+                _selector.Position.Y += 8 * 5;
             }
 
             _substate = _menuState switch
@@ -254,6 +279,10 @@ namespace AnodyneSharp.States.MainMenu
             _save3Label = new UILabel(new Vector2(x, startY + yStep * 2), false, save + 3, color);
             _settingsLabel = new UILabel(new Vector2(x, startY + yStep * 3), false, DialogueManager.GetDialogue("misc", "any", "config", 0), color);
             _quitLabel = new UILabel(new Vector2(x, startY + yStep * 7.5f), false, DialogueManager.GetDialogue("misc", "any", "save", 6), color);
+            if (Achievements.WasInit)
+            {
+                _anodyne2Label = new UILabel(new Vector2(87f, startY + yStep * 7.5f), false, "Anodyne 2", color);
+            }
 
             Vector2 inputPos = Vector2.Zero;
             if (GlobalState.CurrentLanguage == Language.ZH_CN)
