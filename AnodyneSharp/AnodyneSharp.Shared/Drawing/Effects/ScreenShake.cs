@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace AnodyneSharp.Drawing.Effects
@@ -47,12 +48,15 @@ namespace AnodyneSharp.Drawing.Effects
             _shakeUpdate = 0f;
             if((_dir & Directions.Horizontal) == Directions.Horizontal)
             {
-                _pos.X = (float)GlobalState.RNG.NextDouble() * 2 * _intensity - _intensity;
+                _pos.X = (float)GlobalState.RNG.NextDouble() * 2f * _intensity - _intensity;
             }
             if((_dir & Directions.Vertical) == Directions.Vertical)
             {
-                _pos.Y = (float)GlobalState.RNG.NextDouble() * 2 * _intensity - _intensity;
+                _pos.Y = (float)GlobalState.RNG.NextDouble() * 2f * _intensity - _intensity;
             }
+            //Debug.Print(_pos.ToString());
+            if (_pos.X < 0.003f && _pos.X > -0.003f) _pos.X = 0;
+            if (_pos.Y < 0.003f && _pos.Y > -0.003f) _pos.Y = 0;
         }
 
         public void Load(ContentManager content, GraphicsDevice graphicsDevice)
@@ -64,7 +68,9 @@ namespace AnodyneSharp.Drawing.Effects
         {
             Vector2 pos = new Vector2(screen.Width, screen.Height) * _pos;
             batch.GraphicsDevice.Clear(Color.Black);
-            batch.Begin(samplerState:SamplerState.PointClamp);
+            //Clamps the screenshake to pixel intervals, which we don't want
+            //batch.Begin(samplerState:SamplerState.PointClamp);
+            batch.Begin();
             batch.Draw(screen, pos, Color.White);
             batch.End();
         }
