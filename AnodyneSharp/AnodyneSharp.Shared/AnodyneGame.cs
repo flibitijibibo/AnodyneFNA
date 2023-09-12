@@ -192,6 +192,15 @@ namespace AnodyneSharp
             {
                 Achievements.NukeAll();
             }
+            if (Achievements.DebugMode && KeyInput.JustPressedKey(Keys.F10))
+            {
+                Achievements.Unlock("broom");
+                Achievements.Unlock("windmill");
+                Achievements.Unlock("48");
+                Achievements.Unlock("briar");
+                Achievements.Unlock("100");
+                Achievements.Unlock("100fast");
+            }
 
             if (GlobalState.ClosingGame)
             {
