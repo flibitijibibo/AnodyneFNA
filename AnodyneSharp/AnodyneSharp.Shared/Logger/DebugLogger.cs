@@ -106,8 +106,6 @@ namespace AnodyneSharp.Logging
             Debug.WriteLine(logLine.Message);
 #endif
 
-            var assembly = Assembly.GetCallingAssembly();
-
             using (StreamWriter writer = new StreamWriter(new FileStream(LogPath, FileMode.Append)))
             {
                 if (showStack)

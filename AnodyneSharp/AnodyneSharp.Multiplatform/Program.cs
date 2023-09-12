@@ -9,8 +9,42 @@ namespace AnodyneSharp.Multiplatform
 {
     public static class Program
     {
+#if NETCOREAPP
+        static void Main(string[] args)
+        {
+            /* Set up custom logging because stdout and stderr are not redirected to the Visual Studio console.
+             * Use FNALoggerEXT or Debug.WriteLine instead of Console.WriteLine in your application.
+             * Note that this only applies to Debug mode, since Debug.WriteLine is compiled out for Release builds.
+             */
+#if DEBUG
+            AppDomain.CurrentDomain.UnhandledException += OnUnhandledException;
+            static void OnUnhandledException(object sender, UnhandledExceptionEventArgs e)
+            {
+                System.Diagnostics.Debug.WriteLine(e.ExceptionObject);
+            }
+#endif
+
+            if (SDL2.SDL.SDL_GetPlatform().StartsWith("Xbox"))
+            {
+                SDL2.SDL.SDL_GDKRunApp(FakeMain, IntPtr.Zero);
+            }
+            else
+            {
+                RealMain(args);
+            }
+        }
+
+        static int FakeMain(int argc, IntPtr argv)
+        {
+            RealMain(new string[] { });
+            return 0;
+        }
+
+        static void RealMain(string[] args)
+#else
         [STAThread]
         static void Main(string[] args)
+#endif
         {
             foreach (string arg in args)
             {

@@ -7,11 +7,11 @@ using System.Text;
 namespace AnodyneSharp.Utilities
 {
 #nullable enable
-    public static class AssemblyReaderUtil
+    internal static class AssemblyReaderUtil
     {
         public static Stream? GetStream(string path)
         {
-            Assembly asm = Assembly.GetCallingAssembly();
+            Assembly asm = Assembly.GetExecutingAssembly();
 
             return asm.GetManifestResourceStream($"{asm.GetName().Name}.{path}");
         }

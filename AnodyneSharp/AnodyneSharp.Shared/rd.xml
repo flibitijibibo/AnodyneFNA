@@ -1,0 +1,39 @@
+<Directives>
+    <Application>
+        <Assembly Name="mscorlib" />
+        <Assembly Name="FNA" Dynamic="Required All" />
+        <Assembly Name="AnodyneSharp" Dynamic="Required All" />
+        <Assembly Name="System.Text.Json">
+          <!-- Settings -->
+          <Type Name="System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1[[AnodyneSharp.Dialogue.Language,AnodyneSharp]]" Dynamic="Required All" />
+          <Type Name="System.Text.Json.Serialization.Converters.EnumConverter`1[[AnodyneSharp.Dialogue.Language,AnodyneSharp]]" Dynamic="Required All" />
+          <Type Name="System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1[[AnodyneSharp.Registry.Resolution,AnodyneSharp]]" Dynamic="Required All" />
+          <Type Name="System.Text.Json.Serialization.Converters.EnumConverter`1[[AnodyneSharp.Registry.Resolution,AnodyneSharp]]" Dynamic="Required All" />
+          <Type Name="System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1[[AnodyneSharp.Registry.FPS,AnodyneSharp]]" Dynamic="Required All" />
+          <Type Name="System.Text.Json.Serialization.Converters.EnumConverter`1[[AnodyneSharp.Registry.FPS,AnodyneSharp]]" Dynamic="Required All" />
+          <!-- Map -->
+          <Type Name="System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1[[System.Nullable`1[[System.Single,mscorlib]],mscorlib]]" Dynamic="Required All" />
+          <Type Name="System.Text.Json.Serialization.Converters.NullableConverter`1[[System.Single,mscorlib]]" Dynamic="Required All" />
+          <Type Name="System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1[[System.Nullable`1[[System.Boolean,mscorlib]],mscorlib]]" Dynamic="Required All" />
+          <Type Name="System.Text.Json.Serialization.Converters.NullableConverter`1[[System.Boolean,mscorlib]]" Dynamic="Required All" />
+          <!-- Save -->
+          <Type Name="System.Text.Json.Serialization.Converters.DictionaryOfTKeyTValueConverter`3[[System.Collections.Generic.Dictionary`2[[System.Guid,System.Private.CoreLib],[AnodyneSharp.Entities.EntityState,AnodyneSharp]],System.Private.CoreLib],[System.Guid,System.Private.CoreLib],[AnodyneSharp.Entities.EntityState,AnodyneSharp]]" Dynamic="Required All" />
+          <Type Name="System.Text.Json.Serialization.Converters.SmallObjectWithParameterizedConstructorConverter`5[[AnodyneSharp.Registry.GlobalState+CheckPoint,AnodyneSharp],[System.String,System.Private.CoreLib],[Microsoft.Xna.Framework.Vector2,FNA],[System.Object,System.Private.CoreLib],[System.Object,System.Private.CoreLib]]" Dynamic="Required All" />
+          <Type Name="System.Text.Json.Serialization.Converters.ListOfTConverter`2[[System.Collections.Generic.List`1[[System.Int32,System.Private.CoreLib]],System.Collections],[System.Int32,System.Private.CoreLib]]" Dynamic="Required All" />
+          <Type Name="System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1[[System.Nullable`1[[System.Int32,mscorlib]],mscorlib]]" Dynamic="Required All" />
+          <Type Name="System.Text.Json.Serialization.Converters.NullableConverter`1[[System.Int32,mscorlib]]" Dynamic="Required All" />
+          <Type Name="System.Text.Json.Serialization.Converters.DictionaryOfTKeyTValueConverter`3[[System.Collections.Generic.Dictionary`2[[System.String,System.Private.CoreLib],[System.Int32,System.Private.CoreLib]],System.Private.CoreLib],[System.String,System.Private.CoreLib],[System.Int32,System.Private.CoreLib]]" Dynamic="Required All" />
+          <Type Name="System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1[[AnodyneSharp.Entities.BroomType,AnodyneSharp]]" Dynamic="Required All" />
+          <Type Name="System.Text.Json.Serialization.Converters.EnumConverter`1[[AnodyneSharp.Entities.BroomType,AnodyneSharp]]" Dynamic="Required All" />
+          <Type Name="System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1[[AnodyneSharp.Registry.InventoryManager+TradeState,AnodyneSharp]]" Dynamic="Required All" />
+          <Type Name="System.Text.Json.Serialization.Converters.EnumConverter`1[[AnodyneSharp.Registry.InventoryManager+TradeState,AnodyneSharp]]" Dynamic="Required All" />
+          <Type Name="System.Text.Json.Serialization.Converters.ArrayConverter`2[[System.Boolean[],mscorlib],[System.Boolean,mscorlib]]" Dynamic="Required All" />
+          <Type Name="System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1[[Microsoft.Xna.Framework.Vector2,FNA]]" Dynamic="Required All" />
+          <Type Name="System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1[[Microsoft.Xna.Framework.Vector2,FNA]]" Dynamic="Required All" />
+        </Assembly>
+        <Assembly Name="System.Collections">
+          <!-- Map -->
+          <Type Name="System.Collections.Generic.List`1[[AnodyneSharp.MapData.Settings.MapEvent,AnodyneSharp]]" Dynamic="Required All" />
+        </Assembly>
+    </Application>
+</Directives>
