@@ -2092,6 +2092,7 @@ Anodyne은(는) 대부분의 컨트롤러를\n지원합니다.\n\n지금 연결�
 # Press BACK again\nto exit.\nUnsaved progress\nwill be lost.
 BACK을(를) 다시 눌러\n게임을 종료해주세요.\n저장되지 않은 진행은\n잃게됩니다.
 Anodyne Remaster
+Ethan Lee
 		end scene
 		
 		scene gui

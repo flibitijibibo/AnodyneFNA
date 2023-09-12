@@ -2291,6 +2291,7 @@ Seph De Busser
 注意事项\n\n如果你在游戏中遇到输入延迟\n你需要返回主界面\n重新进入《镇痛》\n\n按下C键以继续\n\n图形用户界面显示错误？\n按下下列键可重调设备。
 再次按下返回键可退出。\n未保存的进度将丢失。
 Anodyne Remaster
+Ethan Lee
 		end scene
 		
 		scene gui

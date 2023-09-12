@@ -2050,6 +2050,7 @@ AVISO\n\nSe estiver sofrendo atraso dos comandos durante o jogo,\nfeche e\nabra 
 Pressione VOLTAR para sair.
 #Press BACK again\nto exit.\nUnsaved progress\nwill be lost.
 Anodyne Remaster
+Ethan Lee
 		end scene
  scene elevator
 Andar?

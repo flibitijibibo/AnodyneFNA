@@ -2050,6 +2050,7 @@ Anodyneは\nコントローラー\nに対応しています\n\n使用します�
 戻るをもう一度\n押すと終了します\n保存されてないデータは\n失われます
 #Press BACK again\nto exit.\nUnsaved progress\nwill be lost.
 Anodyne Remaster
+Ethan Lee
 		end scene
  scene elevator
 何階へ行きますか?

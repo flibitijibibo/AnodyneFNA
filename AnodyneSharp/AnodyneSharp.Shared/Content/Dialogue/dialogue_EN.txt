@@ -1542,6 +1542,7 @@ Anodyne supports\nmost controllers.\n\nWill you use one?\n\nYes   No\n\nIf so, c
 NOTE\n\nIf you have input\nlag during gameplay,\nreturn to your\nhome screen and\nre-enter Anodyne.\n\nPRESS C TO CONTINUE\n\nGUI displaying wrong?\nPress button below\nthen reorient device.
 Press BACK again\nto exit.\nUnsaved progress\nwill be lost.
 Anodyne Remaster
+Ethan Lee
 		end scene
 		
 		scene gui

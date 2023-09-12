@@ -2298,6 +2298,7 @@ Anodyne supporta\nla maggior parte dei controller.\n\nNe userai uno?\n\nSì   No
 Press BACK again\nto exit.\nUnsaved progress\nwill be lost.
 NOTA\n\nSe ci sono lag di movimento\ndurante la partita,\nritorna alla schermata inziale e\nrientra in Anodyne.\n\nPREMI C PER CONTINUARE\n\nL'interfaccia grafica non appare come dovrebbe?\nPremi il tasto qui sotto\n\ne orienta di nuovo il dispositivo.
 Anodyne Remaster
+Ethan Lee
 		end scene
 		
 		scene gui

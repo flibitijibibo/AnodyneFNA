@@ -2288,6 +2288,7 @@ Anodyne soporta\nla mayoría de los mandos.\n\n¿Vas a usar uno?\n\nSí   No\n\n
 Press BACK again\nto exit.\nUnsaved progress\nwill be lost.
 NOTA\n\nSi sufres de lag al pulsar las teclas\ndurante la partida,\nsal al escritorio y\nvuelve a abrir Anodyne.\n\nPULSA C PARA CONTINUAR\n\n¿La interfaz gráfica no aparece como debería?\nPulsa el botón de abajo\ny luego reorienta el dispositivo.
 Anodyne Remaster
+Ethan Lee
 		end scene
 		
 		scene gui

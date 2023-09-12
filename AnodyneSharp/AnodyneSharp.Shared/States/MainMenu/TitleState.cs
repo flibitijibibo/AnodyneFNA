@@ -78,7 +78,8 @@ namespace AnodyneSharp.States.MainMenu
             {
                 DialogueManager.GetDialogue("misc", "any", "title", 2),
                 DialogueManager.GetDialogue("misc", "any", "title", 3),
-                DialogueManager.GetDialogue("misc", "any", "title", 4)
+                DialogueManager.GetDialogue("misc", "any", "title", 4),
+                " "
             };
 
             creditsLabels = Array.Empty<UILabel>();
@@ -108,7 +109,8 @@ namespace AnodyneSharp.States.MainMenu
                         {
                             new UILabel(new Vector2(center - (credits[0].Length * charWidth)/2, 88 -lineH-4), false, new string(' ', credits[0].Length), color),
                             new UILabel(new Vector2(center - (credits[1].Length * charWidthEng)/2, 88), false, new string(' ', credits[1].Length), color, forceEnglish:true),
-                            new UILabel(new Vector2(center - (credits[2].Length * charWidthEng)/2, 88 + lineH), false, new string(' ', credits[2].Length), color, forceEnglish:true)
+                            new UILabel(new Vector2(center - (credits[2].Length * charWidthEng)/2, 88 + lineH), false, new string(' ', credits[2].Length), color, forceEnglish:true),
+                            new UILabel(new Vector2(center - (credits[3].Length * charWidthEng)/2, 88 + lineH*2), false, new string(' ', credits[3].Length), color, forceEnglish:true)
                         };
 
                         GlobalState.TitleScreenFinish.Labels = creditsLabels.ToList();
@@ -182,6 +184,7 @@ namespace AnodyneSharp.States.MainMenu
                             credits[0] = DialogueManager.GetDialogue("misc", "any", "title", 5);
                             credits[1] = DialogueManager.GetDialogue("misc", "any", "title", 6);
                             credits[2] = DialogueManager.GetDialogue("misc", "any", "title", 7);
+                            credits[3] = DialogueManager.GetDialogue("misc", "any", "title", 32);
 
                             _state.ChangeState("CreditsWrite");
                         }
