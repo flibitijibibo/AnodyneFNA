@@ -1978,16 +1978,16 @@ npc misc
 3
 4
 #15
-Next
-Previous
-QuickSave
-QuickLoad
-Movement
-Actions
-Broom
-Selection
-QuickSave
-Confirm
+次
+前
+クイックセーブ
+クイックロード
+移動
+作用
+ホウキ選択
+ホウキ選択
+クイックセーブ
+決定
 しゅうりょうするには
 
 #Press
@@ -2039,10 +2039,10 @@ Press [SOMEKEY-C] to start
 #0 deaths 
 枚カードを集めました
 #0 cards
-Save 
-Copy save
-Cancel copy
-Copy to
+ファイル
+コピー
+キャンセル
+コピー:
 Anodyneは\nコントローラー\nに対応しています\n\n使用しますか?はい いいえ\n\n使用する場合は\n接続してください\n\n矢印キーで移動\nC / スペース / Enterで決定\n\n自動で"はい"に設定:
 #Anodyne supports\nmost controllers.\n\nWill you use one?\n\nYes No\n\nIf so, connect it now.\n\nMove with arrow keys\n\nSelect with\nC, SPACE, or ENTER\n\nDefaulting to yes in\n
 注意\n\n入力にラグが\nある場合は\n一度ホームに\n戻ってください\n\nCで次に進みます
@@ -2182,16 +2182,16 @@ en
 #Config Joypad
 BGM
 SFX
-Gameplay
-Graphics
+ゲームプレイ
+画面
 		end scene
 
 		scene gameplay
-Unfocus pause:
-Fast text:
-Invincibility:
-Health drops+:
-Coyote time+:
+フォーカス無し時一時停止:
+早いテキスト:
+無敵:
+回復アイテム+:
+穴に落ちにくくなる:
 		end scene
 
 		scene graphics
@@ -2199,11 +2199,11 @@ FPS:
 60
 VSync
 Unlocked
-Screen flash
-Max:
-Easing:
-Test
-Screen shake:
+フラッシュエフェクト
+明るさ:
+遅さ:
+試す
+画面振動:
 		end scene
 
 		scene secrets
@@ -2233,7 +2233,7 @@ Screen shake:
 #It's blue.
 白色だ
 #It's white.
-CONGRATULATION!!!!!!
+おめでとう!!!!!!
 #[SOMEKEY-C]
 [SOMEKEY-C] :決定
 #:Select
