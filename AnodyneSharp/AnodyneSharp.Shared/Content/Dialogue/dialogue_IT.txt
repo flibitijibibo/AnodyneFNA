@@ -2377,7 +2377,7 @@ Vai alla schermata iniziale
 #Save and quit
 Salva ed esci
 #Quit game
-Esci dal gioco
+Esci gioco
 #Deaths:		
 Morti:	
 		end scene

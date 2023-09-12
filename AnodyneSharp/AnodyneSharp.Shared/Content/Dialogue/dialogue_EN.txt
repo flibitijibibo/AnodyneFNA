@@ -1589,7 +1589,7 @@ Save and go\nto title
 Go to title
 #5
 Save and quit
-Quit game
+Quit
 Deaths:		
 		end scene
 		
@@ -1614,7 +1614,7 @@ Int. Scaled
 # 15
 Stretch
 Scaling:
-Language:
+Lang:
 ja
 en
 # 20

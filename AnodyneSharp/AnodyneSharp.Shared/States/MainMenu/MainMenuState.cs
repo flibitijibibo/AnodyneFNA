@@ -282,6 +282,10 @@ namespace AnodyneSharp.States.MainMenu
             if (Achievements.WasInit)
             {
                 _anodyne2Label = new UILabel(new Vector2(87f, startY + yStep * 7.5f), false, "Anodyne 2", color);
+                if (GlobalState.CurrentLanguage == Language.IT || GlobalState.CurrentLanguage == Language.ES || GlobalState.CurrentLanguage == Language.ZH_CN)
+                {
+                    _anodyne2Label = new UILabel(new Vector2(100f, startY + yStep * 7.5f), false, "Ano2", color);
+                }
             }
 
             Vector2 inputPos = Vector2.Zero;

@@ -2364,7 +2364,7 @@ Volver al título
 #Save and quit
 Guardar y salir
 #Quit game
-Salir del juego
+Salir juego
 #Deaths:		
 Muertes:	
 		end scene

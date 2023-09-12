@@ -2124,7 +2124,7 @@ Ir para título
 #Go to title
 Salvar e sair
 #Save and quit
-Sair do jogo
+Sair jogo
 #Quit game
 Mortes:
 #Deaths:0		
