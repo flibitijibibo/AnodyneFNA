@@ -43,7 +43,7 @@ namespace AnodyneSharp.Registry
         public Resolution resolution { get; set; } = Resolution.Scaled;
         public int scale { get; set; } = 3;
 
-        public FPS fps { get; set; } = FPS.Fixed;
+        public FPS fps { get; set; } = FPS.FixedHalf;
 
         public float flash_brightness { get; set; } = 1.0f;
         public float flash_easing { get; set; } = 0.0f;
