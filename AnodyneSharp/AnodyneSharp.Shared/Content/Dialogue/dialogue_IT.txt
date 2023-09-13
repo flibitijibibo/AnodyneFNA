@@ -116,7 +116,7 @@ npc sage
     area BLANK
         scene intro
 #Mysterious voice: Hello? ...Young?  ^HEY!  ... oh, you can hear me?  Good, now listen.  You are about to wake up.  You will use the arrow keys to move around.
-Voce Misteriosa: Ehi... ... Young? EHI!  ... oh, riesci a sentirmi?  Bene, allora ascolta.  Stai per svegliarti.  Usa le frecce direzionali per muoverti.
+Voce Misteriosa: Ehi... ... Young? EHI!  ... oh, riesci a sentirmi?  Bene, allora ascolta.  Stai per svegliarti.  Usa [SOMEKEY-UP]/[SOMEKEY-DOWN]/[SOMEKEY-LEFT]/[SOMEKEY-RIGHT] per muoverti.
 # Note, these next two lines should be assumed to have the keybinding between them when translated (hence the single quotes)
 #You will press the '
 Premi [SOMEKEY-C] per interagire con gli oggetti e le persone accanto a te. 

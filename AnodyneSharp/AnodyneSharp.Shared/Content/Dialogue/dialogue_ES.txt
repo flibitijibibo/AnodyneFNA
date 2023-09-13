@@ -115,12 +115,12 @@ npc sage
     area BLANK
         scene intro
 #Mysterious voice: Hello? ...Young?  ^HEY!  ... oh, you can hear me?  Good, now listen.  You are about to wake up.  You will use the arrow keys to move around.
-Voz misteriosa: ¿Hola? ¿...Young? ^EY!  ... oh, ¿puedes oírme?  Bien, ahora escucha.  Estás a punto de despertar.  Usarás las teclas de dirección para desplazarte.
+Voz misteriosa: ¿Hola? ¿...Young? ^EY!  ... oh, ¿puedes oírme?  Bien, ahora escucha.  Estás a punto de despertar.  Usarás [SOMEKEY-UP]/[SOMEKEY-DOWN]/[SOMEKEY-LEFT]/[SOMEKEY-RIGHT] para desplazarte.
 # Note, these next two lines should be assumed to have the keybinding between them when translated (hence the single quotes)
 #You will press the '
-Pulsarás la tecla [SOMEKEY-C] para interactuar con objetos y la gente a tu alrededor.
+Pulsarás [SOMEKEY-C] para interactuar con objetos y la gente a tu alrededor.
 #And you will press the '
-Y pulsarás la tecla [SOMEKEY-ENTER] para acceder al menú, el cual te proporcionará información sobre ti mismo y tus alrededores.
+Y pulsarás [SOMEKEY-ENTER] para acceder al menú, el cual te proporcionará información sobre ti mismo y tus alrededores.
         end scene
     end area
 	
