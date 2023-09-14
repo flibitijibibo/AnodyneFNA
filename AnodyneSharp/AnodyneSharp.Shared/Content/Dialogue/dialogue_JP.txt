@@ -88,13 +88,13 @@ end npc
 npc sage
  area BLANK
  scene intro
-なぞの声:こほん... ヤングよ... 私の声が聞こえるかね? ^もしもーし! お 聞こえるようだね... いいかい 間もなくキミは目をさます そうしたら 矢印キーで歩き回れるはずだ
+なぞの声:こほん... ヤングよ... 私の声が聞こえるかね? ^もしもーし! お 聞こえるようだね... いいかい 間もなくキミは目をさます そうしたら [SOMEKEY-UP]/[SOMEKEY-DOWN]/[SOMEKEY-LEFT]/[SOMEKEY-RIGHT]で歩き回れるはずだ
 #Mysterious voice:Hello? ...Young? ^HEY! ... oh, you can hear me? Good, now listen. You are about to wake up. You will use the arrow keys to move around.
 
 # Note, these next two lines should be assumed to have the keybinding between them when translated (hence the single quotes)
-人と話したりモノを使ったりするには [SOMEKEY-C] キーを押すように
+人と話したりモノを使ったりするには [SOMEKEY-C]を押すように
 #' key to interact with objects and people around you.
-それからメニューを開くには [SOMEKEY-ENTER] キーだ ここでは自分や世界についての情報が見られる
+それからメニューを開くには [SOMEKEY-ENTER]だ ここでは自分や世界についての情報が見られる
 #' key to access the menu, which will provide you with information about yourself and your surroundings. 
  end scene
  end area
