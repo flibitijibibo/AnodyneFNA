@@ -88,7 +88,7 @@ end npc
 npc sage
  area BLANK
  scene intro
-なぞの声:こほん... ヤングよ... 私の声が聞こえるかね? ^もしもーし! お 聞こえるようだね... いいかい 間もなくキミは目をさます そうしたら [SOMEKEY-UP]/[SOMEKEY-DOWN]/[SOMEKEY-LEFT]/[SOMEKEY-RIGHT]で歩き回れるはずだ
+なぞの声:こほん... ヤングよ... 私の声が聞こえるかね? ^もしもーし! お 聞こえるようだね... いいかい 間もなくキミは目をさます そうしたら [SOMEKEYS-MOVE]で歩き回れるはずだ
 #Mysterious voice:Hello? ...Young? ^HEY! ... oh, you can hear me? Good, now listen. You are about to wake up. You will use the arrow keys to move around.
 
 # Note, these next two lines should be assumed to have the keybinding between them when translated (hence the single quotes)

@@ -117,7 +117,7 @@ npc sage
     area BLANK
         scene intro
 # Mysterious voice: Hello? ...Young?  ^HEY!  ... oh, you can hear me?  Good, now listen.  You are about to wake up.  You will use the arrow keys to move around.
-의문의 목소리: 이봐? ...영?  ^이봐!!!  ... 오, 내 말이 들리나?  좋아, 내 말 잘 듣게.  우선 움직이는 법을 알려주겠네.  [SOMEKEY-UP]/[SOMEKEY-DOWN]/[SOMEKEY-LEFT]/[SOMEKEY-RIGHT] 사용해서 움직일 수 있네.
+의문의 목소리: 이봐? ...영?  ^이봐!!!  ... 오, 내 말이 들리나?  좋아, 내 말 잘 듣게.  우선 움직이는 법을 알려주겠네.  [SOMEKEYS-MOVE] 사용해서 움직일 수 있네.
 # Note, these next two lines should be assumed to have the keybinding between them when translated (hence the single quotes)
 # You will press the '
 아마 [SOMEKEY-C] 을 눌러서 앞에 있는 사물이나 사람들이랑 상호 작용을 할 수 있을 걸세.

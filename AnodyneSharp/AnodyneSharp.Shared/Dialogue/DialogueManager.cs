@@ -90,6 +90,15 @@ namespace AnodyneSharp.Dialogue
         {
             if (KeyInput.ControllerMode)
             {
+                string moveSpace;
+                if (GlobalState.CurrentLanguage == Language.ZH_CN)
+                {
+                    moveSpace = string.Empty;
+                }
+                else
+                {
+                    moveSpace = " ";
+                }
                 line = line
                     .Replace("[SOMEKEY-X]", GetButtonString(KeyInput.RebindableKeys[KeyFunctions.Cancel].Buttons.First()))
                     .Replace("[SOMEKEY-C]", GetButtonString(KeyInput.RebindableKeys[KeyFunctions.Accept].Buttons.First()))
@@ -98,6 +107,12 @@ namespace AnodyneSharp.Dialogue
                     .Replace("[SOMEKEY-RIGHT]", GetButtonString(KeyInput.RebindableKeys[KeyFunctions.Right].Buttons.First()))
                     .Replace("[SOMEKEY-DOWN]", GetButtonString(KeyInput.RebindableKeys[KeyFunctions.Down].Buttons.First()))
                     .Replace("[SOMEKEY-ENTER]", GetButtonString(KeyInput.RebindableKeys[KeyFunctions.Pause].Buttons.First()))
+                    // FIXME: This \n is only here because we don't have good wordwrapping for button sequences -flibit
+                    .Replace("[SOMEKEYS-MOVE]",
+                         "\n" + GetButtonString(KeyInput.RebindableKeys[KeyFunctions.Up].Buttons.First()) + moveSpace +
+                         GetButtonString(KeyInput.RebindableKeys[KeyFunctions.Down].Buttons.First()) + moveSpace +
+                         GetButtonString(KeyInput.RebindableKeys[KeyFunctions.Left].Buttons.First()) + moveSpace +
+                         GetButtonString(KeyInput.RebindableKeys[KeyFunctions.Right].Buttons.First()))
                     ;
             }
             else
@@ -110,6 +125,11 @@ namespace AnodyneSharp.Dialogue
                     .Replace("[SOMEKEY-RIGHT]", GetKeyBoardString(KeyInput.RebindableKeys[KeyFunctions.Right].Keys.First()))
                     .Replace("[SOMEKEY-DOWN]", GetKeyBoardString(KeyInput.RebindableKeys[KeyFunctions.Down].Keys.First()))
                     .Replace("[SOMEKEY-ENTER]", GetKeyBoardString(KeyInput.RebindableKeys[KeyFunctions.Pause].Keys.First()))
+                    .Replace("[SOMEKEYS-MOVE]",
+                         GetKeyBoardString(KeyInput.RebindableKeys[KeyFunctions.Up].Keys.First()) + "/" +
+                         GetKeyBoardString(KeyInput.RebindableKeys[KeyFunctions.Down].Keys.First()) + "/" +
+                         GetKeyBoardString(KeyInput.RebindableKeys[KeyFunctions.Left].Keys.First()) + "/" +
+                         GetKeyBoardString(KeyInput.RebindableKeys[KeyFunctions.Right].Keys.First()))
                     ;
             }
 

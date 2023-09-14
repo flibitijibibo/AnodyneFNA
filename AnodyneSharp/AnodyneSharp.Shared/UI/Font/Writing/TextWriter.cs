@@ -346,13 +346,36 @@ namespace AnodyneSharp.UI.Text
                 int spaceWidth = GameConstants.BUTTON_WIDTH;
                 int lineHeight = GameConstants.BUTTON_HEIGHT;
 
-                int buttonOffset = 4;
+                int buttonLeftKeming, buttonRightKeming;
+                if (GlobalState.CurrentLanguage == Dialogue.Language.ZH_CN)
+                {
+                    buttonLeftKeming = spaceWidth - 1;
+                    buttonRightKeming = 4;
+                }
+                else if (GlobalState.CurrentLanguage == Dialogue.Language.KR)
+                {
+                    buttonLeftKeming = 4;
+                    buttonRightKeming = 2;
+                }
+                else if (GlobalState.CurrentLanguage == Dialogue.Language.JP)
+                {
+                    buttonLeftKeming = 0;
+                    buttonRightKeming = 6;
+                }
+                else
+                {
+                    buttonLeftKeming = 6;
+                    buttonRightKeming = 4;
+                }
 
-                currentLineWidth += buttonOffset;
+                if (currentLineWidth > 0)
+                {
+                    currentLineWidth += buttonLeftKeming;
+                }
 
                 characterLines[_line].Add(new TextCharacter(null, currentLineWidth, new Rectangle(pos % spaceWidth * spaceWidth, pos / spaceWidth * lineHeight, spaceWidth, lineHeight)));
 
-                currentLineWidth += buttonOffset;
+                currentLineWidth += buttonRightKeming;
 
                 output = true;
             }
