@@ -52,12 +52,6 @@ namespace AnodyneSharp.States.MenuSubstates
 
             _keysToLabel = _keyBindPages.SelectMany((page,pageNum) => page.Where((_,index) => index % 2 == 0).Select((e,index) => (e.keyFunction,(pageNum,index))))
                 .ToDictionary((e) => e.keyFunction, (e) => e.Item2);
-
-            _pageSetter = new TextSelector(new Vector2(91, 156), 32, 0, true, Drawing.DrawOrder.TEXT, "1/5", "2/5", "3/5", "4/5", "5/5")
-            {
-                noConfirm = true,
-                noLoop = true
-            };
         }
 
         private Keys? GetKey(KeyFunctions action, int index)
@@ -511,13 +505,30 @@ namespace AnodyneSharp.States.MenuSubstates
                 CreateTup(KeyFunctions.PreviousPage, 13, 4),
             });
 
-            _keyBindPages.Add(new()
+            if (Environment.GetEnvironmentVariable("ANODYNE_ENABLE_QUICKSAVE") == "1")
             {
-                CreateTup(KeyFunctions.QuickSave, 14, 1),
-                CreateTup(KeyFunctions.QuickSave, 14, 2),
-                CreateTup(KeyFunctions.QuickLoad, 15, 3),
-                CreateTup(KeyFunctions.QuickLoad, 15, 4),
-            });
+                _keyBindPages.Add(new()
+                {
+                    CreateTup(KeyFunctions.QuickSave, 14, 1),
+                    CreateTup(KeyFunctions.QuickSave, 14, 2),
+                    CreateTup(KeyFunctions.QuickLoad, 15, 3),
+                    CreateTup(KeyFunctions.QuickLoad, 15, 4),
+                });
+
+                _pageSetter = new TextSelector(new Vector2(91, 156), 32, 0, true, Drawing.DrawOrder.TEXT, "1/5", "2/5", "3/5", "4/5", "5/5")
+                {
+                    noConfirm = true,
+                    noLoop = true
+                };
+            }
+            else
+            {
+                _pageSetter = new TextSelector(new Vector2(91, 156), 32, 0, true, Drawing.DrawOrder.TEXT, "1/4", "2/4", "3/4", "4/4")
+                {
+                    noConfirm = true,
+                    noLoop = true
+                };
+            }
         }
 
         private struct InputChange
