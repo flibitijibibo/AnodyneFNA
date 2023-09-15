@@ -1,4 +1,4 @@
-﻿using AnodyneSharp.Dialogue;
+using AnodyneSharp.Dialogue;
 using AnodyneSharp.Input;
 using AnodyneSharp.Registry;
 using AnodyneSharp.Sounds;
@@ -47,10 +47,19 @@ namespace AnodyneSharp.States.MenuSubstates
 
             float brOffset = (GlobalState.CurrentLanguage == Language.PT_BR ? yStep + 4 : 0);
 
-            _quickSaveLabel = new UILabel(new Vector2(x, y), true, DialogueManager.GetDialogue("misc", "any", "controls", 15));
-            _quickLoadLabel = new UILabel(new Vector2(x, _quickSaveLabel.Position.Y + yStep * 2 - 4), true, DialogueManager.GetDialogue("misc", "any", "controls", 16));
+            float yStart;
+            if (Environment.GetEnvironmentVariable("ANODYNE_ENABLE_QUICKSAVE") == "1")
+            {
+                _quickSaveLabel = new UILabel(new Vector2(x, y), true, DialogueManager.GetDialogue("misc", "any", "controls", 15));
+                _quickLoadLabel = new UILabel(new Vector2(x, _quickSaveLabel.Position.Y + yStep * 2 - 4), true, DialogueManager.GetDialogue("misc", "any", "controls", 16));
+                yStart = _quickLoadLabel.Position.Y + yStep * 2 - 4 + brOffset;
+            }
+            else
+            {
+                yStart = y;
+            }
 
-            _saveLabel = new UILabel(new Vector2(x, _quickLoadLabel.Position.Y + yStep * 2 - 4 + brOffset), true, DialogueManager.GetDialogue("misc", "any", "save", 0));
+            _saveLabel = new UILabel(new Vector2(x, yStart), true, DialogueManager.GetDialogue("misc", "any", "save", 0));
             _saveTitleLabel = new UILabel(new Vector2(x, _saveLabel.Position.Y + yStep * 2 - 4), true, DialogueManager.GetDialogue("misc", "any", "save", 3));
             _saveQuitLabel = new UILabel(new Vector2(x, _saveTitleLabel.Position.Y + yStep * 3 - 2), true, DialogueManager.GetDialogue("misc", "any", "save", 5));
             _quitLabel = new UILabel(new Vector2(x, _saveQuitLabel.Position.Y + yStep * 2 - 2), true, DialogueManager.GetDialogue("misc", "any", "save", 6));
@@ -60,7 +69,14 @@ namespace AnodyneSharp.States.MenuSubstates
         public override void GetControl()
         {
             base.GetControl();
-            _state = SaveState.QuickSaveLabel;
+            if (_quickSaveLabel != null)
+            {
+                _state = SaveState.QuickSaveLabel;
+            }
+            else
+            {
+                _state = SaveState.SaveLabel;
+            }
 
             SetSelectorPos();
         }
@@ -70,6 +86,10 @@ namespace AnodyneSharp.States.MenuSubstates
             if (KeyInput.JustPressedRebindableKey(KeyFunctions.Up))
             {
                 if (_state == SaveState.QuickSaveLabel)
+                {
+                    return;
+                }
+                if (_state == SaveState.SaveLabel && _quickSaveLabel == null)
                 {
                     return;
                 }
@@ -154,8 +174,8 @@ namespace AnodyneSharp.States.MenuSubstates
 
         public override void DrawUI()
         {
-            _quickSaveLabel.Draw();
-            _quickLoadLabel.Draw();
+            _quickSaveLabel?.Draw();
+            _quickLoadLabel?.Draw();
 
             _saveLabel.Draw();
             _saveTitleLabel.Draw();
