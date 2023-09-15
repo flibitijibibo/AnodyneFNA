@@ -176,7 +176,7 @@ namespace AnodyneSharp.States.MainMenu
 
         private void BrowseInput()
         {
-            if (KeyInput.JustPressedRebindableKey(KeyFunctions.Accept) || KeyInput.JustPressedRebindableKey(KeyFunctions.Right))
+            if (KeyInput.JustPressedRebindableKey(KeyFunctions.Accept) || (KeyInput.JustPressedRebindableKey(KeyFunctions.Right) && Achievements.WasInit))
             {
                 SoundManager.PlaySoundEffect("menu_select");
                 if (_menuState == MenuState.Quit)
