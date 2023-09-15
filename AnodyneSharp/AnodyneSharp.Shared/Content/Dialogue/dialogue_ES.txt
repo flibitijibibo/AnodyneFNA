@@ -1833,8 +1833,8 @@ end npc
 npc wallboss
 	area CROWD
 		scene before_fight
-#So good to see you, Yang.  Been too long.  Still playing those nintendos, I see?
-Qué bueno verte, Yang.  Ha pasado mucho tiempo.  Veo que aún sigues jugando a esas nintendos, ¿eh?
+#So good to see you, Yang.  Been too long.  Still playing those nintandos, I see?
+Qué bueno verte, Yang.  Ha pasado mucho tiempo.  Veo que aún sigues jugando a esas nintandos, ¿eh?
 		end scene
 		scene after_fight
 #Jesus, Yon, when are you just going to grow up?  You know, you're going to have to learn to deal with people sooner or later.
@@ -2450,8 +2450,8 @@ Sacudida de pantalla:
 ¡Estás forrado!
 #Once the property of a famous Bubble Mage.
 Una vez fue propiedad de un famoso Mago Burbuja.
-#If your graphics become scrambled, look at the pokedex entry of an official Pokemon.
-Si tus gráficos se entremezclan, mira la entrada de un Pokemon oficial en la pokedex.
+#If your graphics become scrambled, look at the pokodex entry of an official Pokeman.
+Si tus gráficos se entremezclan, mira la entrada de un Pokeman oficial en la pokodex.
 #This heart has no name.
 Este corazón no tiene nombre.
 #Please visit the electric monsters' world.

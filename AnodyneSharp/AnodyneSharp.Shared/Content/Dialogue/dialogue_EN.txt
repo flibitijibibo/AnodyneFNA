@@ -1273,7 +1273,7 @@ end npc
 npc wallboss
 	area CROWD
 		scene before_fight
-So good to see you, Yang.  Been too long.  Still playing those nintendos, I see?
+So good to see you, Yang.  Been too long.  Still playing those nintandos, I see?
 		end scene
 		scene after_fight
 Jesus, Yon, when are you just going to grow up?  You know, you're going to have to learn to deal with people sooner or later.
@@ -1651,7 +1651,7 @@ Screen shake:
 		scene secrets
 You're rolling in it!
 Once the property of a famous Bubble Mage.
-If your graphics become scrambled, look at the pokedex entry of an official Pokemon.
+If your graphics become scrambled, look at the pokodex entry of an official Pokomon.
 This heart has no name.
 Please visit the electric monsters' world.
 #5

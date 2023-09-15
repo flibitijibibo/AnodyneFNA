@@ -1667,8 +1667,8 @@ end npc
 npc wallboss
 	area CROWD
 		scene before_fight
-しばらくぶりだねえ ヤン 本当に久しぶりだ まだあのファミコンで遊んでるようだねえ?
-#So good to see you, Yang. Been too long. Still playing those nintendos, I see?
+しばらくぶりだねえ ヤン 本当に久しぶりだ まだあのファミゴンで遊んでるようだねえ?
+#So good to see you, Yang. Been too long. Still playing those nintandos, I see?
 		end scene
 		scene after_fight
 ええい! いいかげん大人になれ ヤン! どうせさいごには 他人と付き合わなきゃ ならないというのに
@@ -2212,7 +2212,7 @@ Unlocked
 しおづけのおにくのかんづめ すききらいがわかれる
 #Once the property of a famous Bubble Mage.
 グラフィックがおかしいときは パキモンずかんでチェックしてみよう!
-#If your graphics become scrambled, look at the pokedex entry of an official Pokemon.
+#If your graphics become scrambled, look at the pokodex entry of an official Pokomon.
 このハートには特に名前はない
 #This heart has no name.
 きみもデラモンワールドにおいでよ!

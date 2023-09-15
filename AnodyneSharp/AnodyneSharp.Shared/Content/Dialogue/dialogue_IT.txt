@@ -1837,8 +1837,8 @@ end npc
 npc wallboss
 	area CROWD
 		scene before_fight
-#So good to see you, Yang.  Been too long.  Still playing those nintendos, I see?
-Che bello vederti, Yang.  Ne è passato di tempo.  Stai ancora giocando a quei nintendo, eh?
+#So good to see you, Yang.  Been too long.  Still playing those nintandos, I see?
+Che bello vederti, Yang.  Ne è passato di tempo.  Stai ancora giocando a quei nintando, eh?
 		end scene
 		scene after_fight
 #Jesus, Yon, when are you just going to grow up?  You know, you're going to have to learn to deal with people sooner or later.
@@ -2463,8 +2463,8 @@ Screen Shake
 Ci sei dentro fino al collo!
 #Once the property of a famous Bubble Mage.
 Un tempo di proprietà di un famoso Mago delle Bolle.
-#If your graphics become scrambled, look at the pokedex entry of an official Pokemon.
-Se la grafica sembra criptata, cerca la definizione del pokedex di un pokemon ufficiale.
+#If your graphics become scrambled, look at the pokedex entry of an official Pokomon.
+Se la grafica sembra criptata, cerca la definizione del pokodex di un pokomon ufficiale.
 #This heart has no name.
 Questo cuore non ha nome.
 #Please visit the electric monsters' world.

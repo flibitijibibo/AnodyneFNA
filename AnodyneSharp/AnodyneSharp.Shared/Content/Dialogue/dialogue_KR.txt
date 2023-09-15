@@ -1706,8 +1706,8 @@ end npc
 npc wallboss
 	area CROWD
 		scene before_fight
-# So good to see you, Yang.  Been too long.  Still playing those nintendos, I see?
-다시 봐서 반갑다, 양.  오랜만이야.  아직도 닌텐도 가지고 노니?
+# So good to see you, Yang.  Been too long.  Still playing those tendos, I see?
+다시 봐서 반갑다, 양.  오랜만이야.  아직도 텐도 가지고 노니?
 		end scene
 		scene after_fight
 # Jesus, Yon, when are you just going to grow up?  You know, you're going to have to learn to deal with people sooner or later.
@@ -2256,8 +2256,8 @@ VSync
 너 엄청 부자구나!
 # Once the property of a famous Bubble Mage.
 한때 유명한 거품 마법사의 소유물이었지.
-# If your graphics become scrambled, look at the pokedex entry of an official Pokemon.
-만약 그래픽이 깨지면, 공식 포켓몬의 포켓몬 도감에서 확인해.
+# If your graphics become scrambled, look at the pokodex entry of an official Pokomon.
+만약 그래픽이 깨지면, 공식 켓몬의 켓몬 도감에서 확인해.
 # This heart has no name.
 이 심장은 이름이 없어.
 # Please visit the electric monsters' world.

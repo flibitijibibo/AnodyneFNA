@@ -1670,8 +1670,8 @@ end npc
 npc wallboss
 	area CROWD
 		scene before_fight
-Muito bom te ver, Yang. Faz tanto tempo. Ainda jogando esses nintendo, não é?
-#So good to see you, Yang. Been too long. Still playing those nintendos, I see?
+Muito bom te ver, Yang. Faz tanto tempo. Ainda jogando esses nintando, não é?
+#So good to see you, Yang. Been too long. Still playing those nintandos, I see?
 		end scene
 		scene after_fight
 Meu Deus, Yon, quando é que você vai crescer? Você sabe que terá que aprender a lidar com pessoas mais cedo ou mais tarde.
@@ -2211,8 +2211,8 @@ Você está mandando brasa!
 #You're rolling in it!
 Antiga propriedade do Mago das Bolhas.
 #Once the property of a famous Bubble Mage.
-Se os gráficos ficarem estranhos, procure pela descrição oficial do Pokedex sobre algum Pokemon.
-#If your graphics become scrambled, look at the pokedex entry of an official Pokemon.
+Se os gráficos ficarem estranhos, procure pela descrição oficial do Pokodex sobre algum Pokomon.
+#If your graphics become scrambled, look at the pokodex entry of an official Pokomon.
 esse coração não tem nome
 #This heart has no name.
 Por favor visite o mundo dos monstros eletrônicos.

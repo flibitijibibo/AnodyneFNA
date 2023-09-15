@@ -1833,7 +1833,7 @@ end npc
 npc wallboss
 	area CROWD
 		scene before_fight
-#So good to see you, Yang.  Been too long.  Still playing those nintendos, I see?
+#So good to see you, Yang.  Been too long.  Still playing those nintandos, I see?
 见到你正好啊，扬。 好久没见了。 你现在还在玩任地狱的游戏吗？
 		end scene
 		scene after_fight
@@ -2455,7 +2455,7 @@ Screen shake:
 你正在前往中！
 #Once the property of a famous Bubble Mage.
 曾经是一位著名的泡泡魔法师的财物。
-#If your graphics become scrambled, look at the pokedex entry of an official Pokemon.
+#If your graphics become scrambled, look at the pokodex entry of an official Pokomon.
 如果你的图像受到了干扰，就去看看官方口袋妖怪图鉴。
 #This heart has no name.
 这颗心没有名字。

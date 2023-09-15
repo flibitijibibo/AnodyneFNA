@@ -195,7 +195,7 @@ namespace AnodyneSharp.Entities.Gadget
                     "Blank", "Nexus", "Street",
                     "Overworld", "Bedroom", "Bedroom Boss",
                     "Mitra", "Fields",
-                    "Beach", "Redsea", "Sacrificial",
+                    "Beach", "Redsea", "Redsea",
                     "Forest", "Cliff",
                     "Redcave", "Redcave Boss",
                     "Crowd", "Crowd Boss",
