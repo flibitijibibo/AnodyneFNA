@@ -46,6 +46,10 @@ namespace AnodyneSharp.Multiplatform
         static void Main(string[] args)
 #endif
         {
+            /* Anodyne doesn't use 3D audio, and all assets are 44.1KHz */
+            Environment.SetEnvironmentVariable("SDL_AUDIO_CHANNELS", "2");
+            Environment.SetEnvironmentVariable("SDL_AUDIO_FREQUENCY", "44100");
+
             foreach (string arg in args)
             {
                 if (arg.Equals("--steamdebug"))
