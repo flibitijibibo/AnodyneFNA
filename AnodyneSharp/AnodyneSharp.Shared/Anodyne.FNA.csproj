@@ -580,6 +580,10 @@
       <HintPath>..\..\netframework\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
+    <PackageReference Include="Microsoft.Net.Compilers.Toolset" Version="3.11.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
