@@ -105,7 +105,18 @@ namespace AnodyneSharp.States.MenuSubstates
                 confirmLabel.Color = Color.White;
             }
 
-            // Ensure (CANCEL AND CONFIRM) != (Anything but CONFIRM OR CANCCEL) on controller
+            // Ensure UP/RIGHT/LEFT/DOWN don't conflict with each other on controller
+            for (int i = 0; i < 8; i++) {
+                for (int j = 0; j < 8; j++) {
+                    if (i == j) continue;
+                    if (_keyBindPages[0][i].controller.Text == _keyBindPages[0][j].controller.Text) {
+                        inConflict = true;
+                        confirmLabel.Color = Color.Red;
+                    }
+                }
+            }
+
+            // Ensure (CANCEL AND CONFIRM) have no conflicts on controller
             for (int _pageIndex = 0; _pageIndex < 4; _pageIndex++) {
                 for (int _controlIndex = 0; _controlIndex < _keyBindPages[_pageIndex].Count; _controlIndex++) {
                     if ((_pageIndex == 1 && _controlIndex == 0) || (_pageIndex == 1 && _controlIndex == 2)) {
@@ -113,6 +124,20 @@ namespace AnodyneSharp.States.MenuSubstates
                     } else {
                         if (_keyBindPages[_pageIndex][_controlIndex].controller.Text == _keyBindPages[1][0].controller.Text || _keyBindPages[_pageIndex][_controlIndex].controller.Text == _keyBindPages[1][2].controller.Text) {
 
+                            inConflict = true;
+                            confirmLabel.Color = Color.Red;
+                        }
+                    }
+                }
+            }
+
+            // Ensure neither of the pause inputs conflict on controller
+            for (int _pageIndex = 0; _pageIndex < 4; _pageIndex++) {
+                for (int _controlIndex = 0; _controlIndex < _keyBindPages[_pageIndex].Count; _controlIndex++) {
+                    if ((_pageIndex == 1 && (_controlIndex == 4 || _controlIndex == 5))) {
+
+                    } else {
+                        if (_keyBindPages[_pageIndex][_controlIndex].controller.Text == _keyBindPages[1][4].controller.Text || _keyBindPages[_pageIndex][_controlIndex].controller.Text == _keyBindPages[1][5].controller.Text) {
                             inConflict = true;
                             confirmLabel.Color = Color.Red;
                         }
