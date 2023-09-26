@@ -73,7 +73,21 @@ namespace AnodyneSharp.Entities.Events
                     .Condition(playerOn, (s) => state.ChangeState("PlayerOn"))
                 .End()
                 .State("PlayerOn")
-                    .Enter((s) => Play("stepped_on"))
+                    .Enter((s) => {
+                        Play("stepped_on");
+                        if (GlobalState.settings.autosave_on) {
+
+                            SoundManager.PlaySoundEffect("button_down");
+                            if (!Active) {
+                                GlobalState.CUR_HEALTH = GlobalState.MAX_HEALTH;
+                                GlobalState.checkpoint = new GlobalState.CheckPoint(GlobalState.CURRENT_MAP_NAME, Position);
+                            }
+                            GlobalState.SaveGame();
+                            saveIcon.opacity = 1f;
+                            saveIcon.visible = true;
+                            state.ChangeState("Saved");
+                        }
+                        })
                     .Event("Interact", (s) =>
                     {
                         SoundManager.PlaySoundEffect("button_down");
