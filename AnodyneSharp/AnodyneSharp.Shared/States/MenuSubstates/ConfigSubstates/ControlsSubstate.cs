@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
@@ -74,6 +75,7 @@ namespace AnodyneSharp.States.MenuSubstates
         {
             IEnumerable<(KeyFunctions func,int index)> getIndex(int index) => _keysToLabel.Keys.Select(f => (f,index));
 
+            
             var conflicts = getIndex(0).Concat(getIndex(1)).Select(loc => (loc, GetKey(loc.func, loc.index))).Where(l => l.Item2.HasValue)
                 .GroupBy(l => l.Item2.Value).Where(g => g.Count() > 1).SelectMany(g => g.Select(e => e.loc));
 
@@ -84,6 +86,7 @@ namespace AnodyneSharp.States.MenuSubstates
                     s.keyboard.Color = Color.White;
                 }
             }
+
 
             foreach(var (func, index) in conflicts)
             {
@@ -100,6 +103,27 @@ namespace AnodyneSharp.States.MenuSubstates
             {
                 inConflict = false;
                 confirmLabel.Color = Color.White;
+            }
+
+            // Ensure (CANCEL AND CONFIRM) != (Anything but CONFIRM OR CANCCEL) on controller
+            for (int _pageIndex = 0; _pageIndex < 4; _pageIndex++) {
+                for (int _controlIndex = 0; _controlIndex < _keyBindPages[_pageIndex].Count; _controlIndex++) {
+                    if ((_pageIndex == 1 && _controlIndex == 0) || (_pageIndex == 1 && _controlIndex == 2)) {
+
+                    } else {
+                        if (_keyBindPages[_pageIndex][_controlIndex].controller.Text == _keyBindPages[1][0].controller.Text || _keyBindPages[_pageIndex][_controlIndex].controller.Text == _keyBindPages[1][2].controller.Text) {
+
+                            inConflict = true;
+                            confirmLabel.Color = Color.Red;
+                        }
+                    }
+                }
+            }
+
+            // Ensure CONFIRM != CANCEL on controller
+            if (_keyBindPages[1][0].controller.Text == _keyBindPages[1][2].controller.Text) {
+                inConflict = true;
+                confirmLabel.Color = Color.Red;
             }
         }
 
@@ -164,14 +188,25 @@ namespace AnodyneSharp.States.MenuSubstates
 
             bool moved = false;
 
+            //Debug.Print(_selectorPos+","+_page);
             if (KeyInput.JustPressedRebindableKey(KeyFunctions.Up))
             {
-                SetCursorPos(_selectorPos - 1);
+                // Hack so controller can't set two bindings to confirm or cancel to prevent getting permastuck
+                if (KeyInput.ControllerMode && _page == 1 && (_selectorPos == 2 || _selectorPos == 4)) {
+                    SetCursorPos(_selectorPos - 2);
+                } else {
+                    SetCursorPos(_selectorPos - 1);
+                }
                 moved = true;
             }
             else if (KeyInput.JustPressedRebindableKey(KeyFunctions.Down))
             {
-                SetCursorPos(_selectorPos + 1);
+                // Hack so controller can't set two bindings to confirm or cancel to prevent getting permastuck
+                if (KeyInput.ControllerMode && _page == 1 && (_selectorPos == 0 || _selectorPos == 2)) {
+                    SetCursorPos(_selectorPos + 2);
+                } else {
+                    SetCursorPos(_selectorPos + 1);
+                }
                 moved = true;
             }
             else if (KeyInput.JustPressedRebindableKey(KeyFunctions.Right))
