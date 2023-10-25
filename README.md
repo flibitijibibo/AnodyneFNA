@@ -6,6 +6,8 @@ AnodyneSharp is based on the original game's source code, which can be found ove
 
 The aim is to be faithful to the original, with some UX improvements and a more modular/moddable codebase.
 
+This repository is also the source tree used to build Anodyne Remastered!
+
 Overview of FNA Edition changes
 ---------------
 - Steam achievements and stats are supported once more!
@@ -17,7 +19,7 @@ Overview of FNA Edition changes
 - Added a Quit Game option to the main menu
 - By default, the game starts in fullscreen integer-scaled mode
 - Game storage can be located at `$XDG_DATA_HOME/AnodyneFNA/`
-    - Steam Cloud storage is not supported at this time
+    - Multiplatform Steam Cloud storage is now supported via Steam Autocloud!
 
 Overview of changes
 ---------------
