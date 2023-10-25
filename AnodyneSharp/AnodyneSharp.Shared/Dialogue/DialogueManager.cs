@@ -23,7 +23,8 @@ namespace AnodyneSharp.Dialogue
         JP,
         KR,
         PT_BR,
-        ZH_CN
+        ZH_CN,
+        EU
     }
     public static class DialogueManager
     {

@@ -277,7 +277,7 @@ namespace AnodyneSharp.States.MainMenu
             string save = "";  /*DialogueManager.GetDialogue("misc", "any", "title", 24);*/
 
 
-            _versionLabel = new UILabel(new Vector2(x, startY - yStep), false, "v0.95", color);
+            _versionLabel = new UILabel(new Vector2(x, startY - yStep), false, "v1.0", color);
             _save1Label = new UILabel(new Vector2(x, startY), false, save + 1, color);
             _save2Label = new UILabel(new Vector2(x, startY + yStep), false, save + 2, color);
             _save3Label = new UILabel(new Vector2(x, startY + yStep * 2), false, save + 3, color);

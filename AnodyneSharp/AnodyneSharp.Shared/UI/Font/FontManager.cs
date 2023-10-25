@@ -23,6 +23,8 @@ namespace AnodyneSharp.UI.Font
                         return ko_string;
                     case Language.JP:
                         return jp_string;
+                    case Language.EU:
+                        return es_string;
                     default:
                         return en_string;
                 }
@@ -50,6 +52,7 @@ namespace AnodyneSharp.UI.Font
             switch (lang)
             {
                 case Language.ES:
+                case Language.EU:
                 case Language.PT_BR:
                 case Language.IT:
                     lString = es_string;

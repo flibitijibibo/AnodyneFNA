@@ -185,7 +185,7 @@ namespace AnodyneSharp
 
             if (KeyInput.JustPressedKey(Keys.F12))
             {
-                GlobalState.ShowFPS = !GlobalState.ShowFPS;
+                //GlobalState.ShowFPS = !GlobalState.ShowFPS;
             }
 
             if (Achievements.DebugMode && KeyInput.JustPressedKey(Keys.F11))
