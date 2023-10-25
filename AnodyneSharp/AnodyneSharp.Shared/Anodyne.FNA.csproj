@@ -475,6 +475,7 @@
     <EmbeddedResource Include="Content\CardLookup.card" />
     <EmbeddedResource Include="Content\Dialogue\dialogue_EN.txt" />
     <EmbeddedResource Include="Content\Dialogue\dialogue_ES.txt" />
+    <EmbeddedResource Include="Content\Dialogue\dialogue_EU.txt" />
     <EmbeddedResource Include="Content\Dialogue\dialogue_IT.txt" />
     <EmbeddedResource Include="Content\Dialogue\dialogue_JP.txt" />
     <EmbeddedResource Include="Content\Dialogue\dialogue_PT_BR.txt" />
@@ -584,10 +585,6 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Content\Dialogue\dialogue_EU.txt" />
-    <Content Include="Icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
