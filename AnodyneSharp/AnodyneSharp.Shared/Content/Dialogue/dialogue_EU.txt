@@ -84,8 +84,8 @@ npc briar
 	area GO
 		scene before_fight
 #Briar: I’m tired, Young.  I’m tired of all of these cycles.  I feel like I’m living the same dream, the same nightmare over and over again.
-Elorri: Nekatua nago, Young. Nekatu naiz itzuli guztiotaz. Amets berbera bizitzen nabilela iruditzen zait, amesgaizto bera behin eta berriz.
-Briar: ...
+Elorri: Nekatua nago, Young. Nekatu naiz itzuli guztiotaz. Amets berbera bizitzen nabilela iruditzen zait, amesgaizto bera, behin eta berriro.
+Elorri: ...
 #Briar: It’s not going to change, Young.  This is all we’ll ever be.
 Elorri: Ez da ezer aldatuko, Young. Hau da betirako izango garena.
 		end scene
@@ -97,9 +97,9 @@ Elorri: Agur, Young.
 		
 		scene final
 #Briar: Dude, Young.
-Elorri: Young, lagun.
+Elorri: Ei, Young.
 #Briar: Kick your feet.  Move your arms.  Jeez, you wouldn’t last a minute without me!
-Elorri: Egin ostiko. Mugitu besoak. Motel, zer egingo zenuke ni gabe!
+Elorri: Mugitu zangoak. Orain besoak. Motel, zer egingo zenuke ni gabe!
 #Briar: Well, come on, let’s go get a sandwich or something. 
 Elorri: Tira, goazen ogitarteko bat jatera-edo. 
 #Sage: You... you did adequately.  Until we meet again.
@@ -113,7 +113,7 @@ npc sage
     area BLANK
         scene intro
 #Mysterious voice: Hello? ...Young?  ^HEY!  ... oh, you can hear me?  Good, now listen.  You are about to wake up.  You will use [SOMEKEYS-MOVE] to move around.
-Ahots misteriotsua: Kaixo? ...Young? ^EI! ... o, entzuten didazu? Ondo, orain aditu. Esnatzear zaude. [SOMEKEYS-MOVE] erabiliko duzu mugitzeko.
+Ahots misteriotsua: Kaixo? ...Young? ^EI! ... O, entzuten didazu? Ondo, orain aditu. Esnatzear zaude. [SOMEKEYS-MOVE] erabiliko dituzu mugitzeko.
 # Note, these next two lines should be assumed to have the keybinding between them when translated (hence the single quotes)
 #You will press [SOMEKEY-C] to interact with objects and people around you.
 Inguruko objektu eta pertsonekin interaktuatzeko [SOMEKEY-C] sakatuko duzu.
@@ -155,7 +155,7 @@ Sage: Ez dizut bizikletaren izenik galdetu, zer zabiltza hemen? Ez naiz zutaz or
 #Mitra: I’m here to help my friend, Young..
 Mitra: Nire laguna laguntzeko nago hemen, Young.
 #Sage: Young doesn’t have friends.  Young doesn’t even have Briar.  And if you’re egging him on, then I want you out of my world!
-Sage: Young-ek ez du lagunik. Young-ek ez dauka ezta Elorri ere. Eta bera adoretzen bazabiltza, nire mundutik at nahi zaitut!
+Sage: Youngek ez du lagunik. Youngek ez dauka ezta Elorri ere. Eta bera adoretzen bazabiltza, nire mundutik at nahi zaitut!
 #Mitra: What do you mean?  Wares and I--
 Mitra: Zer esan nahi duzu? Wares eta biok--
 #Sage: SHUT UP ABOUT YOUR STUPID BICYCLE!!! 
@@ -172,7 +172,7 @@ Mitra: Wares...
 #Mitra: Look, mysterious hooded character, I don’t know who you think you are, but why don’t you just leave us alone?
 Mitra: Begira, kaputxadun pertsonaia misteriotsua, ez dakit nor uste duzun zarela, baina zergatik ez gaituzu bakean uzten?
 #Sage: You think you’re Young’s friend because you’ll lie to him and tell him that deep down he’s just perfect and everything will work out.  Well, if that’s what you want, FINE.  Get out of my face, Young.
-Sage: Young-en laguna zarela uste duzu gezurra esango diozulako, esango diozulako funtsean perfektua dela eta dena ondo irtengo dela. Tira, hori bada nahi duzuna, KONFORME. Alde nire begi bistatik, Young.
+Sage: Youngen laguna zarela uste duzu gezurra esango diozulako, esango diozulako funtsean perfektua dela eta dena ondo irtengo dela. Tira, hori bada nahi duzuna, KONFORME. Alde nire begi bistatik, Young.
 #Sage: Go talk to your "friend".
 Sage: Zoaz zure "laguna"rekin hitz egitera.
 #Mitra: We're just doing the best we can...
@@ -185,11 +185,11 @@ Mitra: Ahal dugun ondoen egiten ari gara...
 		scene enter_nexus
 TOP
 #Cloaked Man: Well, it’s about time.  Er...^I mean...^ Greetings, Young!  I am Sage, the Village Elder.  You have been summoned here because The Darkness has spread across The Land.  The Darkness seeks The Legendary Briar, to use The Briar’s power for evil.  You must reach it first. You must protect The Briar.	
-Kaputxadun gizona: Tira, bazen ordua! Zera... ^Esan nahi nuen... ^Agur t'erdi, Young! Ni Sage naiz, herrixkako agurea. Hona deitu zaitugu Lurralde osoan zehar Iluntasuna hedatu delako. Iluntasuna Elorri legendarioaren bila dabil, bere boterea gaizkia egiteko erabiltzeko. Hark baino lehen aurkitu behar duzu. Elorria babestu behar duzu.
+Kaputxadun gizona: Azkenean, ordua zen! Zera... ^Esan nahi nuen... ^Agur t'erdi, Young! Ni Sage naiz, herrixkako agurea. Hona deitu zaitugu Lurralde osoan zehar Iluntasuna hedatu delako. Iluntasuna Elorri legendarioaren bila dabil, bere boterea gaizkia egiteko erabiltzeko. Hark baino lehen aurkitu behar duzu. Elorria babestu behar duzu.
 #Enter the active portal on your left to begin your quest.
 Sartu ezkerretara daukazun atarira zure bilaketari ekiteko.
 #*Sigh* it doesn’t bode well that you’re still dallying about here.  Enter the portal to begin your quest.  The Briar and, by extension, the world are in dire need!
-*Hasperen* Ez da zantzu ona oraindik hemendik bueltaka ibiltzea. Sartu atarira zure bilaketa hasteko. Elorria, eta hedaduraz, mundua behar larrian daude!
+*Hasperen* Ez da zantzu ona oraindik hemendik bueltaka ibiltzea. Sartu atarira zure bilaketa hasteko. Elorria, eta hedaduraz, mundua, behar larrian daude!
 LOOP
 #Just go in the damn door!
 Sartzeko ate madarikatutik!
@@ -220,7 +220,7 @@ Eskatutakoa egin duzu, Young, baina oraindik asko dago egiteko. Agian Lurraldear
 		
 		scene all_card_first
 #Good work, Young. You have found all of the cards in one area of The Land, and as a result, a gem has appeared on top of the area's portal.
-Lan ona, Young. Lurraldearen eremu bateko txartel guztiak aurkitu dituzu, eta ondorioz, harribitxi bat azaldu da eremurako atariaren gainean.
+Lan ona, Young. Lurraldearen eremu bateko karta guztiak aurkitu dituzu, eta ondorioz, harribitxi bat azaldu da eremurako atariaren gainean.
 		end scene
 	end area
 	
@@ -243,7 +243,7 @@ Kontu handiz ibili, Young.
 		scene after_boss
 # Sage fades into room.	
 #Sage: At this point, you are still weak. If you hope to protect The Briar from The Darkness, you must face your fears.  The card you will find in this chest, and others like it, are symbols of your growth, so acquiring them is absolutely vital to your quest.
-Sage: Une honetan oraindik ahula zara. Elorria Iluntasunetik babesteko itxaropenik baduzu, zure beldurrei aurre egin beharko diezu. Kutxa honetan aurkituko duzun txartela, eta hau bezalako besteak, zure hazkuntzaren ikur dira, eta hauek eskuratzea ezinbestekoa da zure bilaketarako.
+Sage: Une honetan oraindik ahula zara. Elorria Iluntasunetik babesteko itxaropenik baduzu, zure beldurrei aurre egin beharko diezu. Kutxa honetan aurkituko duzun karta, eta hau bezalako besteak, zure hazkuntzaren ikur dira, eta hauek eskuratzea ezinbestekoa da zure bilaketarako.
 #That key will also play an important role in your quest. You must seek out other keys, as well.  Select the map on the menu screen to teleport back to the temple's entrance, and continue your heroic quest.
 Giltza horrek ere rol garrantzitsua jokatuko du bilaketan. Beste giltzak ere bilatu behar dituzu. Hautatu mapa menuaren pantailan tenpluaren sarrerara telegarraiatzeko, eta jarraitu zure bilaketa heroikoa.
 #Travel East and South through the temple grounds... you will find a use for that key.
@@ -257,24 +257,24 @@ Zer, atera altzoan eraman zaitzadan nahi duzu ala?
 	area TERMINAL
 		scene before_fight
 #Sage: Why won’t you listen to me?!  If you rush into this like an idiot, you’ll only endanger The Briar, The Land, and everything I’ve worked for!  I’m sorry Young, but if you won’t listen to me, then I’ll have to convince you another way...
-Sage: Zergatik ez didazu entzuten?! Inozoak bezala garaia baino lehen ekiten badiozu honi, lortuko duzuna da Elorria, Lurraldea eta nik egindako guztia arriskuan jartzea baino ez duzu lortuko! Sentitzen dut, Young, baina ez badidazu entzuten, beste nolabait konbentzitu beharko zaitut...
+Sage: Zergatik ez didazu entzuten?! Inozoak bezala garaia baino lehen ekiten badiozu honi, lortuko duzuna da Elorria, Lurraldea eta nik egindako guztia arriskuan jartzea! Sentitzen dut, Young, baina ez badidazu entzuten, beste nolabait konbentzitu beharko zaitut...
 		end scene
 		scene after_fight
 #Sage: Young...  This is not how I mean things to be... I meant for you to become a better person.  I meant for you to be able to help The Briar.  But all of this is just a silly game...  I can’t stop you from reaching The Briar.  Just remember what I said when it all goes to hell.
-Sage: Young... Hau ez da nik nahi nuena... Pertsona hobea bilaka zintezen nahi nuen. Elorria laguntzeko gai izan zintezen nahi nuen. Baina guzti hau joko burugabe bat baino ez da... Ezin dizut galarazi Elorriagana heltzea. Baina oroitu zer esan dizudan dena pikutara joatean.
+Sage: Young... Hau ez da nik nahi nuena... Pertsona hobea bilaka zintezen nahi nuen. Elorria laguntzeko gai izan zintezen nahi nuen. Baina guzti hau joko burugabe bat baino ez da... Ezin dizut galarazi Elorriagana heltzea. Dena pikutara joatean, oroi zaitez esan dizudanaz.
 		end scene
 		scene entrance
 #Sage: Hello, Young.  When you have become a stronger and wiser individual, this path will lead you to The Briar.
 Sage: Kaixo, Young. Norbanako indartsuago eta jakintsuagoa bihurtzen zarenean, bide honek eramango zaitu Elorriagana.
 #Sage: You’re not ready Young, first you must face more trials in The Land.
-Sage: Ez zaude prest Young, aurrena proba gehiagori aurre egin beharko diozu Lurraldean.
+Sage: Ez zaude prest Young, aurrena proba gehiagori aurre egin beharko diezu Lurraldean.
 #Sage: You have made progress, Young, but you must collect at least 36 cards to pass this gate.
-Sage: Aurrera egin duzu, Young, baina gutxienez 36 txartela bildu behar dituzu ate hau igarotzeko.
+Sage: Aurrera egin duzu, Young, baina gutxienez 36 karta bildu behar dituzu ate hau igarotzeko.
 		end scene
 # non idlnig stuff
 		scene etc
 #Sage: Oh... uh... you have at least 36 cards?  But I am not certain that you are ready for the true test.  In fact, look, we were reading this gate wrong, you actually need...\n...\n........\n92 cards to pass this gate, not 36!
-Sage: Oh... uh...badituzu gutxieneko 36 txartelak? Baina ez nago ziur benetako probarako prest zaudenik. Izan ere, begira, atea gaizki irakurtzen genbiltzan, benetan behar dituzu...\n...\n........\n92 txartel atetik igarotzeko, ez 36!
+Sage: Oh... uh...badituzu gutxieneko 36 kartak? Baina ez nago ziur benetako probarako prest zaudenik. Izan ere, begira, atea gaizki irakurtzen genbiltzan, atetik igarotzeko benetan behar dituzunak...\n...\n........\n92 karta dira, ez 36!
 #Sage: Young, don’t go there, you’re not ready yet!  Think of The Briar!  The Land!  All of this will be for nothing if you are not ready! 
 Sage: Young, ez zaitez horra joan, oraindik ez zaude prest! Pentsatu Elorrian! Lurraldean! Guzti hau ez da ezertarako izango prest ez bazaude! 
 		end scene
@@ -353,7 +353,7 @@ Arraioa, ariketa egiteak gogor jartzen dit!
 		
 		scene gold
 #Did you know this place is made of gold?  Like actual gold!  We could run away together and live off this brick right here!  Wahahahaha!
-Bazenekien leku hau urrez egina dela? Benetako urrea! Hemengo adreilu honekin, elkarrekin ihes egin eta gustura bizi ahalko ginake! Kar kar kar!
+Bazenekien leku hau urrez egina dela? Benetako urrea! Hemengo adreilu honekin, elkarrekin ihes egin eta gustura bizi ahalko ginateke! Kar kar kar!
 #Seriously, why are you just standing there?  Help me jack this brick!
 Benetan, zergatik zaude hor geldirik? Lagundu adreilu hau ateratzen!
 		end scene
@@ -373,7 +373,7 @@ npc mitra
 KONTUZ!
 #Mitra swerves to avoid you and crashes
 #Sorry about that... I was going way too fast.  Oh, I’ve never seen you before!  Are you a fellow traveller? ... Huh?  You want to protect the Briar from the Evil Darkness?  ...  ^Well... I have no clue what you’re talking about, but sounds cool, I guess!		
-Barkatu... bizkorregi nindoan. O, ez zaitut aurrez inoiz ikusi! Bidaiari bat zara zu ere, ni bezala? ... Zer? Elorria babestu nahi duzula Iluntasun maltzurragandik? ... ^Tira... Ez dakit zeri buruz ari zaren hitz egiten, baina interesgarria dirudi, suposatzen dut!
+Barkatu... bizkorregi nindoan. Oi, ez zaitut aurrez inoiz ikusi! Bidaiari bat zara zu ere, ni bezala? ... Zer? Elorria babestu nahi duzula Iluntasun maltzurragandik? ... ^Tira... Ez dakit zeri buruz ari zaren hitz egiten, baina interesgarria dirudi, suposatzen dut!
 #I’ve just been out and about, peddling my wares.... What?  No, I’m not a salesman.  Wares is the name of my bicycle!  
 Alde batetik bestera nabil, Waresekin bueltaka.... Zer? Zer den Wares? Wares nire bizikletaren izena da!
 #Plays if you talk 3 times, or if you leave the screen
@@ -407,7 +407,7 @@ Mitra: Laster arte, Young!
 		end scene
 		scene quest_event
 #Mitra: Hey, I just remembered - someone said they were trying to find something earlier. I wasn't sure what they were talking about, so they said they were going to the mountains - ran off in a hurry.
-Mitra: Ei, orain gogoratu dut - norbaitzuk pasa dira lehen zerbaiten bila. Ez dut ziotena ulertu, baina mendietarantz abiatu dira - presaka zebiltzan.
+Mitra: Ei, orain gogoratu dut - norbait pasa da lehen, zerbaiten bila. Ez diodanez esaten zuena ulertu, mendietarantz abiatu da - presaka zebilen.
 		end scene
 		
 # Hints for the game - not cards
@@ -430,7 +430,7 @@ Begira giltza guzti horiei! Uste dut ate batzuk ikusiak ditudala hego-ekialdean.
 Ei, ikusi dut haizerrota martxan jarri duzula! Badakizu Lurraldean eraginik izan ote duen?
 # 5. finished 6 bosses, all 36...
 #Hey Young.  Wow!  You've really been racking up those cards!  Have you figured out what they're for yet?  Seems like you could really cash in with all those!
-Aupa Young. Uou! Txartel mordoa lortu duzu! Asmatu duzu zertarako balio duten dagoeneko? Dirutza bat lor zenezake horiek salduz gero!
+Aupa Young. Uou! Karta mordoa lortu duzu! Asmatu duzu zertarako balio duten dagoeneko? Dirutza bat lor zenezake horiek salduz gero!
 # 6. hints for go things
 #What is that new broom attachment you have?  It lets you alter the structure of the world...?  Honestly, that is really scary Young.  I'm glad it doesn't seem to work anywhere, perhaps just in the deepest, strangest recesses of the Land
 Zer da erratzaren hedapen berri hori? Munduaren egitura aldatzeko aukera ematen dizu...? Egia esan, beldurgarria da hori, Young. Pozten naiz ez duelako edonon funtzionatzen, agian soilik Lurraldearen bazter sakon eta bitxienetan.
@@ -439,85 +439,85 @@ Zer da erratzaren hedapen berri hori? Munduaren egitura aldatzeko aukera ematen 
 Zer moduz zabiltza nire jauzi egiteko oinetakoekin? Izugarriak dira, ezta? Bizikletarako oinetako berriekin zoratzen nago. Wares eta biok bikote hobea osatzen dugu orain!
 #8. redcave finished but not crowd
 #Cool, Young, you found another key!  Wares likes the color!  Have you found a place to use them yet?
-Bikain, Young, beste giltza bat aurkitu duzu! Waresek gustoko du kolorea! Aurkitu duzu irekitzen duen atea?
+Bikain, Young, beste giltza bat aurkitu duzu! Waresek gustuko du kolorea! Aurkitu duzu irekitzen duen atea?
 		end scene
 # Hints for the cards. Play after the 6 dungeons are finished.		
 		scene card_hints
 #Mitra: Hey Young, looking for a card?\nHave you checked around the area of the Seeing One's temple?
-Mitra: Epa Young, txartel bila?\nBegiratu duzu Ikusten Duenaren tenpluaren inguruko lurretan?
+Mitra: Epa Young, karta bila?\nBegiratu duzu Ikusten Duenaren tenpluaren inguruko lurretan?
 #Mitra: Hey Young, looking for a card?\nI heard there's a maze around the back exit of the Seeing One's temple.
-Mitra: Epa Young, txartel bila?\nEntzun dut Ikusten Duenaren tenpluaren atzeko irteera inguruan ziega bat dagoela.
+Mitra: Epa Young, karta bila?\nEntzun dut Ikusten Duenaren tenpluaren atzeko irteera inguruan ziega bat dagoela.
 #Mitra: Hey Young, looking for a card?\nYou might find something near the Seeing One's lair.
-Mitra: Epa Young, txartel bila?\nAgian zerbait aurkituko duzu Ikusten Duenaren ezkutalekuan.
+Mitra: Epa Young, karta bila?\nAgian zerbait aurkituko duzu Ikusten Duenaren ezkutalekuan.
 #Mitra: Hey Young, looking for a card?\nThere was a room filled with enemies in the Seeing One's temple, right?
-Mitra: Epa Young, txartel bila?\nEtsaiz beteriko gela bat zegoen Ikusten Duenaren tenpluan, ezta?
+Mitra: Epa Young, karta bila?\nEtsaiz beteriko gela bat zegoen Ikusten Duenaren tenpluan, ezta?
 #Mitra: Hey Young, looking for a card?\nHave you looked all over the Seeing One's temple?
-Mitra: Epa Young, txartel bila?\nOndo begiratu duzu Ikusten Duenaren tenpluaren inguruan?
+Mitra: Epa Young, karta bila?\nOndo begiratu duzu Ikusten Duenaren tenpluaren inguruan?
 #Mitra: Hey Young, looking for a card?\nTry looking in the vestigial area near the back exit of the Seeing One's lair.
-Mitra: Epa Young, txartel bila?\nProbatu Ikusten Duenaren gordelekuko atzeko irteeraren inguruko hondakinetan.
+Mitra: Epa Young, karta bila?\nProbatu Ikusten Duenaren gordelekuko atzeko irteeraren inguruko hondakinetan.
 #Mitra: Hey Young, looking for a card?\nMaybe your neighbor knows something about it.
-Mitra: Epa Young, txartel bila?\nAgian zure bizilagunak zerbait jakingo du.
+Mitra: Epa Young, karta bila?\nAgian zure bizilagunak zerbait jakingo du.
 #Mitra: Hey Young, looking for a card?\nI know the guy in your apartment was hiding something...
-Mitra: Epa Young, txartel bila?\nBadakit zure apartamentuko tipoa zerbait ezkutatzen zebilela...
+Mitra: Epa Young, karta bila?\nBadakit zure apartamentuko tipoa zerbait ezkutatzen zebilela...
 #Mitra: Hey Young, looking for a card?\nSomewhere near the entrance of your apartment...look around there!
-Mitra: Epa Young, txartel bila?\nZure apartamentuaren sarrera aldean nonbait...begiratu inguru horretan!
+Mitra: Epa Young, karta bila?\nZure apartamentuaren sarrera aldean nonbait...begiratu inguru horretan!
 #Mitra: Hey Young, looking for a card?\nHave you looked *everywhere* in your apartment?
-Mitra: Epa Young, txartel bila?\nZiur zure apartamentuko zoko *guztiak* miatu dituzula?
+Mitra: Epa Young, karta bila?\nZiur zure apartamentuko zoko *guztiak* miatu dituzula?
 #Mitra: Hey Young, looking for a card?\nJust south of here is an island! I haven't gone there, but you should check it out.
-Mitra: Epa Young, txartel bila?\nHegoalderantz uharte bat dago! Ni ez naiz bertan izan, baina begiratzera joan beharko zenuke.
+Mitra: Epa Young, karta bila?\nHegoalderantz uharte bat dago! Ni ez naiz bertan izan, baina begiratzera joan beharko zenuke.
 #Mitra: Hey Young, looking for a card?\nThere's a lot of stuff to be found if you follow the rivers. Look around!
-Mitra: Epa Young, txartel bila?\nGauza asko aurkituko dituzu ibaiei jarraituz gero. Adi ibili!
+Mitra: Epa Young, karta bila?\nGauza asko aurkituko dituzu ibaiei jarraituz gero. Adi ibili!
 #Mitra: Hey Young, looking for a card?\nI know someone left a card near the windmill.
-Mitra: Epa Young, txartel bila?\nBadakit norbaitek txartel bat utzi duela haize-errotaren ondoan.
+Mitra: Epa Young, karta bila?\nBadakit norbaitek karta bat utzi duela haize-errotaren ondoan.
 #Mitra: Hey Young, looking for a card?\nLook around the rivers in the forest...
-Mitra: Epa Young, txartel bila?\nBegiratu oihaneko ibaien inguruan...
+Mitra: Epa Young, karta bila?\nBegiratu oihaneko ibaien inguruan...
 #Mitra: Hey Young, looking for a card?\nTry poking around the base of the mountains.
-Mitra: Epa Young, txartel bila?\nZoaz mendi-oinetara ikusmiran ibiltzera. 
+Mitra: Epa Young, karta bila?\nZoaz mendi-oinetara ikusmiran ibiltzera. 
 #Mitra: Hey Young, looking for a card?\nTry going to the summit of the mountains.
-Mitra: Epa Young, txartel bila?\nZoaz mendi-gailurretara.
+Mitra: Epa Young, karta bila?\nZoaz mendi-gailurretara.
 #Mitra: Hey Young, looking for a card?\nThe far end of the beach may hold something.
-Mitra: Epa Young, txartel bila?\nHondartzaren amaiera urrunean zerbait ezkutatzen omen da.
+Mitra: Epa Young, karta bila?\nHondartzaren amaiera urrunean zerbait ezkutatzen omen da.
 #Mitra: Hey Young, looking for a card?\nTake a walk in the crimson woods.
-Mitra: Epa Young, txartel bila?\nOihan gorriminetan ibilalditxo bat egin beharko zenuke.
+Mitra: Epa Young, karta bila?\nOihan gorriminetan ibilalditxo bat egin beharko zenuke.
 #Mitra: Hey Young, looking for a card?\nThere were a lot of locked doors in one of those red caves, right? 
-Mitra: Epa Young, txartel bila?\nItxitako ate asko zeuden leize gorri horietan, ezta?
+Mitra: Epa Young, karta bila?\nItxitako ate asko zeuden leize gorri horietan, ezta?
 #Mitra: Hey Young, looking for a card?\nTry looking around the northern red cave - follow the river to its end!
-Mitra: Epa Young, txartel bila?\nBegiratu iparraldeko leize gorriaren inguruan - jarraitu ibaia amaieraraino!
+Mitra: Epa Young, karta bila?\nBegiratu iparraldeko leize gorriaren inguruan - jarraitu ibaia amaieraraino!
 #Mitra: Hey Young, looking for a card?\nGo to the northern red cave, check out the source of the river!
-Mitra: Epa Young, txartel bila?\nZoaz iparraldeko leize gorrira, bilatu ibaiaren sorburua!
+Mitra: Epa Young, karta bila?\nZoaz iparraldeko leize gorrira, bilatu ibaiaren sorburua!
 #Mitra: Hey Young, looking for a card?\nHmm...did you look all over that dark labyrinth?
-Mitra: Epa Young, txartel bila?\nHmm...ondo begiratu duzu labirinto ilunean zehar?
+Mitra: Epa Young, karta bila?\nHmm...ondo begiratu duzu labirinto ilunean zehar?
 #Mitra: Hey Young, looking for a card?\nI remember there was a pretty grim looking path of flamethrowers somewhere. Something's gotta be at the end of it!
-Mitra: Epa Young, txartel bila?\nOroitzen dut su-jaurtigailuz betetako bidexka ospel bat zegoela nonbait. Bide horrek amaieraren bat izango du!
+Mitra: Epa Young, karta bila?\nOroitzen dut su-jaurtigailuz betetako bidexka ospel bat zegoela nonbait. Bide horrek amaieraren bat izango du!
 #Mitra: Hey Young, looking for a card?\nThose circus folks have got to be hiding something. Did you look everywhere?
-Mitra: Epa Young, txartel bila?\nZiur zirkuko lagun horiek zerbait ezkutatzen dutela. Bazter guztietan bilatu duzu?
+Mitra: Epa Young, karta bila?\nZiur zirkuko lagun horiek zerbait ezkutatzen dutela. Bazter guztietan bilatu duzu?
 #Mitra: Hey Young, looking for a card?\nHave you looked around the area on the perimeter of that couple's large pit?
-Mitra: Epa Young, txartel bila?\nBegiratu duzu bikote haren putzu sakonaren perimetroan?
+Mitra: Epa Young, karta bila?\nBegiratu duzu bikote haren putzu sakonaren perimetroan?
 #Mitra: Hey Young, looking for a card?\nThere's this couple that like to hang around a pit. They must be hiding something.
-Mitra: Epa Young, txartel bila?\nBadago bikote bat eguna pasatzeko putzu baten ingurura joaten dena. Ziur zerbait ezkutatzen dabiltzala.
+Mitra: Epa Young, karta bila?\nBadago bikote bat eguna pasatzeko putzu baten ingurura joaten dena. Ziur zerbait ezkutatzen dabiltzala.
 #Mitra: Hey Young, looking for a card?\nSometimes there are things hidden across chasms - especially in mountain caves!
-Mitra: Epa Young, txartel bila?\nBatzuetan gauzak leizeetan ezkutatzen dira - batez ere mendiko kobetan!
+Mitra: Epa Young, karta bila?\nBatzuetan gauzak leizeetan ezkutatzen dira - batez ere mendiko kobetan!
 #Mitra: Hey Young, looking for a card?\nHave you scoured the highest parts of the mountain cave?
-Mitra: Epa Young, txartel bila?\nArakatu duzu mendiko leizearen zatirik garaiena?
+Mitra: Epa Young, karta bila?\nArakatu duzu mendiko leizearen zatirik garaiena?
 #Mitra: Hey Young, looking for a card?\nIs there anything in the depths of that mountain cave?
-Mitra: Epa Young, txartel bila?\nBa al dago ezer mendiko leize haren sakonean?
+Mitra: Epa Young, karta bila?\nBa al dago ezer mendiko leize haren sakonean?
 #Mitra: Hey Young, looking for a card?\nThat colorful cube in that weird place - it has probably got something!
-Mitra: Epa Young, txartel bila?\nKubo koloretsu hura, leku bitxi hartan - ziur zerbait daukala barruan!
+Mitra: Epa Young, karta bila?\nKubo koloretsu hura, leku bitxi hartan - ziur zerbait daukala barruan!
 #Mitra: Hey Young, looking for a card?\nHave you talked to that grayscale cube in that wild-lookin' area? Maybe it knows something.
-Mitra: Epa Young, txartel bila?\nHitz egin diozu leku basati hartan zegoen gris-eskalako kubo hari? Akaso zerbait jakingo du.
+Mitra: Epa Young, karta bila?\nHitz egin diozu leku basati hartan zegoen gris-eskalako kubo hari? Akaso zerbait jakingo du.
 #Mitra: Hey Young, looking for a card?\nThe top floor of that hotel is a little run down, but it's gotta have something!
-Mitra: Epa Young, txartel bila?\nHotelaren goi-goiko solairua nahiko hondatua dago, baina egongo da zerbait bertan!
+Mitra: Epa Young, karta bila?\nHotelaren goi-goiko solairua nahiko hondatua dago, baina egongo da zerbait bertan!
 #Mitra: Hey Young, looking for a card?\nDid you walk into all of the rooms on the 3rd floor of the hotel?
-Mitra: Epa Young, txartel bila?\nHotelaren 3. solairuko gela guztietara sartu zara?
+Mitra: Epa Young, karta bila?\nHotelaren 3. solairuko gela guztietara sartu zara?
 #Mitra: Hey Young, looking for a card?\nI bet someone left something lying around the 2nd floor of the hotel.
-Mitra: Epa Young, txartel bila?\nZiur naiz norbaitek zerbait utzi duela hotelaren 2. solairu inguruan.
+Mitra: Epa Young, karta bila?\nZiur naiz norbaitek zerbait utzi duela hotelaren 2. solairu inguruan.
 #Mitra: Hey Young, looking for a card?\nThe owner of the hotel might have left something for you! 
-Mitra: Epa Young, txartel bila?\nBaliteke hotelaren jabeak zuretzako zerbait utzi izana! 
+Mitra: Epa Young, karta bila?\nBaliteke hotelaren jabeak zuretzako zerbait utzi izana! 
 #Mitra: Hey Young, looking for a card?\nThose broken bridges to the northwest...look around there!
-Mitra: Epa Young, txartel bila?\nIpar-mendebaldeko zubi apurtu horiek... begiratu inguru hartan!
+Mitra: Epa Young, karta bila?\nIpar-mendebaldeko zubi apurtu horiek... begiratu inguru hartan!
 # and a bonus one if for some reason you make it this far without finding any...
 #...What? You haven't found *any* cards? Man, Young, that's crazy! Sometimes in life you just need to be adventurous, open a few boxes, you know? 
-...Zer? Ez duzu txartel *bat bera ere* aurkitu? Motel, Young, sinestezina da! Bizitzan, batzuetan, bidetik atera beharra duzu, kaxa batzuk ireki, ulertzen? 
+...Zer? Ez duzu karta *bat bera ere* aurkitu? Motel, Young, sinestezina da! Bizitzan, batzuetan, bidetik atera beharra duzu, kaxa batzuk ireki, ulertzen? 
 		end scene
 		
 #General random stuff 
@@ -558,7 +558,7 @@ Estatua: Ikusia dut erratz bat elezahar batean... atezainaren armairuko mapa bat
 	area BEDROOM
 		scene one
 #Statue: Acquiring cards is vital to your quest.  Acquiring cards is also vital for other quests, such as earning credit or purchasing alcoholic beverages.
-Estatua: Txartelak eskuratzea ezinbestekoa da zure bilaketarako. Baita beste helburu batzuetarako ere, hala nola kreditua lortzeko edo edari alkoholdunak erosteko.
+Estatua: Kartak eskuratzea ezinbestekoa da zure bilaketarako. Baita beste helburu batzuetarako ere, hala nola lagunen berri izateko edo musean jokatzeko.
 		end scene
 	end area
 	area REDCAVE
@@ -605,7 +605,7 @@ npc sun_guy
 	area BEDROOM
 		scene before_fight
 #Oh, isn’t it cute?  Precious little Young, playing the hero.  But I have witnessed every step you have taken in "The Land", and let me tell you, Young, not everyone here is as honest as me.  Be careful who you trust!
-O, ez al da politta? Young txiki ederra, heroiarena egiten. Baina "Lurraldean" eman duzun urrats bakoitza aztertu dut, eta utzidazu esaten, Young, hemen denak ez dira ni bezain zintzoak. Kontuz nortaz fidatzen zaren!
+Oi, ez al da politta? Young txiki ederra, heroiarena egiten. Baina "Lurraldean" eman duzun urrats bakoitza aztertu dut, eta utzidazu esaten, Young, hemen denak ez dira ni bezain zintzoak. Kontuz nortaz fidatzen zaren!
 		end scene
 		scene after_fight
 #I will be with you, Young, whenever you are alone.  And remember my advice on your little "adventure".		
@@ -654,7 +654,7 @@ Tornu hau erabiltzen da dikea jasotzeko.
 		end scene
 		scene four
 #August 5th, 1957: In my dream, I saw a stone face with fierce, shining eyes.  He spoke of the truth of our existence and was the first to offer freedom from the pain.
-1957, abuztuak 5: Ametsetan, harrizko aurpegi bat ikusi dut, begirada zorrotz distiratsuaz. Gure existentziaren egiari buruz hitz egin dit, eta minetik libratzeko laguntza eskaintzen aurrena izan da.
+1957, abuztuak 5: Ametsetan, harrizko aurpegi bat ikusi dut, begirada zorrotz distiratsuaz. Gure existentziaren egiari buruz hitz egin dit, eta minetik libratzeko laguntza eskaini dit beste inork baino lehen.
 		end scene
 		scene five
 #August 7th, 1957: How many of us will suffer before we accept the truth of the Seeing One?
@@ -663,7 +663,7 @@ Tornu hau erabiltzen da dikea jasotzeko.
 		
 		scene six
 #August 8th, 1957: I have come to my decision.  A few of the others have said they will follow me.  This will be my final entry.  May the Seeing One look favorably upon us all.
-1957, abuztuak 8: Hartua dut erabakia. Besteetako batzuek ere nirekin etorriko direla esan didate. Hau izango da nire azken sarrera. Ikusten Duenak begi onez begiratuko al digu.
+1957, abuztuak 8: Hartua dut erabakia. Besteetako batzuek ere nirekin etorriko direla esan didate. Hau izango da nire azken sarrera. Ikusten Duenak begi onez begiratuko ahal digu.
 		end scene
 	end area
 	area CLIFF
@@ -693,14 +693,14 @@ Arroka: Nola?
 		end scene
 		scene two
 #Rock: Warning! Vertical drop, jump at your own risk.
-Arroka: Adi! Amildegia, egin jauzi zure arriskupean.
+Arroka: Kontuz, amildegia! Egin jauzi zure arriskupean.
 		end scene
 	end area
 	
 	area DEBUG
 		scene one
 #This used to be a placeholder animation for the card gates. Approach it twice to see the locked and open animations! 
-Hau txartelen atarientzako behin-behineko animazioa zen. Gerturatu birritan, 'itxita' eta 'ireki' animazio ezberdinak ikusteko!
+Hau karta-atarientzako behin-behineko animazioa zen. Gerturatu birritan, 'itxita' eta 'ireki' animazio ezberdinak ikusteko!
 #I forget why we ended up scrapping it. Perhaps too dramatic.
 Ez dut gogoratzen zergatik baztertu genuen. Agian, dramatikoegia zelako.
 		end scene
@@ -777,7 +777,7 @@ Mendebalera: Hondartza\n\nEkialdera: Basoa\n\nHego-ekialdera: \nLur Euritsua\n\n
 	area FOREST
 		scene one
 #West: Land Lake\nSouth, then east: Cliffs
-Mendebalera: Lurrezko Lakua\nHegoaldera, gero ekialdera: Amildegiak
+Mendebalera: Lurraldeko Lakua\nHegoaldera, gero ekialdera: Amildegiak
 		end scene
 		scene two
 #Relaxation pond. Stay a while, we know you have the time.
@@ -796,22 +796,22 @@ Ekialdera: Amildegiak
 	area GO
 		scene one
 # The path will open when the dark guardian tiles are replaced by the stone of their spirit color on the square grid below.
-Bidexka irekitzeko, azpiko taulako zaindari ilunen lauzen gainean bakoitzaren izpiritu-kolorea duen harria jarri beharko duzu.
+Bidexka irekitzeko, azpiko taulako zaindari ilunen lauzen gainean bakoitzaren izpiritu-\nkolorea duen harria jarri beharko duzu.
 		end scene
 		
 		scene two
 #When the blue stone statue shifted\nThere a new path was revealed\nPast the cliffs, through strange dimensions\nStands a travelers' hotel\n\n\n"Who is the guardian?" I ask,\n"Who rules this crowded business place?"\nDespite the many human souls\nI still feel alone.
-Harri urdinezko estatua mugitzean\nbide berri bat zen azaldu\nAmildegiak pasata, dimentsio bitxiak zeharkatuz,\nbidaiarientzako hotel bat aurkitzen da\n\n\n"Nor da zaindaria?" galdetzen dut,\n"Nork agintzen du lepo betetako negozio-leku honetan?"\nBertan giza-arima ugari egon arren\noraindik bakarrik sentitzen naiz.
+Harri urdinezko estatua mugitzean, bide berri bat da azaltzen.\nAmildegiak pasata, dimentsio bitxiak zeharkatuz,\nbidaiarientzako hotel bat aurkitzen da.\n\n\n"Nor da zaindaria?" galdetzen dut,\n"Nork agintzen du lepo betetako negozio-leku honetan?"\nBertan giza-arima ugari egon arren,\noraindik bakarrik sentitzen naiz.
 		end scene
 		
 		scene three
 #The red and rusty statue moved\nAnd paved the way to deeper pits\nA labyrinthine dungeon follows\nThen a big-top circus tent\n\n\n"Who are the guardians?" I ask,\n"Who gave up life to flee this place?"\nI fear the pain, the same as they\nBut fear it more to die.
-Estatua gorri herdoildua mugitu\neta zulo sakonagoetarako bidea urratu zuen\nZiega labirintiko bat dator jarraian\nGero, zirkuko karpa garai bat\n\n\n"Nor dira zaindariak?" galdetzen dut,\n"Nork eman zuen bizia leku honetatik ihes egitearren?"\nMinak ikaratzen nau, haiek bezala,\nbaina gehiago izutzen nau hiltzeak.
+Estatua gorri herdoilduak, mugitu,eta zulo sakonagoetarako bidea urratzen du.\nZiega labirintiko bat dator jarraian.\nGero, zirkuko karpa garai bat.\n\n\n"Nor dira zaindariak?" galdetzen dut,\n"Nork eman zuen bizia leku honetatik ihes egitearren?"\nMinak ikaratzen nau, haiek bezala,\nbaina gehiago izutzen nau hiltzeak.
 		end scene
 		
 		scene four
 #The green, metallic statue shifted\nOpening a deeper trail\nSuburban homes and sidewalks form\nA path to an apartment.\n\n\n"Who is the guardian?" I ask,\n"Who looks for comfort in the stars?"\nAlone, I feel like I am watched\nAnd not by friendly starlight.
-Estatua berde metalikoa mugitu zen\nbidezidor sakonago bat irekiz\nAldiriko etxe eta espaloiek\napartamentu baterako bidea eratzen dute.\n\n\n"Nor da zaindaria?" galdetzen dut,\n"Nor dabil erosotasun bila izar artean?"\nBakarrik, norbait begira dabilkidala iruditzen zait,\neta dira izarrak so daudenak.
+Estatua berde metalikoa mugitzen da, bidezidor sakonago bat irekiz.\nAldiriko etxe eta espaloiek\napartamentu baterako bidea eratzen dute.\n\n\n"Nor da zaindaria?" galdetzen dut,\n"Nor dabil erosotasun bila izar artean?"\nBakarrik nagoela, norbait begira dabilkidala iruditzen zait,\neta ez dira izarrak so daudenak.
 		end scene
 		
 
@@ -836,7 +836,7 @@ Arroka: Kontuz^ -...baina beti^ - egin aurrera^ - lortzen dut berragertzea ezta?
 		#mazeish place, not near the portal
 		scene four
 #Rock: Looking down^ - And I realized:^ - from here, you- ^ I'm in love with him.^ - can see...nothing, really.
-Arroka: Hemendik beherantz^ - Eta ohartu nintzen:^ - begiratuz, ikus- ^ berataz maitemindurik nago.^ - dezakezuna da...ezer ez, egia esan.
+Arroka: Hemendik beherantz^ - Eta ohartu nintzen:^ - begiratuz, ikus - ^ berataz maitemindurik nago.^ - dezakezuna da...ezer ez, egia esan.
 		end scene
 		#left part of the 48 gate
 		scene five
@@ -870,7 +870,7 @@ Arroka: O!...?
 		end scene
 		scene five
 #The computer terminal has an e-mail open. Parts of the screen are broken, so only parts of the message are visible in between black blotches. The e-mail reads: "Hello, Young! It seems that [...] fiftieth card [...] maybe you shouldn't... [...] worth thinking about! Do you think you're ready? Wake up..." 
-Konputagailu terminalean e-mail bat dago irekita. Pantailako zati batzuk hautsita daudenez, mezuaren zati batzuk soilik daude ikusgai, orban beltzen artean. Mezuak honela dio: "Kaixo, Young! Badirudi [...] berrogeita hamargarren txartela [...] agian ez zenuke [...] hausnartu beharreko zerbait da! Prest zaudela uste duzu? Esnatu..." 
+Konputagailu terminalean e-mail bat dago irekita. Pantailako zati batzuk hautsita daudenez, mezuaren zati batzuk soilik daude ikusgai, orban beltzen artean. Mezuak honela dio: "Kaixo, Young! Badirudi [...] berrogeita hamargarren karta [...] agian ez zenuke [...] hausnartu beharreko zerbait da! Prest zaudela uste duzu? Esnatu..." 
 		end scene
 	end area
 	
@@ -918,7 +918,7 @@ INOIZ EZ GENUEN HAU ESKATU. EZ GENITUZKE GURE BIZIAK EROSIKO BERE SUFRIMENDUAREN
 	area REDSEA
 		scene one
 #Rock: Signs indicate the trees have not been active for an extended period of time.
-Arroka: Zantzu guztien arabera zuhaitzak ez dira aktibo egon luzaroan.
+Arroka: Zantzu guztien arabera, zuhaitzak ez dira aktibo egon luzaroan.
 		end scene
 		scene two
 #Rock: South: ???^   North: ???
@@ -926,11 +926,11 @@ Arroka: Hegoaldera: ???^ Iparraldera: ???
 		end scene
 		scene three
 #Rock: The uneven terrain is said to have been formed by the ancestors of the area's inhabitants.
-Arroka: Esaten da lur irregularra bertako biztanleen arbasoek eratu zutela.
+Arroka: Esaten da lur irregular hau bertako biztanleen arbasoek eratu zutela.
 		end scene
 		scene four
 #Rock: They appear to be a peaceful species.
-Arroka: Espezie baketsuak dirudite.
+Arroka: Izaki baketsuak dirudite.
 		end scene
 	end area
 	
@@ -1019,18 +1019,18 @@ Egin aurrera.
 		end scene
 		scene four
 #Do not anger the Chasers with violence.
-Ez amorratu Jazarleak bortxa erabiliz.
+Ez amorrarazi Jazarleak bortxa erabiliz.
 		end scene
 	end area
 	
 	area WINDMILL
 		scene one
 #SCENIC LANDMARK: Partner Towers. Built some time ago, the Partner Towers overlook the distant mountains. The first tower was damaged a while ago and has since been repurposed. The second still stands to the east, reaching into the sky. Due to safety concerns, the path to the tower has been cut off until further notice.
-LEKU EZAGUNA: Bikote Dorreak. Duela dexente eraikiak, Bikote Dorreek urruneko mendiak gainbegiratzen dituzte. Aurreneko dorrea duela zenbait kaltetu zen, eta geroztik beste erabilera bat eman zaio. Bigarrenak oraindik zutik dirau ekialdean, zeruraino iristen delarik. Segurtasun arrazoiengatik, dorrera daraman bidea moztu da behin-behinean.
+LEKU EZAGUNA: Bikote Dorreak. Duela dexente eraikiak, Bikote Dorreek urruneko mendiak gainbegiratzen dituzte. Aurreneko dorrea orain dela asko kaltetu zen, eta geroztik beste erabilera bat eman zaio. Bigarrenak oraindik zutik dirau ekialdean, zeruraino iristen delarik. Segurtasun arrazoiengatik, dorrera daraman bidea moztu da behin-behinean.
 		end scene
 		scene two
 #PUBLIC SAFETY NOTICE:^\nThis tower, while not damaged, has been said to have a dimensional rift at the top. Proceed with caution and an open mind.^\n      -- The MGMT
-SEGURTASUN PUBLIKORAKO OHARRA:^\nDorre hau kalteturik egon ez arren, dirudienez gainaldean arrakala dimentsional bat dauka. Egin aurrera arretaz eta pentsaera irekiz.^\n      -- ZUZENDARITZA
+SEGURTASUN PUBLIKORAKO OHARRA:^\nDorre hau kalteturik egon ez arren, dirudienez gainaldean arrakala dimentsional bat dauka. Egin aurrera arretaz eta pentsaera irekiaz.^\n      -- ZUZENDARITZA
 		end scene
 	end area 
 end npc
@@ -1094,16 +1094,16 @@ npc cube_king
 			#You want to know why I'm the ruler of this place? I'll tell you, but it will take a while. Like, a long while. An obnoxiously long while.
 			Zergatik naizen leku honetako agintaria jakin nahi duzu? Esango dizut, baina une bat beharko dut. Hau da, une luze bat. Une izugarri luze bat.
 			#Like, quite a while. No really, I'm warning you! I tend to ramble. Maybe you'd be better off just scooping out the contents of that chest over there. Or heading off to the hotel in the distance. Don't know how that got there, I heard they have relatively cheap rates. Not that money matters here.
-			Esan nahi dut, une luuuuze bat. Benetan, abisatua zaude! Gustoko dut inguru-minguru ibiltzea. Agian hobe zenuke kutxa horretako edukien artean galtzea. Edo urruneko hotel horretara gerturatzea. Ez dakit nola heldu zen hori horra, entzun dut prezio onak dituztela. Nahiz eta hemen diruak ez duen baliorik.
+			Esan nahi dut, une luuuuze bat. Benetan, abisatua zaude! Gustuko dut inguru-minguru ibiltzea. Agian hobe zenuke kutxa horretako edukien artean galtzea. Edo urruneko hotel horretara gerturatzea. Ez dakit nola heldu zen hori horra, entzun dut prezio onak dituztela. Nahiz eta hemen diruak ez duen baliorik.
 			LOOP
 			#Why am I the ruler?^...I'm not sure why, but my friends around here saw it fit to put me in this position, because of the immediate state of this space. Maybe this is the case because cubes are best at sitting still on flat surfaces. As for why someone needs to sit up here - that's beyond me!
 			Zergatik naizen agintaria?^... Ez dakit zergatik, baina inguruko nire lagunek egoki ikusi zuten ni posizio honetan jartzea, espazio honen egoera hurbilagatik. Agian izango da kuboak hobeak garelako gainazal lauetan geldi egoten. Zergatik egon behar duen norbaitek hemen goian eserita - ez dakit!
 			#The others - my friends over there - have merits of their own. It's not like they couldn't sit up here in the future, they just can't do it now. Sometimes, we switch off who is the ruler, but every time, we always have to reinterpret this region of space! Perhaps Mr. or Ms. Pyramid comes up here because we decide to make the throne shaped in a way that best fits them, by re-imagining this world, so to speak. Does that sound silly? It might be. But that's how it is. It happens quite fast. Minutes, hours - not necessarily a long reign.
-			Besteek - horko nire lagunek - euren meritu propioak dituzte. Inork ez dio etorkizunean haiek ezingo direla hemen eseri, kontua da une honetan ezin dutela. Batzuetan, agintariz aldatzen dugu, baina beti berrinterpretatu behar izaten dugu espazioko eremu hau! Agian Piramide jaun edo andrea etorriko da hona, tronua haientzako egokiena den forma batekin eraikiko dugulako, mundu hau berrirudikatuz, nolabait esateko. Tontakeria dirudiela? Baliteke. Baina horrela da. Nahiko bizkor gertatzen da. Minutuak, orduak - ez du zertan agintaldi luzea izan.
+			Besteek - horko nire lagunek - euren meritu propioak dituzte. Inork ez dio etorkizunean haiek ezingo direla hemen eseri, kontua da une honetan ezin dutela. Batzuetan, agintariz aldatzen dugu, baina beti berrinterpretatu behar izaten dugu espazioko eremu hau! Agian Piramide jaun edo andrea etorriko da hona, tronua harentzako egokiena den forma batekin eraikiko dugulako, mundu hau berrirudikatuz, nolabait esateko. Tontakeria dirudiela? Baliteke. Baina horrela da. Nahiko bizkor gertatzen da. Minutuak, orduak - ez du zertan agintaldi luzea izan.
 			#Though, when I am ruler, it feels slightly strange...I somewhat feel isolated, wanting to be avoidant of others...
 			Baina, agintari naizenean, sentimendu bitxia izaten dut... Isolaturik sentitzen naiz, besteak ekiditeko gogoz...
 			#...but isolation is not the right word, though it covers parts of the feeling. I'm not isolated, and I don't dislike the others. We consider ourselves all friends, but you know, no one really comes up here except to say a few words. So I have to think about things or I might go crazy! Maybe that's part of the isolation. 
-			...baina isolatua ez da hitz egokia, sentimenduaren zati bat deskribatzen badu ere. Ez nago isolaturik, eta ez dut ezer besteen kontra. Denok laguntzat hartzen ditugu ingurukoak, baina, badakizu, ez da inor hona etortzen hitz gutxi batzuk baino gehiago esatera. Beraz beste gauza batzuk izan behar ditut buruan, ez erotzeko! Agian hori isolazioaren alde bat da.
+			...baina isolatua ez da hitz egokia, sentimenduaren zati bat deskribatzen badu ere. Ez nago isolaturik, eta ez dut ezer besteen kontra. Denok laguntzat hartzen ditugu ingurukoak, baina, badakizu, ez da inor hona etortzen hitz gutxi batzuk baino gehiago esatera. Beraz, beste gauza batzuk izan behar ditut buruan, ez erotzeko! Agian hori isolazioaren alde bat da.
 			#Outside of those inane questions about *why* we're here occupying this space, I'm curious as to why we're even friends.
 			Espazio hau okupatzen *zergatik* gauden inozoki galdetzeaz gain, jakin nahiko nuke zergatik garen lagunak.
 			#I like to think that whenever we're under the interpretations that I'm best to rule, that they give me comfort in being able to hold this position for as long as it takes to reach the next interpretation. You know, encouragement and the like, their physical presence, those are comforting.
@@ -1122,18 +1122,18 @@ npc cube_king
 		
 		scene gray
 		#Hello there. I'm the ruler of this part of space.
-		Kaixo, lagun. Espazioko zati honetako agintaria.
+		Kaixo, lagun. Espazioko zati honetako agintaria naiz.
 		#What's that? You want to know why I'm here? Are you sure? It'll take me quite a few words to explain why!
 		Zer diozu? Hemen zergatik nagoen jakin nahi duzu? Ziur zaude? Hitz dexente beharko ditut zergatia azaltzeko!
 		#Well, if you insist. Though you might be better off just walking off to that hotel in the distance. Don't know why they went through with the construction of it. If I had any money to be taxed, I'd surely be complaining!
-		Beno, horrela eskatzen baduzu... Baina hobe zenuke hemen egon ordez urrutiko hotel hartara gerturatzea. Ez dakit zergatik egin zuten aurrera eraikuntzarekin. Zergak ordaindu beharko banitu, ziur naiz ozen kexatuko nintzakeela!
+		Beno, horrela eskatzen baduzu... Baina hobe zenuke hemen egon ordez urrutiko hotel hartara gerturatzea. Ez dakit zergatik egin zuten aurrera eraikuntzarekin. Zergak ordaindu beharko banitu, ziur naiz ozen kexatuko nintzatekeela!
 		LOOP
 		#Well, even though I'm the ruler of this part of space, I am not really ruling over anyone.
 		Tira, espazioko zati honetako agintaria naizen arren, egia esan ez dut inoren gainetik agintzen.
 		#Those friends of mine - they're all rulers of their own parts of space. Ruling no one really, either - we're all alone in that respect. But we're not alone in that we talk to each other, and in other ways we are not alone, too. This is just one place in which I exist.
-		Nire lagun horiek - denek agintzen duten nork bere espazioko zatian. Agindu inoren gainetik ez, haiek ere - denok gaude bakarrik zentzu horretan. Baina ez gaude bakarrik elkarren artean hitz egiten dugun heinean, ezta beste zentzu batzuetan ere. Hau ni existitzen naizen lekuetariko bat baino ez da.
+		Nire lagun horiek - denek agintzen dute nork bere espazioko zatian. Agindu inoren gainetik ez, haiek ere - denok gaude bakarrik zentzu horretan. Baina ez gaude bakarrik elkarren artean hitz egiten dugun heinean, ezta beste zentzu batzuetan ere. Hau ni existitzen naizen lekuetariko bat baino ez da.
 		#My friends and I - our parts of space have a lot of commonality to them in why they exist and how they're organized. Similar interests and desires, and the like. We like to talk a lot about how to rule, and so forth.
-		Nire lagunek eta nik - gure espazioko zatiek antzekotasun asko dituzte existitzeko arrazoiari eta antolatzeko moduari dagokionean. Antzeko interesak eta desirak, eta abar. Oso gogoko dugu agintzeko moduari buruz hitz egitea, eta beste.
+		Nire lagunek eta nik - gure espazioko zatiek, antzekotasun asko dituzte existitzeko arrazoiari eta antolatzeko moduari dagokionean. Antzeko interesak eta desirak, eta abar. Oso gogoko dugu agintzeko moduari buruz hitz egitea, eta beste.
 		#But the tragic thing is that we rarely, if ever, get to meet eachother in the physical form. 
 		Baina, zoritxarrez, oso gutxitan ikusten dugu elkar forma fisikoan, eta hori, inoiz izatekotan.
 		#So you're not actually talking to their physical forms, but a representation of them in some holographic form.
@@ -1165,9 +1165,9 @@ Crickson: Erratzdun txorimalo bat baino ez zara, artaburua! Lotsa eman behar liz
 		
 		scene thorax
 #Thorax: I am the thorax, I speak for the bees.\n^Their fate is uncertain, it’s not the bee’s knees!\n^Some colonies’ workers have all took to flight!\n^These colonies die then, it’s no pretty sight!
-Thorax: Ni Thorax naiz, erleen bozeramaile.\n^Haien patua ez da ziurra, bizitzan galtzaile!\n^Kolonia batzuetan langileek egin dute ospa!\n^Kolonia horiek hilko dira, bihotzak diosta!
+Thorax: Ni Thorax naiz, erleen bozeramaile.\n^Haien patua ez da ziurra, bizitzan dira galtzaile!\n^Kolonia batzuetan langileek egin dute ospa!\n^Kolonia horiek hilko dira, bihotzak diosta!
 #Thorax: Perhaps it’s a virus or new pesticide,\n^perhaps it’s the larva of foul phorid flies!\n^That’s making these honeybees all act so strange.\n^Whatever it is, it must certainly change!
-Thorax: Agian birus bat da, edo pestizidaren pozoia,\n^agian izango da barro bizkarroia!\n^Erleak zorararazi ditu, hori seguru.\n^Edozer dela ere, hau aldatu behar dugu!
+Thorax: Agian birus bat da, edo pestizidaren pozoia,\n^agian izango da barro bizkarroia!\n^Erleak zorararazi ditu, hori seguru.\n^Edozer dela ere, hau aldatu beharra dugu!
 #Thorax: Okay, so I don’t really know what’s the matter\n^I worry my efforts are nothing but chatter.\n^But how can I sit and do nothing to help?\n^So I’ll post it to Facebook and Twitter and Yelp!  
 Thorax: Ados, ez dakit ziur zein den arazoa,\n^eta hemen oihuka emango dut pailazoa.\n^Baina eseri eta ezer ez egitea litzateke traizioa.\n^Beraz, idatziko dut Facebooken, eta Twitterren bota txioa!
 		end scene
@@ -1254,9 +1254,9 @@ Miao: Jokatuko nuke Aukeratua bilakatzeko gogor lan egin behar izan duzula, ezta
 # musing after you save icky	
 		scene philosophy 
 #That scary situation with Icky got me thinking...  What do you think happens after we die?  How could any of us fulfill our full purpose in the span of one life?  
-Ickyrekin bizi dugun egoera beldurgarri hark zer pentsatua eman dit... Zer uste duzu gertatzen dela hil ostean? Nola da posible gutako edonork bere helburuak betetzea bizitza bakarrean?
+Ickyrekin bizi izan dugun egoera beldurgarri hark zer pentsatua eman dit... Zer uste duzu gertatzen dela hil ostean? Nola da posible gutako edonork bere helburuak betetzea bizitza bakarrean?
 #Maybe we are reincarnated again and again until we fulfill our destiny.  Or would that make things too easy?
-Agian behin eta berriro berraragitzen gara gure patua osatu arte. Edo horrek gauzak gehiegi erraztuko?
+Agian behin eta berriro berraragitzen gara gure patua osatu arte. Edo horrek gauzak gehiegi erraztuko lituzke?
 #And then what is our reward for completing our journey?  Do we just fade away?
 Eta orduan zein da gure bidaia burutzeagatik jasotzen dugun saria? Itzali egiten gara, besterik gabe?
 LOOP
@@ -1315,7 +1315,7 @@ Adobe Photoshop CS5, Graphics Gale Free Edition eta Windows 7ren Mozteko Tresna 
 #The humidity here is good for your skin, but bad for your hair.
 Hemengo hezetasuna ona da larruazalarentzat, baina ez ilearentzat.
 #I like standing here.  These days, people spend the whole summer rushing back and forth between sweltering heat and freezing cold AC.  Those quick temperature changes weaken your bones.
-Gogoko dut hemen egotea. Egunotan, jendeak uda igarotzen du bero sapatik aire girotu izoztura bueltaka. Tenperatura aldaketa bat-bateko horiek hezurrak ahultzen dituzte.
+Gogoko dut hemen egotea. Egunotan, jendeak, bero sapatik aire girotu izoztura bueltaka igarotzen du uda. Tenperatura aldaketa bat-bateko horiek hezurrak ahultzen dituzte.
 #It’s like that rotten habit of chewing your ice cubes.  My mother chewed her ice cubes into her late 20s.  Now she’s got hairline cracks all over her molars.
 Izotz-puskak murtxikatzeko ohitura ustel hori modukoa da. Nire amak izotz-puskak murtxikatzen zituen hogeitaka urte zituenerarte. Orain hagin guztiak arrakalaz beteta ditu.
 		end scene
@@ -1331,7 +1331,7 @@ Zergatik eskaintzen dituzte buffetetan soilik gelatina kubo GORRIAK? Balirudike 
 #Get away from me.
 Ez nigana gerturatu.
 #I’m serious... leave me alone now.
-Benetan nabil... utz nazazu bakean.
+Benetan nabil... Utz nazazu bakean.
 		end scene
 
 	end area
@@ -1389,7 +1389,7 @@ A! Aurkitu nauzu!
 #Golem: Did you get hit by a boulder on your way up?  Sometimes I throw boulders when I’m angry.  I’m sorry if I hit you.
 Golema: Ez al zintuen harri batek joko gora bidean! Batzuetan harriak jaurtitzen ditut haserre naizenean. Sentitzen dut jo bazaitut.
 #Golem: My mother always said that if I kept doing it, I’d run out of mountain to throw.  Back before she was fracked.
-Golema: Amak beti esaten zidan horrela jarraituz gero, botatzeko mendi gabe geldituko nintzela. Gero, gas bila zulatu zuten bera.
+Golema: Amak beti esaten zidan, horrela jarraituz gero, botatzeko mendi gabe geldituko nintzela. Gero, gasa bilatzeko zulatu zuten bera.
 		end scene
 		
 		scene second
@@ -1403,7 +1403,7 @@ Golema: Egia esan, ez dut faltan botatzen jendeari begira egotea, aspergarria da
 		
 		scene quest_event
 #Golem: Oh, yes, I met someone who was little lost...they told me they were going off to look around the beach.
-Golema: O, bai. Nahiko galduta zebiltzan batzuekin topo egin nuen... hondartza inguruan begiratzera zihoazela esan zidaten.
+Golema: O, bai. Nahiko galduta zebilen norbaitekin topo egin dut... hondartza inguruan begiratzera zihoala esan dit.
 		end scene
 	end area
 	
@@ -1423,7 +1423,7 @@ Hews: Hondartza batek, jendez betetzean, grazia guztia galtzen du.
 		
 		scene second
 #Hews: Have you heard of the mantis shrimp?  It has 16 photoreceptors that allow it to perceive ultraviolet light.  Can you imagine seeing a wider range of colors?
-Hews: Badakizu zer diren mantis izkirak? 16 fotorrezeptore dituzte eta haiekin argi ultramore bereiz dezakete. Imajinatzen zer litzatekeen kolore-gama zabalagoa ikusteko gai izatea?
+Hews: Badakizu zer diren mantis izkirak? 16 fotorrezeptore dituzte eta haiekin argi ultramorea bereiz dezakete. Imajinatzen zer litzatekeen kolore-gama zabalagoa ikusteko gai izatea?
 #Hews: Maybe it would be beautiful.  Then again, we’ve found plenty of ways to hate each other with just the colors we have.
 Hews: Agian ederra izango litzateke. Baina, bestalde, batak bestea gorrotatzeko modu gehiegi aurkitu ditugu dagoeneko ikusten ditugun koloreekin ere.
 		end scene
@@ -1458,7 +1458,7 @@ James: Baduzu baiarik Jamesentzat?
 		
 		scene quest_event
 #James: Someone came by. They did not want berries. Went to southeast part of lake to the west.
-James: Norbaitzuk etorri dira. Ez zuten baiarik nahi. Mendebaldeko lakuaren hego-ekialdera joan dira.
+James: Norbait etorri da. Ez zuen baiarik nahi. Mendebaldeko lakuaren hego-ekialdera joan da.
 		end scene
 		
 	end area
@@ -1484,7 +1484,7 @@ Rank: Ejeje, Young inozoa! Erratza ez da zuhaixkak mozteko tresna!
 		end scene
 		scene quest_normal
 #Rank: I cut down the bushes for a living.  Sometimes when you cut the bushes you find gold!  Eheheh!
-Rank: Zuhaixkak mozten ditut bizimodua ateratzeko. Batzutan zuhaixkak moztean urrea aurkitzen duzu! Ejeje!
+Rank: Zuhaixkak mozten ditut bizimodua ateratzeko. Batzuetan, zuhaixkak moztean, urrea aurkitzen duzu! Ejeje!
 #Rank: The economy has been really struggling under this bush...
 Rank: Ekonomiak gorriak ikusi ditu zuhaixka honen pean...
 #Rank: Sometimes it’s tough to support the wife and kids on bush cutting--we don’t always have enough to eat... but we’ve always got a roaring fireplace!  Eheheh!
@@ -1492,7 +1492,7 @@ Rank: Batzuetan zaila da emaztea eta haurren kargu egitea zuhaixkak moztuz--ez d
 		end scene
 		scene quest_event
 #Rank: Eh? Yes! Someone came by here. Said they were going to an underground labyrinth...I bet they've got a lot of bushes there, eh Young? Eheheh!
-Rank: E? Bai! Norbaitzuk pasa ziren hemendik. Lurpeko labirintora zihoazela esan zuren... Ziur han zuhaixka ugari dituztela, e, Young? Ejeje!
+Rank: E? Bai! Norbait pasa da hemendik. Lurpeko labirintora zihoazela esan du... Ziur han zuhaixka ugari dituztela, e, Young? Ejeje!
 		end scene
 		
 		scene marvin
@@ -1522,7 +1522,7 @@ Bob: Apostrofoak gaizki'aren erroa dira.
 #Bob: quiet! I am busy exuding an aura of hamstery ambiance.
 Bob: Ixo! Lanpetuta nago hamster-giroko aura jariatzen.
 #Bob: ... I suppose you only get better by doing... But... if you do something wrong, are you just getting better at doing it wrong?
-Bob: ... Suposatzen dut hobetzeko modua egitea dela... Baina... zerbait oker egiten baduzu, oker egitean hobetzen ari al zara? 
+Bob: ... Suposatzen dut hobetzeko modua, egitea dela... Baina... zerbait oker egiten baduzu, oker egitean hobetzen ari al zara? 
 #Bob: A real man never cries... well, maybe he lets a single tear slide back from the corner of his eye across his sun-hardened face as he rides his bad, bad, Harley across the wind-swept Mohave desert wearing no helmet or goggles. But he never cries.
 Bob: Benetako gizon batek ez du inoiz negarrik egiten... tira, agian malko bakar bati bere begiaren ertzetik irristatzea baimentzen dio, eguzkiak zaildutako aurpegian behera, bere Harley gaizto-gaiztoaren gainean Mojave desertu haizetsua zeharkatzen duelarik kasko eta betaurrekorik gabe. Baina ez du inoiz negarrik egiten.
 #Bob: This game was created by an infinite number of monkeys working on an infinite number of typewriters.
@@ -1770,9 +1770,9 @@ Gustatzen zaizu Davement? Nire anaia Davek haien abesti izugarri hau erakutsi di
 		scene older_kid
 # inside of a house, olderkid
 #My friends like to listen to that 'None Surprises' song by 'Rayhead' and complain about this place. Sure, it's a bit of a bubble, but hell, at least show some gratitude! Or do something about it! They're all just...oh, sorry. I tend to do that sometimes..
-Nire lagunei 'Rayhead' taldearen 'Ezustekorik ez' abestia gustatzen zaie, eta herri honetaz kexatzea. Bai, burbuila moduko bat da, egia, baina arraioa, esker on apur bat ez legoke gaizki! Edo egin zerbait hau aldatzeko! Denak dira...o, barkatu. Batzuetan hau egiten dut...
+Nire lagunei 'Rayhead' taldearen 'Ezustekorik ez' abestia gustatzen zaie, eta herri honetaz kexatzea. Bai, burbuila moduko bat da, egia, baina arraioa, esker on apur bat ez legoke gaizki! Edo egin zerbait hau aldatzeko! Denak dira hain...o, barkatu. Batzuetan hau egiten dut...
 #I guess I'll just go write in my blog.
-Nire blogean idaztera joan naiz, eta kito.
+Nire blogean idaztera joango naiz, eta kito.
 #You sure look like you're in a daze.
 Nahasturik dirudizu.
 #I have trouble hearing my thoughts with sports and the like playing on the TV, but my parents like it.
@@ -1797,7 +1797,7 @@ Zalaparta dexente dator kaletik! Begiratu duzu leihotik azkenaldian? Jakin nahik
 #My house has a lot of windows. I don't like windows. It's as if someone is always looking in. And you know there HAS to be something going on outside there. It can't just be that silent all the time, so silent and calm - it's disturbing to me.
 Nire etxeak leiho mordoa du. Ez zaizkit leihoak gustatzen. Norbait beti begira izango banu bezala da. Eta badakizu ZERBAIT gertatzen ari dela hor kanpoan. Ezinezkoa da uneoro isiltasun hau izatea, dena horren isilik eta lasai - aztoratu egiten nau.
 #Murderers? What? Outside? What are you talking about? Are you kidding me? There haven't been any murders in this town before, but still...you're starting to worry me...maybe you should just leave.
-Hiltzaileak? Zer? Kanpoan? Zeri buruz ari zara? Txantxa da? Orain arte herri honetan ez da hilketarik izan, baina hala ere... ni beldurtzen zabiltza... uste dut zu joateko ordua dela.
+Hiltzaileak? Zer? Kanpoan? Zeri buruz ari zara? Txantxa da? Orain arte herri honetan ez da hilketarik izan, baina hala ere... ni beldurtzen zabiltza... uste dut joateko ordua duzula.
 #Please get out.
 Mesedez, atera hemendik.
 		end scene
@@ -1806,7 +1806,7 @@ Mesedez, atera hemendik.
 #The body of this woman has been beaten to death by a blunt weapon.
 Emakume honen gorpua hil arte kolpatu dute arma kamuts batekin.
 #The man, to put it bluntly, well...
-Gizonak, kamutsenak ere badaki, tira...
+Gizona, argi esanda, tira...
 		end scene
 		
 	end area
@@ -1845,13 +1845,13 @@ Zurekin izango nauzu Young, bakarrik zaudenero.
 Ookchot bat zara? Amatxok beti ohartarazten ninduen Ookchot maltzurrez.
 #4 slime
 #Jello there, Young!  So goo to flanly meet you!  Why don't you set for a minute?  I was just pudding on some tea!
-gMuki on, Young! Zu ezagutzeko likaz nengoen! Zergatik ez zara esertzen? Te adur bat prestatzen ari nintzen!
+Muki on, Young! Zu ezagutzeko likaz nengoen! Zergatik ez zara esertzen? Te adur bat prestatzen ari nintzen!
 #5 post-statue area in BEDROOM
 #Pew, Pew, Pew, Pew, Pew, Pew, Pew, Pew, Pew, Pew, Pew, Pew, Chancel, Pulpit, Altar, Stained Glass Windows...
 Aulkia, aulkia, aulkia, aulkia, aulkia, aulkia, aulkia, aulkia, aulkia, aulkia, aulkia, aulkia, presbiterioa, pulpitua, aldarea, beiratea...
 #6 SUBURB inside of house past blocker
 #Limited time offer! Buy one, get one free - only today!
-Aldi baterako eskaintza! Erosi bat, eraman bat doan - gaur baino ez!
+Aldi baterako eskaintza! Erosi bat, eraman beste bat doan - gaur baino ez!
 # 7 APT Boss
 #Remember the time that you lit a candle when the power was out?
 Gogoratzen zara argindarra joan zelako kandela bat piztu zenuen aldiaz?
@@ -1878,7 +1878,7 @@ Kontuz basoko perretxikoekin...
 Sentitzen dut. Nire izaera da.
 #15 Top of Cliff
 #What do you mean, 'Only a rock'??  Rocks can be on cards too, you know!
-Zer esan nahi duzu 'Arroka bat soilik' horrekin?? Arrokak ere egon daitezke txarteletan, badakizu!
+Zer esan nahi duzu 'Arroka bat soilik' horrekin?? Arrokak ere egon daitezke kartetan, aizu!
 #16 Western end of BEACH past spikes
 #Give a man a fish and he will eat for a day.  Teach a man to fish, and he will have bonding times with his son, Jimmy.
 Eman gizon bati arrain bat, eta egun baterako jana izango du. Irakatsi gizonari arrantzatzen, eta bere seme Jimmyrekin harremana estutzeko uneak izango ditu.
@@ -1917,7 +1917,7 @@ Zientziaren arabera, apoak igelen azpiklasea dira.
 KARKARKAR! Bai! Badakit!
 #28 WALL BOSS crowd - post boss
 #Oh, you collect cards, too?  Real classy, Ying.
-O, txartelen bilduma ere egiten duzu? Hori da klasea, Ying.
+O, karten bilduma ere egiten duzu? Hori da klasea, Ying.
 #29 end of grey end of space, for grey cube king
 #They always said, "Get off the computer! Or you'll never make friends!"
 Beti esaten zidaten, "Utzi ordenagailua! Edo ez duzu inoiz lagunik egingo!"
@@ -1935,7 +1935,7 @@ Gorroto ditut diagonalak.
 Emango dizudan alergiaren aurka ez dago sendagai eragikorrik.
 #34 EYE BOSS hotel - post-boss
 #Swipe this card to unlock the door to your room!
-Erabili txartel hau zure gelako atea desblokeatzeko!
+Erabili karta hau zure gelako atea desblokeatzeko!
 #35 end of left-most TERMINAL bridge - sage
 #I'm doing a great job.
 Lan bikaina egiten ari naiz.
@@ -2037,11 +2037,11 @@ Sakatu [SOMEKEY-ENTER] irteteko. \n[SOMEKEY LEFT] kontrolak ezartzeko.
 Erabili gezi-teklak\nleihoaren tamaina\naldatzeko, ertzetan\ngune beltzik ikusten\nez duzun arte.\n\nSakatu [SOMEKEY-C] bukatzean.
 ANODYNE
 #Original game by:
-Jatorrizko jokoaren egileak:
+Jatorrizko jokoa:
 Melos Han-Tani
 Marina Kittaka 
 #Remaster by:
-Birmasterizatzearen egileak:
+Birmasterizatzea:
 Cynthia Steenvoorden
 Seph De Busser 
 #any key
@@ -2069,7 +2069,7 @@ Ez
 #Yeah
 Baietz 
 #No going back!
-Ez dago atzera egiterik!
+Ez dago bueltarik!
 #20
 #Forget it
 Orduan ez
@@ -2078,13 +2078,13 @@ Badakit
 # deaths  
  heriotza
 # cards
- txartel
+ karta
 #Save 
-Gorde 
+Arteka:  
 #Copy save
-Kopiatu gordetako partida
+Kopiatu partida
 #Cancel copy
-Utzi kopiatzea
+Utzi
 #Copy to
 Kopiatu hona
 #Anodyne supports\nmost controllers.\n\nWill you use one?\n\nYes   No\n\nIf so, connect it now.\n\nMove with arrow keys\n\nSelect with\nC, SPACE, or ENTER\n\nDefaulting to yes in\n
@@ -2094,7 +2094,7 @@ OHARRA\n\nJolastu bitartean\nsarrerako atzerapena baduzu,\nitzul zaitez\nhasiera
 #Press BACK again\nto exit.\nUnsaved progress\nwill be lost.
 Irteteko, sakatu\nberriro ATZERA.\nGorde gabeko\naurrerapena galduko da.
 #Anodyne Remaster
-Anodyne Birmasterizatzea
+Anodyne Birmasterizatua
 Ethan Lee
 		end scene
 		
@@ -2124,7 +2124,7 @@ Itzuli\nsarrerara
 		
 		scene items
 #Items
-Itemak
+Objekt.
 #Normal
 Arrunta
 #Swap
@@ -2151,9 +2151,9 @@ Mendiko leize batean aurkitutako giltza.
 		
 		scene cards
 #Cards
-Txartelak
+Kartak
 #cards
-txartel
+karta
 		end scene
 		
 		scene save
@@ -2178,13 +2178,13 @@ Heriotzak:
 		
 		scene config
 #Config
-Konfig
+Konfig.
 #Set keybinds
-Ezarri teklak
+Kontrolak
 #Set volume 
 Ezarri bolumena 
 #Autosave at\ncheckpoints:
-Autogorde\kontrol-puntuetan:
+Autogorde\nkontrol-puntuetan:
 #On
 Bai
 # 5
@@ -2208,14 +2208,14 @@ Bereizmena:
 #Windowed
 Leihoan
 #Int. Scaled
-Int. eskalatua
+Eskalatua
 # 15
 #Stretch
-Zabaldu
+Hedatua
 #Scaling:
-Eskalatzea:
+Eskala:
 #Lang:
-Hizk:
+Hizk.:
 ja
 en
 # 20
@@ -2226,9 +2226,9 @@ Aldatu leihoa\ntamainaz
 #Config Joypad
 Konfiguratu agintea
 #BGM
-Atzeko musika
+BGM
 #SFX
-Soinu-efektuak
+SFX
 #Gameplay
 Jokoa
 #Graphics
@@ -2241,7 +2241,7 @@ Desfokuratu pausan:
 #Fast text:
 Testu bizkorra:
 #Invincibility:
-Ilezkortasuna:
+Hilezkortasuna:
 #Health drops+:
 Osasun-tantak+:
 #Coyote time+:
@@ -2271,9 +2271,9 @@ Pantaila-dardara
 		
 		scene secrets
 #You're rolling in it!
-Diruz lepo zaude!
+Zer den kaka beharrean urrea egitea!
 #Once the property of a famous Bubble Mage.
-Behinola Punpa-azti ospetsu baten jabetzakoa.
+Behinola punpa-azti ospetsu baten jabetzakoa.
 #If your graphics become scrambled, look at the pokodex entry of an official Pokomon.
 Irudia nahasten bada, begiratu Pokomon ofizial baten pokodexeko sarrerari.
 #This heart has no name.
@@ -2330,9 +2330,9 @@ Giltza hau behin bakarrik erabil daiteke itxitako hesi bat irekitzeko.
 #A mysterious pair of boots has nothing but the branding on it, which says "Press [SOMEKEY-X]".
 Bota pare misteriotsua, ez du markarik, baina "Sakatu [SOMEKEY-X]" jartzen du.
 #A few words on the broom extension read "Equip the WIDEN upgrade in the menu to have the broom release harmful dust to the left and right."
-Erratzaren hedapenean hitz batzuek diote "Ekipatu ZABALDU hobekuntza menuan eta erratzak hauts kaltegarria ezker-eskuin botako du."
+Erratzaren hedapenean, hitz batzuek honakoa diote: "Ekipatu ZABALDU hobekuntza menuan eta erratzak hauts kaltegarria ezker-eskuin zabalduko du."
 #A few words on the broom extension read "Equip the EXTEND upgrade in the menu for the broom to release harmful dust in front of the broom's normal reach."
-Erratzaren hedapenean hitz batzuek diote "Ekipatu HEDATU hobekuntza menuan eta erratzak hauts kaltegarria ohikoa baino aurrerago botako du."
+Erratzaren hedapenean, hitz batzuek honakoa diote: "Ekipatu HEDATU hobekuntza menuan eta erratzak hauts kaltegarria ohi baino aurrerago botako du."
 #A note next to the broom extension: "Hello, Young. Use this SWAP upgrade on two tiles to switch their places. It may be a while before you can use this everywhere, but it should serve you well for the time being."
 Ohar bat dago erratzaren hedapenaren alboan: "Kaixo, Young. Erabili TRUKATU hobekuntza hau bi lauzatan, eta bien posizioak trukatuko dira. Denbora bat igaroko da hau leku guztietan erabili ahal izaterako, baina orain ere lagungarri izango zaizu.
 #YOU FOUND A HEART!!! Maximum Health increased by...zero.
@@ -2355,7 +2355,7 @@ Bai
 #No
 Ez
 #While standing on a checkpoint, press [SOMEKEY-C] to save your progress and set it as your respawn point if you die.
-Kontrol-puntu baten gainean zaudela, sakatu [SOMEKEY-C] partida gordetzeko eta, hiltzen bazara, birsortze-puntu gisa ezartzeko.
+Kontrol-puntu baten gainean zaudela, sakatu\n[SOMEKEY-C] partida gordetzeko\neta, hiltzen bazara, birsortze-puntu gisa ezartzeko.
 		end scene
 		
 		scene rock
@@ -2371,15 +2371,15 @@ Ez dirudi ataria aktibo dagoenik.
 		
 		scene keyblockgate
 #The gate stares, petrified. It won't open until it senses four cards...
-Atea itxita dago, tinko. Ez da irekiko lau txartel nabaritzen dituen arte...
+Atea itxita dago, tinko. Ez da irekiko lau karta nabaritzen dituen arte...
 #Sensing four cards, the gate decides to open.
-Lau txartel nabaritzean, ateak irekitzea erabaki du.
+Lau karta nabaritzean, ateak irekitzea erabaki du.
 #The gate stubbornly remains in place.
 Atea bere horretan dago, burugogor.
 #The gate senses all of the cards, and decides to open.
-Ateak, txartel guztiak nabaritzean, irekitzea erabaki du.
+Ateak, karta guztiak nabaritzean, irekitzea erabaki du.
 #The gate senses enough cards, and decides to open.
-Ateak behar beste txartel nabaritu, eta irekitzea erabaki du.
+Ateak behar beste karta nabaritu, eta irekitzea erabaki du.
 #5
 #It opens!
 Ireki da!
@@ -2418,7 +2418,7 @@ Uste dut erabilgarri izango zaizkizula! Oinetakoek zer dute grabaturik: "Sakatu 
 		
 		scene tradenpc
 #Finty: Welcome, welcome, my friend Young!  The name's Prasandhoff--Finty Prasandhoff!  Take a look around at my shop and see if anything catches your eye!
-Finty: Ongi etorri, ongi etorri, Young laguna! Izena Prasandhoff da--Finty Prasandhoff! Bisitatu nire denda eta ea zerbaiti begia botatzen diozun!
+Finty: Ongi etorri, ongi etorri, Young laguna! Nire izena? Prasandhoff--Finty Prasandhoff! Bisitatu nire denda eta ea zerbaiti begia botatzen diozun!
 #Finty: I still appreciate that box!
 Finty: Oraindik esker onez nago kaxarengatik!
 #Finty: Ah, a box! Thank you so much! Now I can carry all my inventory home at night and back in the morning!
@@ -2431,9 +2431,9 @@ Esker onez opari bat egingo dizut, zuretzat bizikletarako oinetako ederrok!
 #Fine morning out, isn't it, my friend?  A fine morning for shopping! I just wish I had a box to carry my inventory around.
 Goiz ederra, ez da hala, laguna? Goiz ederra erosketak egiteko! Nahiko nuke, baina, nire inbentarioa aldean eramateko kaxa bat banu.
 #Too bad, looks like you can't afford this item!  Come back later, when you have the cash!
-Zer pena, objektu hau erosteko dirurik ez duzula dirudi! Bueltatu geroago, dirua duzunean!
+Zer pena, badirudi ez duzula objektu hau erosteko dirurik! Bueltatu geroago, dirua duzunean!
 #Finty: Ah, you have a fine eye! You need a better weapon, don't you? Blow your enemies to pieces for only $499.99!
-Finty: A, gusto finekoa zaitugu! Arma hobe baten bila zabiltza, ezta? Txikitu arerioak soilik 499,99€ren truk!
+Finty: A, gustu finekoa zaitugu! Arma hobe baten bila zabiltza, ezta? Txikitu arerioak soilik 499,99€ren truk!
 #Finty: That money sack will allow you to accumulate money that you find in The Land! It's yours for a mere $869.99!
 Finty: Diru-zorro horrekin Lurraldean aurkitzen duzun dirua batu ahalko duzu! Zurea duzu 869,99€gatik!
 #Finty: Oh ho ho, here's a specialty item indeed: clip-in bike shoes so you can be speedy AND stylish! On sale now for just $299.99!
@@ -2442,7 +2442,7 @@ Finty: Ujuju, honakoa ondasun bitxia da, badenez: bizikletarako oinetakoak, bizk
 #Finty: Tired of shoving dust around with your piddling little broom?  Eradicate harmful dust particles with this state-of-The-Art vacuum cleaner! Just $749.99, or four easy, monthly payments of $199.99!
 Finty: Hautsa jasotzeko erratz ustel hori erabiltzeaz nekatuta? Esan agur hauts partikula kaltegarrioi xurgagailu moderno honekin! 749,99€ baino ez, edo lau hilean epeka ordain dezakezu, hilero 199,99€ soilik!
 #As a token of my gratitude, take this ugly--I mean beautiful, collector's edition card!^
-Nire esker onaren erakusgarri, hartzazu bildumagile edizioko txartel zatar--zera... eder hau!^
+Nire esker onaren erakusgarri, hartzazu bildumagile edizioko karta zatar--zera... eder hau!^
 		end scene
 		
 		#(Translate as much or as little as you see fit - note this is a little different than normal dialogue, so you'll have to keep at most 19 characters on each line, delimited by newlines - if there are multiple newlines keep them there though, but if a translated line goes over, feel free to add a newline in the middle)
@@ -2456,9 +2456,9 @@ DISEINUA\n------\nBiok
 #PROGRAMMING\n-----------\nMelos, using the\nFlixel library for\nActionscript 3.\n\n\n\nART\n---\nMarina\n
 PROGRAMAZIOA\n-----------\nMelos,\nActionscript 3rako\nFlixel liburutegia\nerabiliz.\n\n\n\nARTEA\n---\nMarina\n
 #MUSIC/SFX\n---------\nMelos, using REAPER\nand number of free\nsoundfonts.\n\n\n\nDIALOGUE\n--------------\nMostly Marina\n
-MUSIKA/SFX\n---------\nMelos, REAPER eta\nsoinu libreak\nerabiliz.\n\n\n\nELKARRIZKETAK\n--------------\nBatik bat Marina\n
+MUSIKA/SFX\n---------\nMelos, REAPER eta\nsoinu libreak\nerabiliz.\n\n\n\nELKARRIZKETAK\n--------------\nBatik bat Marinak\n
 #STORY\n-----\nBoth\nJapanese Localization:\nKakehashi Games
-ISTORIOA\n-----\Biok\nJaponierazko testuak:\nKakehashi Games\nEuskarazko testuak:\nIbai Oihanguren Sala
+ISTORIOA\n-----\nBiok\nJaponierazko itzulpena:\nKakehashi Games\nEuskarazko itzulpena:\nIbai Oihanguren Sala
 #Massive thanks to\nour testers, who\nsuffered so you\ndon't have to!\n--------------\n\nMarina, for suffering\nthrough most of the\ninitial bugs.\n\nEtan, for constant\nsupport since the\nbeginning, with\nmany bugs found,\nand the third human\nto play through most\nof the game.
 Milioika esker\ngure probagileei,\nzuk sufri ez dezazun\nsufritu baitzuten!\n--------------\n\nMarina, hasierako\nbug gehienak\njasateagatik.\n\nEtan, hasieratik\nlaguntza etengabea\nemateagatik, bug\nugari aurkituta,\neta joko ia osoan\nibili zen hirugarren\ngizakia izanez.
 #O - thanks, sis!\n\nRunnan, Nick Reineke,\nEmmett, Poe, AD1337,\n Dennis, Andrew,\nAndrew MM\n Carl, Max, Amidos,\nLyndsey, Nathan\n
