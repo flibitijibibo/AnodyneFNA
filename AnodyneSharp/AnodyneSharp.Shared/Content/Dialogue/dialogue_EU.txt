@@ -806,12 +806,12 @@ Harri urdinezko estatua mugitzean, bide berri bat da azaltzen.\nAmildegiak pasat
 		
 		scene three
 #The red and rusty statue moved\nAnd paved the way to deeper pits\nA labyrinthine dungeon follows\nThen a big-top circus tent\n\n\n"Who are the guardians?" I ask,\n"Who gave up life to flee this place?"\nI fear the pain, the same as they\nBut fear it more to die.
-Estatua gorri herdoilduak, mugitu,eta zulo sakonagoetarako bidea urratzen du.\nZiega labirintiko bat dator jarraian.\nGero, zirkuko karpa garai bat.\n\n\n"Nor dira zaindariak?" galdetzen dut,\n"Nork eman zuen bizia leku honetatik ihes egitearren?"\nMinak ikaratzen nau, haiek bezala,\nbaina gehiago izutzen nau hiltzeak.
+Estatua gorri herdoilduak, mugitu, eta zulo sakonagoetarako bidea urratzen du.\nZiega labirintiko bat dator jarraian.\nGero, zirkuko karpa garai bat.\n\n\n"Nor dira zaindariak?" galdetzen dut,\n"Nork eman zuen bizia leku honetatik ihes egitearren?"\nMinak ikaratzen nau, haiek bezala,\nbaina gehiago izutzen nau hiltzeak.
 		end scene
 		
 		scene four
 #The green, metallic statue shifted\nOpening a deeper trail\nSuburban homes and sidewalks form\nA path to an apartment.\n\n\n"Who is the guardian?" I ask,\n"Who looks for comfort in the stars?"\nAlone, I feel like I am watched\nAnd not by friendly starlight.
-Estatua berde metalikoa mugitzen da, bidezidor sakonago bat irekiz.\nAldiriko etxe eta espaloiek\napartamentu baterako bidea eratzen dute.\n\n\n"Nor da zaindaria?" galdetzen dut,\n"Nor dabil erosotasun bila izar artean?"\nBakarrik nagoela, norbait begira dabilkidala iruditzen zait,\neta ez dira izarrak so daudenak.
+Estatua berde metalikoa mugitzen da, bidezidor sakonago bat irekiz.\nAldiriko etxe eta espaloiek apartamentu baterako bidea eratzen dute.\n\n\n"Nor da zaindaria?" galdetzen dut,\n"Nor dabil erosotasun bila izar artean?"\nBakarrik nagoela, norbait begira dabilkidala iruditzen zait,\neta ez dira izarrak so daudenak.
 		end scene
 		
 
@@ -2069,7 +2069,7 @@ Ez
 #Yeah
 Baietz 
 #No going back!
-Ez dago bueltarik!
+Ezin da desegin!
 #20
 #Forget it
 Orduan ez
@@ -2237,7 +2237,7 @@ Grafikoak
 
 		scene gameplay
 #Unfocus pause:
-Desfokuratu pausan:
+Desfokuratu\npausatzean:
 #Fast text:
 Testu bizkorra:
 #Invincibility:
@@ -2260,9 +2260,9 @@ Desblokeatua
 #Screen flash
 Pantailaren distira
 #Max:
-Max:
+Gehien.:
 #Easing:
-Ahultzea:
+Ahultz.:
 #Test
 Probatu
 #Screen shake:
@@ -2464,35 +2464,35 @@ Milioika esker\ngure probagileei,\nzuk sufri ez dezazun\nsufritu baitzuten!\n---
 #O - thanks, sis!\n\nRunnan, Nick Reineke,\nEmmett, Poe, AD1337,\n Dennis, Andrew,\nAndrew MM\n Carl, Max, Amidos,\nLyndsey, Nathan\n
 O - milesker, arrebatxo!\n\nRunnan, Nick Reineke,\nEmmett, Poe, AD1337,\n Dennis, Andrew,\nAndrew MM\n Carl, Max, Amidos,\nLyndsey, Nathan\n
 #Melos would like\nto thank:\n\nMom and Dad, for\ntheir constant support\nin this endeavor.\n\nS\n\nMany TIGSourcers and\nother devs met\nalong the way!\n\nMarina, for making\nthis game possible,\nand improving it in\ncountless ways.
-Melosek honakoak\neskertu nahi ditu:\n\nAma eta aita,\nabentura honetan eskainitako\netengabeko babesagatik.\n\nS\n\nTIGSourcelari ugari eta\nbidean ezagututako\nbeste zenbait garatzaile!\n\nMarina, joko\nhau egitea ahalbidetzearren,\neta konta ezin ahala\nmodutan hobetzearren.
+Melosek honakoak\neskertu nahi ditu:\n\nAma eta aita,\nabentura honetan\neskainitako etengabeko\nbabesagatik.\n\nS\n\nTIGSourcelari ugari eta\nbidean ezagututako\nbeste zenbait garatzaile!\n\nMarina, joko hau\negitea ahalbidetzearren,\neta konta ezin ahala\nmodutan hobetzearren.
 #Adobe, Adam Saltsman,\nFlashDevelop devs,\nREAPER devs,\nDAME creator,\nDesura, Gamersgate,\nIndieDB, TIGSource\n\n\nAnd my other friends\nwho have shown their\nsupport. (Thanks!)\n\nAnd last, but\nnot least,\nTina Chen,\nlongtime friend,\nfor both support and\nintroducing me to\nMarina.
-Adobe, Adam Saltsman,\nFlashDevelopeko garatzaileak,\nREAPEReko garatzaileak,\nDAMEren sortzailea,\nDesura, Gamersgate\nIndieDB, TIGSource\n\n\nEta babesa adierazi\ndidaten nire beste\nlagunak. (Milesker!)\n\nEta azkenik,\nbaita hauek ere:\nTina Chen,\nbetiko laguna,\nbabesa emateaz gain\nMarina niri\naurkeztearren.
+Adobe, Adam Saltsman,\nFlashDevelopeko\ngaratzaileak, REAPEReko\ngaratzaileak, DAMEren\nsortzailea, Desura,\nGamersgate IndieDB,\nTIGSource\n\nEta babesa adierazi\ndidaten nire beste\nlagunak. (Milesker!)\n\nEta azkenik,\nbaita hauek ere:\nTina Chen,\nbetiko laguna, babesa\nemateaz gain Marina\nniri aurkeztearren.\n
 #Marina would like\nto thank...\n\nColin Meloy, for\nexpanding\nmy vocabulary\n\nTsugumo, for\n"So You Want to\nBe a Pixel Artist?"\n\nMy family,\nfor support and food.\n\nDaniel, for being an\n"indie game dev"\nwith me growing up.
-Marinak honakoak\neskertu nahi ditu:\n\nColin Meloy, nire\nhiztegia aberasteagatik\n\nTsugumo, eta bere\n"So You Want to\nBe a Pixel Artist?"\n\nNire familia,\nbabesa eta jatekoa emateagatik.\n\nDaniel, "indie" joko\ngaratzaile modura\nnirekin hazteagatik.
+Marinak honakoak\neskertu nahi ditu:\n\nColin Meloy, nire\nhiztegia aberasteagatik\n\nTsugumo, eta bere\n"So You Want to\nBe a Pixel Artist?"\n\nNire familia, babesa\neta jatekoa emateagatik.\n\nDaniel, "indie" joko\ngaratzaile modura\nnirekin hazteagatik.
 #Mo, for believing\n in me.\n\nTina, for introducing\nme\nto Melos.\n\nMelos, for making\na game\nand trusting me to\nbe a big part of it.
-Mo, nigan\nsinistearren.\n\nTina, Melos\nniri\naurkezteagatik.\n\nMelos, joko bat\negin eta \nbertako parte izateko\nnitaz fidatzeagatik. 
+Mo, nigan\nsinistearren.\n\nTina, Melos\nniri aurkezteagatik.\n\nMelos, joko bat\negin eta bertako\nparte izateko\nnitaz fidatzeagatik. 
 #New credits
 #Anodyne Remaster\n-------\n\n\nRemake by\n\nCynthia Steenvoorden\n\nand\n\nSeph De Busser\n\n-------------\nAdditional Remaster\nProgramming:\nEthan Lee
 Anodyne Birmasterizatzea\n-------\n\n\nBerregitearen egileak\n\nCynthia Steenvoorden\n\neta\n\nSeph De Busser\n\n-------------\nBerregiteko programatze\ngehigarria:\nEthan Lee
 #Remake testers\n-------\n\n\nNoelle Suplex,\nAa(holocene.scenes),\nMaddy(saladplainzone),\ndaffodilian\n\n\nAdditional\ntranslations\n-------\n\n\nLisandro Johnston,\nAntonio Natilla,\nMichelle Caldeira\n(Talking-Translation),\nLyndon Ang\n\n
-Berregitearen probagileak\n-------\n\n\nNoelle Suplex,\nAa(holocene.scenes),\nMaddy(saladplainzone),\ndaffodilian\n\n\nItzulpen\ngehigarriak\n-------\n\n\nLisandro Johnston,\nAntonio Natilla,\nMichelle Caldeira\n(Talking-Translation),\nLyndon And\n\n
+Berregitearen probagileak\n-------\n\n\nNoelle Suplex,\nAa(holocene.scenes),\nMaddy(saladplainzone),\ndaffodilian\n\n\nItzulpen\ngehigarriak\n-------\n\n\nLisandro Johnston,\nAntonio Natilla,\nMichelle Caldeira\n(Talking-Translation),\nLyndon Ang\n\n
 #We would like\nto thank:\n\nMelos and Marina\nfor making this\nproject possible\n\nCynthia would like\nto thank:\n\nMom and dad(rip),\n\nNoelle and Lilly for\nalways being\nsupportive,\n\nNixie the cat.
 Benetan eskertu\nnahi ditugu:\n\nMelos eta Marina\nproiektu hau\nposible egiteagatik\n\nCynthiak honakoak\neskertu nahi ditu:\n\nAma eta aita (goian bego),\n\nNoelle eta Lilly\netengabe\nlaguntzeagatik,\n\nNixie katua.
 #Seph would like\n to thank:\n\nGhlyffe, for always\nlistening to my\ninfodumps about this\nproject,\n\nMy Twitch regulars,\nwho kept me\nmotivated to\nstream myself\nworking on this\nremake.\n\nThe Analgesic discord\ncommunity, who were\nalways hyped for new\nremake features.\n\n
-Sephek honakoak\neskertu nahi ditu:\n\nGhlyffe, proiektu\nhoni buruzko nire\nberriketak entzuteagatik,\n\nNire Twitcheko lagunak,\nberregite honetan\nlanean nenbilenean\nzuzenekoak egitera\nanimatzeagatik.\n\nAnalgesicen discord\nkomunitatea, berregitearen\nxehetasunak irrikaz\nhartzen zituztelako.\n\n
+Sephek honakoak\neskertu nahi ditu:\n\nGhlyffe, proiektu\nhoni buruzko nire\nberriketak entzuteagatik,\n\nNire Twitcheko lagunak,\nberregite honetan\nlanean nenbilenean\nzuzenekoak egitera\nanimatzeagatik.\n\nAnalgesic-en discord\nkomunitatea, berregitearen\nxehetasunak irrikaz\nhartzen zituztelako.\n\n
 #end of new credits
 #CAST\n----\n\n\nSlime\n\n\nAnnoyer\n\n\nPew Pew\n\n\nShieldy\n\n\nSeer
 AKTOREAK\n---\n\n\nLerde-bola\n\n\nErnegatzailea\n\n\nPew Pew\n\n\nEzkututxo\n\n\nIgarlea
 #Mover\n\n\nOn Off\n\n\nFour Shooter\n\n\nSlasher\n\n\nRogue\n
-Mugitzailea\n\n\nOn Off\n\n\nLau tirokoa\n\n\nAlproja\n
+Mugitzailea\n\n\nOn Off\n\n\nLau tirokoa\n\n\nSegaria\n\n\nBakartia\n
 #Dog\n\n\nFrog\n\n\nRotator\n\n\nPerson\n\n\nWall\n\n
-Zakurra\n\n\nIgela\n\n\nBiratzailea\n\n\nPertsona\n\n\nHorma\n\n
+Zakurra\n\n\nIgela\n\n\nBirakaria\n\n\nPertsona\n\n\nHorma\n\n
 #Rat\n\n\nGasguy\n\n\nSilverfish\n\n\nDasher\n\n\nRoller\n\nWatcher\n\n\n
-Arratoia\n\n\nGasaren gizona\n\n\nZilar-arraina\n\n\nIrabiagailua\n\n\nArrabola\n\nBegiralea\n\n\n
+Arratoia\n\n\nGasaren gizona\n\n\nZilar-arraina\n\n\nArrastaria\n\n\nArrabola\n\nZelataria\n\n\n
 #Dustmaid\n\n\nBurst Plant\n\n\nManager\n\n\n
-Hauts kentzailea\n\n\nLandare leherkaria\n\n\nManagerra\n\n\n
+Hauts kentzailea\n\n\nLore leherkaria\n\n\nManagerra\n\n\n
 #Lion\n\n\nContort\n\n\nFlame Pillar\n\n\nServants\nArthur\nJaviera
-Lehoia\n\n\nBihurrikaria\n\n\nSugar harroina\n\n\nZerbitzariak\nArthur\nJaviera
+Lehoia\n\n\nBihurrikariak\n\n\nSugar-habea\n\n\nZerbitzariak\nArthur\nJaviera
 #Follower\n\n\nEdward\n\n\nFisherman\n\n\nRed Walker\n\nHews
 Jarraitzailea\n\n\nEdward\n\n\nArrantzalea\n\n\nIbiltari gorria\n\nHews
 #Rabbit\n\n\nIcky\n\n\nShopkeeper\n\nMiao Xiao Tuan Er\n\nRank\n\nGoldman
@@ -2500,11 +2500,11 @@ Untxia\n\n\nIcky\n\n\nDendaria\n\nMiao Xiao Tuan Er\n\nRank\n\nGoldman
 #Thorax\n\nJames\n\nMushroom\n\nCrickson\n\nGolem\n\nSuburbanites
 Thorax\n\nJames\n\nPerretxikoa\n\nCrickson\n\nGolema\n\nAldiritarrak
 #Chaser\n\n\nEntities\n\n\nSpace Faces\n\n\nCube Kings
-Jazarlea\n\n\nEntitateak\n\n\nEspazioko aurpegiak\n\n\nKubo erregeak
+Jazarlea\n\n\n\n\nEntitateak\n\n\nEspazioko\naurpegiak\n\n\nKubo erregeak
 #Young\n\n\nMitra\n\n\nSage\n\n\nBriar
 Young\n\n\nMitra\n\n\nSage\n\n\nElorri
 #And we'd like to\nthank YOU!\nFor playing our game!\n\n\nWe hope you\nenjoyed it.
-Eta ESKERRAK eman\nnahi dizkizugu!\nMilesker jolasteagatik!\n\n\nEspero dugu\njokoaz gozatuko zenuela.
+Eta ZURI ere eskerrak\neman nahi dizkizugu!\nMilesker jolasteagatik!\n\n\nEspero dugu\njokoaz gozatuko zenuela.
 \n\n\n\n\n\n\n\n    
 #Now you have\nthe ability\nto explore Young's\nworld with (almost) no\nlimitations, via \nthe swap.\n
 Orain Youngen mundua\n(ia) mugarik gabe\nesploratzeko gaitasuna\nduzu, trukaketa\nerabiliz.\n
