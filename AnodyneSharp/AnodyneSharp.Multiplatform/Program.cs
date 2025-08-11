@@ -9,7 +9,7 @@ namespace AnodyneSharp.Multiplatform
 {
     public static class Program
     {
-#if NETCOREAPP
+#if NET
         static void Main(string[] args)
         {
             /* Set up custom logging because stdout and stderr are not redirected to the Visual Studio console.
@@ -24,19 +24,15 @@ namespace AnodyneSharp.Multiplatform
             }
 #endif
 
-            if (SDL2.SDL.SDL_GetPlatform().StartsWith("Xbox"))
-            {
-                SDL2.SDL.SDL_GDKRunApp(FakeMain, IntPtr.Zero);
-            }
-            else
-            {
-                RealMain(args);
-            }
+            realArgs = args;
+            SDL3.SDL.SDL_main_func mainFunction = FakeMain;
+            SDL3.SDL.SDL_RunApp(0, IntPtr.Zero, mainFunction, IntPtr.Zero);
         }
 
+	static string[] realArgs;
         static int FakeMain(int argc, IntPtr argv)
         {
-            RealMain(new string[] { });
+            RealMain(realArgs);
             return 0;
         }
 
