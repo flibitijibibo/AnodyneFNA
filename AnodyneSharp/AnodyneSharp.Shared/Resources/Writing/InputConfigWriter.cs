@@ -7,8 +7,8 @@ namespace AnodyneSharp.Resources.Writing
 {
     public class InputConfigWriter : ContentWriter
     {
-        public InputConfigWriter(string filePath)
-            : base(filePath)
+        public InputConfigWriter()
+            : base("InputConfig.dat")
         { }
 
         public bool WriteInputConfig()

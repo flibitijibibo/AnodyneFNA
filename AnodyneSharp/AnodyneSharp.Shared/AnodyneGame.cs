@@ -20,7 +20,6 @@ using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Threading;
 
@@ -58,17 +57,6 @@ namespace AnodyneSharp
             Content.RootDirectory = "Content";
 
             _currentState = null;
-
-
-            if (!Directory.Exists(GameConstants.SavePath))
-            {
-                Directory.CreateDirectory(GameConstants.SavePath);
-            }
-
-            if (!Directory.Exists(GameConstants.SavePath + "Saves/"))
-            {
-                Directory.CreateDirectory(GameConstants.SavePath + "Saves/");
-            }
 
             // Don't apply changes yet, the GDM will do this for us at Initialize()
             InitGraphics(false);
@@ -129,15 +117,15 @@ namespace AnodyneSharp
         /// </summary>
         protected override void LoadContent()
         {
-            if (File.Exists($"{GameConstants.SavePath}InputConfig.dat"))
+            if (Storage.Exists("InputConfig.dat"))
             {
-                using InputConfigLoader inputConfigWriter = new InputConfigLoader($"{GameConstants.SavePath}InputConfig.dat");
+                using InputConfigLoader inputConfigWriter = new InputConfigLoader();
                 inputConfigWriter.LoadInputConfig();
             }
             else
             {
                 SetDefaultKeys();
-                using InputConfigWriter inputConfigWriter = new InputConfigWriter($"{GameConstants.SavePath}InputConfig.dat");
+                using InputConfigWriter inputConfigWriter = new InputConfigWriter();
                 inputConfigWriter.WriteInputConfig();
             }
 

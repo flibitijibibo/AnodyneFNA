@@ -1,4 +1,5 @@
 ﻿using AnodyneSharp.Logging;
+using AnodyneSharp.Registry;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -39,7 +40,7 @@ namespace AnodyneSharp.Resources
 
         protected void SetStreamreader(string path)
         {
-            _stream = new FileStream(path, FileMode.OpenOrCreate);
+            _stream = new MemoryStream(Storage.LoadFile(path));
 
             if (_stream != null)
             {

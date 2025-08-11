@@ -67,6 +67,7 @@
     <Compile Include="Registry\InventoryManager.cs" />
     <Compile Include="Registry\GlobalState.cs" />
     <Compile Include="Registry\EventRegister.cs" />
+    <Compile Include="Registry\Storage.cs" />
     <Compile Include="Entities\EntityManager.cs" />
     <Compile Include="Entities\CollisionGroups.cs" />
     <Compile Include="Entities\DoorPair.cs" />

@@ -354,7 +354,7 @@ namespace AnodyneSharp.States.MenuSubstates
                 }
             }
 
-            using InputConfigWriter inputConfigWriter = new($"{GameConstants.SavePath}InputConfig.dat");
+            using InputConfigWriter inputConfigWriter = new InputConfigWriter();
             inputConfigWriter.WriteInputConfig();
 
             if (KeyInput.FaceButtonsSwitched)

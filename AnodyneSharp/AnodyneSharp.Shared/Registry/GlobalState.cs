@@ -6,12 +6,12 @@ using AnodyneSharp.Entities.Lights;
 using AnodyneSharp.GameEvents;
 using AnodyneSharp.Logging;
 using AnodyneSharp.MapData;
+using AnodyneSharp.Registry;
 using AnodyneSharp.States;
 using AnodyneSharp.UI;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -49,14 +49,10 @@ namespace AnodyneSharp.Registry
             public int max_health = _maxHealth;
             public int deaths = DeathCount;
 
-            public static Save GetSave(string path)
+            public static Save GetSave(int saveID)
             {
-                string save;
-                try
-                {
-                    save = File.ReadAllText(path);
-                }
-                catch
+                string save = Storage.LoadGame(saveID);
+                if (string.IsNullOrEmpty(save))
                 {
                     return null;
                 }
@@ -65,7 +61,7 @@ namespace AnodyneSharp.Registry
 
             public void SaveTo(int id)
             {
-                File.WriteAllText($"{GameConstants.SavePath}Saves/Save_{id + 1}.dat", ToString());
+                Storage.SaveGame(id, ToString());
             }
 
             public override string ToString()

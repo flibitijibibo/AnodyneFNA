@@ -9,8 +9,8 @@ namespace AnodyneSharp.Resources.Loading
 {
     public class InputConfigLoader : ContentLoader
     {
-        public InputConfigLoader(string filePath)
-            : base(filePath)
+        public InputConfigLoader()
+            : base("InputConfig.dat")
         { }
 
         public int RebindableKeys { get; private set; }

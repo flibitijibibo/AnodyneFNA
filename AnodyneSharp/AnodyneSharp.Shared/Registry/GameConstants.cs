@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using AnodyneSharp.Dialogue;
 
 namespace AnodyneSharp.Registry
@@ -36,8 +35,6 @@ namespace AnodyneSharp.Registry
             DEBUG
         };
 
-        public static string SavePath;
-
         public const int SCREEN_WIDTH_IN_TILES = 10;
         public const int SCREEN_HEIGHT_IN_TILES = 10;
         public const int TILE_WIDTH = 16;
@@ -48,21 +45,6 @@ namespace AnodyneSharp.Registry
 
         public const int BUTTON_WIDTH = 13;
         public const int BUTTON_HEIGHT = 14;
-
-        static GameConstants()
-        {
-            SavePath =
-#if ANDROID
-                Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData,Environment.SpecialFolderOption.Create),"AnodyneFanRemake/");
-#elif DEBUG
-                "./";
-#else
-                SDL3.SDL.SDL_GetPrefPath(null, "AnodyneFNA");
-                // Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData,Environment.SpecialFolderOption.Create),"AnodyneFanRemake/");
-#endif
-
-
-        }
 
         public static int FONT_LINE_HEIGHT
         {

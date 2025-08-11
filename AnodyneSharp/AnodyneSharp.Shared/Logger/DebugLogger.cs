@@ -12,8 +12,7 @@ namespace AnodyneSharp.Logging
 {
     public static class DebugLogger
     {
-        private static readonly string LogPath = $"{GameConstants.SavePath}game.log";
-
+        private static string LogPath;
         private static Queue<LogLine> DebugLog;
         private const int MaxLogs = 10;
 
@@ -21,9 +20,14 @@ namespace AnodyneSharp.Logging
         {
             DebugLog = new Queue<LogLine>(2);
 
-            if (File.Exists(LogPath))
+            string os = SDL3.SDL.SDL_GetPlatform();
+            if (!os.Contains("Xbox") && !os.Contains("Nintendo") && !os.Contains("PlayStation"))
             {
-                File.Delete(LogPath);
+                LogPath = SDL3.SDL.SDL_GetPrefPath(null, "AnodyneFNA") + "game.log";
+                if (File.Exists(LogPath))
+                {
+                    File.Delete(LogPath);
+                }
             }
 
             FNALoggerEXT.LogInfo += (s) => { AddInfo(s); };
@@ -106,16 +110,19 @@ namespace AnodyneSharp.Logging
             Debug.WriteLine(logLine.Message);
 #endif
 
-            using (StreamWriter writer = new StreamWriter(new FileStream(LogPath, FileMode.Append)))
+            if (!string.IsNullOrEmpty(LogPath))
             {
-                if (showStack)
+                using (StreamWriter writer = new StreamWriter(new FileStream(LogPath, FileMode.Append)))
                 {
-                    AddStackFrame(ref logLine);
-                }
+                    if (showStack)
+                    {
+                        AddStackFrame(ref logLine);
+                    }
 
-                FormatLine(ref logLine);
-                writer.WriteLine(logLine.Message);
-                writer.Close();
+                    FormatLine(ref logLine);
+                    writer.WriteLine(logLine.Message);
+                    writer.Close();
+                }
             }
         }
 

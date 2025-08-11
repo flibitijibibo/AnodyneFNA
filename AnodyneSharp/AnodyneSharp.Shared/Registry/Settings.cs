@@ -1,8 +1,8 @@
 ﻿using AnodyneSharp.Dialogue;
 using AnodyneSharp.Drawing;
+using AnodyneSharp.Registry;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -53,7 +53,7 @@ namespace AnodyneSharp.Registry
         {
             try
             {
-                string save = File.ReadAllText($"{GameConstants.SavePath}Settings.json");
+                string save = Storage.LoadSettings();
                 return JsonSerializer.Deserialize<Settings>(save);
             }
             catch
@@ -66,7 +66,7 @@ namespace AnodyneSharp.Registry
 
         public void Save()
         {
-            File.WriteAllText($"{GameConstants.SavePath}Settings.json", JsonSerializer.Serialize<Settings>(this));
+            Storage.SaveSettings(JsonSerializer.Serialize<Settings>(this));
         }
     }
 }

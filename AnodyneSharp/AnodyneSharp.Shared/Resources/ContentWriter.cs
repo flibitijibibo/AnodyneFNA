@@ -1,4 +1,5 @@
 ﻿using AnodyneSharp.Logging;
+using AnodyneSharp.Registry;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,7 +12,7 @@ namespace AnodyneSharp.Resources
         public string FilePath { get; protected set; }
 
         private StreamWriter _writer;
-        private Stream _stream;
+        private MemoryStream _stream;
         private int _lineNumber;
 
 
@@ -19,27 +20,22 @@ namespace AnodyneSharp.Resources
         {
             _lineNumber = 0;
             FilePath = filePath;
-            SetStreamreader(filePath);
+            SetStreamreader();
         }
 
         public virtual void Dispose()
         {
+            _writer.Flush();
+            Storage.SaveFile(FilePath, _stream.ToArray());
+
             _writer.Dispose();
             _stream.Dispose();
         }
 
-        protected void SetStreamreader(string path)
+        protected void SetStreamreader()
         {
-            _stream = new FileStream(path, FileMode.Create);
-
-            if (_stream != null)
-            {
-                _writer = new StreamWriter(_stream);
-            }
-            else
-            {
-                DebugLogger.AddError($"Unable to read content file: {FilePath}. File does not exist!");
-            }
+            _stream = new MemoryStream();
+            _writer = new StreamWriter(_stream);
         }
 
         protected void ThrowFileWarning(string message)
