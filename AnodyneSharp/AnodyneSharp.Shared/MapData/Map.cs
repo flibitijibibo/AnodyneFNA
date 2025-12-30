@@ -100,7 +100,7 @@ namespace AnodyneSharp.MapData
 
         public void ReloadTexture()
         {
-            _tiles.Reload(mapName);
+            _tiles.Reload($"{mapName.ToLower()}_tilemap");
         }
 
         public Touching GetCollisionData(Vector2 pos)

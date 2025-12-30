@@ -848,12 +848,6 @@ namespace AnodyneSharp.Entities
             }
         }
 
-        public override void ReloadTexture(bool ignoreChaos = false)
-        {
-            base.ReloadTexture();
-            broom.ReloadTexture();
-        }
-
         private void GroundMovement()
         {
             Set_init_vel();
