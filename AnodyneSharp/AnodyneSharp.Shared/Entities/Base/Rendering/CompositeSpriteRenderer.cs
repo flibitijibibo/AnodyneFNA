@@ -55,14 +55,6 @@ namespace AnodyneSharp.Entities.Base.Rendering
             throw new NotImplementedException();
         }
 
-        public void ReloadTexture(bool ignoreChaos = false)
-        {
-            foreach(var renderer in Renderers)
-            {
-                renderer.ReloadTexture(ignoreChaos);
-            }
-        }
-
         public void SetFrame(int index)
         {
             throw new NotImplementedException();

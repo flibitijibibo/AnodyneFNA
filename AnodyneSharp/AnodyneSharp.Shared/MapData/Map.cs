@@ -98,11 +98,6 @@ namespace AnodyneSharp.MapData
             }
         }
 
-        public void ReloadTexture()
-        {
-            _tiles.Reload($"{mapName.ToLower()}_tilemap");
-        }
-
         public Touching GetCollisionData(Vector2 pos)
         {
             Point p = ToMapLoc(pos);

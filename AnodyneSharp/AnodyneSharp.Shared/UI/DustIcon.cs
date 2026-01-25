@@ -21,6 +21,7 @@ namespace AnodyneSharp.UI
         public DustIcon(Vector2 pos, Broom broom)
             : base(pos, GetSprite(), DrawOrder.DUST_ICON)
         {
+            SetTexture("DustUI", 9, 9); // Disable chaos mode
             _broom = broom;
         }
 

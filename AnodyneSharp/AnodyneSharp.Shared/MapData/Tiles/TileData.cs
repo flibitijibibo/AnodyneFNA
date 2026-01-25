@@ -32,7 +32,7 @@ namespace AnodyneSharp.MapData.Tiles
     {
         public static Spritesheet GetTileset(string MapName)
         {
-            return new(ResourceManager.GetTexture($"{MapName.ToLower()}_tilemap", true), 16, 16);
+            return new(ResourceManager.GetTexHandle($"{MapName.ToLower()}_tilemap"), 16, 16);
         }
 
         public static void SetTileProperties(string mapName, Tile[] tiles)
@@ -75,7 +75,7 @@ namespace AnodyneSharp.MapData.Tiles
                         if (int.TryParse(values[0], out int frame) &&
                             int.TryParse(values[1], out int frameRate))
                         {
-                            animTiles.Add(frame, new AnimatedTile(frames, frameRate, ResourceManager.GetTexture(texName)));
+                            animTiles.Add(frame, new AnimatedTile(frames, frameRate, texName));
                         }
                     }
                 }

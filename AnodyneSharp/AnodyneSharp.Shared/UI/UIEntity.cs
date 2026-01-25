@@ -14,18 +14,16 @@ namespace AnodyneSharp.UI
     {
 
         public UIEntity(Vector2 pos, string textureName, int frameWidth, int frameHeight, DrawOrder layer)
-            : base(pos, textureName, frameWidth, frameHeight, layer)
+            : this(pos, textureName, 0, frameWidth, frameHeight, layer)
         {
-            HasVisibleHitbox = false;
         }
 
         public UIEntity(Vector2 pos, string textureName, int frameWidth, int frameHeight, ILayerType layer)
-            : base(pos, textureName, frameWidth, frameHeight, layer)
+            : this(pos, textureName, 0, frameWidth, frameHeight, layer)
         {
-            HasVisibleHitbox = false;
         }
 
-        public UIEntity(Vector2 pos, ISpriteRenderer sprite, DrawOrder layer, SpriteEffects flip) 
+        public UIEntity(Vector2 pos, ISpriteRenderer sprite, DrawOrder layer, SpriteEffects flip)
             : base(pos, sprite, layer)
         {
             _flip = flip;
@@ -35,19 +33,20 @@ namespace AnodyneSharp.UI
         public UIEntity(Vector2 pos, ISpriteRenderer sprite, DrawOrder layer) : base(pos, sprite, layer) { HasVisibleHitbox = false; }
 
         public UIEntity(Vector2 pos, string textureName, int frame, int frameWidth, int frameHeight, DrawOrder layer)
-            : base(pos, new StaticSpriteRenderer(textureName, frameWidth, frameHeight, frame), layer)
+            : base(pos, new StaticSpriteRenderer(textureName, frameWidth, frameHeight, frame, ignoreChaos: true), layer)
         {
             HasVisibleHitbox = false;
         }
 
-        protected override bool SetTexture(string textureName, int width, int height, bool ignoreChaos = false, bool allowFailure = true)
+        public UIEntity(Vector2 pos, string textureName, int frame, int frameWidth, int frameHeight, ILayerType layer)
+            : base(pos, new StaticSpriteRenderer(textureName, frameWidth, frameHeight, frame, layer: layer, ignoreChaos: true))
         {
-            return base.SetTexture(textureName, width, height, true, allowFailure);
+            HasVisibleHitbox = false;
         }
 
-        public override void ReloadTexture(bool ignoreChaos = false)
+        protected override bool SetTexture(string textureName, int width, int height, bool ignoreChaos = false, bool allowFailure = false)
         {
-            base.ReloadTexture(true);
+            return base.SetTexture(textureName, width, height, true, allowFailure);
         }
     }
 }

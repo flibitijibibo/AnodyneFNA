@@ -43,7 +43,7 @@ namespace AnodyneSharp.Drawing.Effects
 
         public void SetTex(string texName)
         {
-            tex = ResourceManager.GetTexture(texName, true, true);
+            tex = ResourceManager.GetTexture(texName, true);
             hard_light = texName.EndsWith("hardlight");
         }
     }

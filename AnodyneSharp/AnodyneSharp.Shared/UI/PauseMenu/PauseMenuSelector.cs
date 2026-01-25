@@ -19,6 +19,7 @@ namespace AnodyneSharp.UI.PauseMenu
         public PauseMenuSelector(Vector2 pos)
             : base(pos, GetSprite(), DrawOrder.PAUSE_SELECTOR)
         {
+            SetTexture("menu_select_active", 61, 15); //Disable chaos mode
         }
     }
 }

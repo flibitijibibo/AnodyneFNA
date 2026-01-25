@@ -24,6 +24,7 @@ namespace AnodyneSharp.Resources
         public static string BaseDir;
 
         private static Dictionary<string, Texture2D> _textures = new();
+        private static Dictionary<string, TextureHandle> _randomizeabletextureHandles = new();
         private static Dictionary<string, string> _music = new();
         private static Dictionary<string, string> _ambience = new();
         private static Dictionary<string, SFXLimiter> _sfx = new();
@@ -40,13 +41,8 @@ namespace AnodyneSharp.Resources
             return true;
         }
 
-        public static Texture2D GetTexture(string textureName, bool forceCorrectTexture = false, bool allowUnknown = false)
+        public static Texture2D GetTexture(string textureName, bool allowUnknown = false)
         {
-            if (!forceCorrectTexture && GlobalState.GameMode != GameMode.Normal)
-            {
-                return _textures.Values.ElementAt(GlobalState.RNG.Next(_textures.Count));
-            }
-
             if (!_textures.ContainsKey(textureName))
             {
                 if (!allowUnknown)
@@ -57,6 +53,47 @@ namespace AnodyneSharp.Resources
             }
 
             return _textures[textureName];
+        }
+
+        public static TextureHandle GetTexHandle(string texName, bool ignoreChaos = false, bool allowUnknown = false)
+        {
+            if (!ignoreChaos && _randomizeabletextureHandles.TryGetValue(texName, out TextureHandle texHandle)) { return texHandle; }
+
+            // Make sure grabbing the texture initially fails if the name's not found
+            if (!_textures.TryGetValue(texName, out Texture2D res))
+            {
+                if (!allowUnknown)
+                {
+                    DebugLogger.AddWarning($"Texture file called {texName}.png not found!");
+                }
+                return null;
+            }
+            TextureHandle handle = new(res); // Load initial for initialization of properties that need to exist.
+            
+            if (!ignoreChaos)
+            {
+                if (GlobalState.GameMode != GameMode.Normal)
+                {
+                    handle.SetTex(_textures.Values.ElementAt(GlobalState.RNG.Next(_textures.Count)));
+                }
+                _randomizeabletextureHandles[texName] = handle;
+            }
+            return handle;
+        }
+
+        public static void ReloadRandomizableTextures()
+        {
+            foreach(var (key,val) in _randomizeabletextureHandles)
+            {
+                if(GlobalState.GameMode != GameMode.Normal)
+                {
+                    val.SetTex(_textures.Values.ElementAt(GlobalState.RNG.Next(_textures.Count)));
+                }
+                else
+                {
+                    val.SetTex(_textures[key]);
+                }
+            }
         }
 
         public static string GetMusicPath(string musicName)

@@ -144,13 +144,6 @@ namespace AnodyneSharp.Entities
             }
         }
 
-        public override void ReloadTexture(bool ignoreChaos = false)
-        {
-            base.ReloadTexture();
-            long_attack.ReloadTexture();
-            wide_attack.ReloadTexture();
-        }
-
         public override void Draw()
         {
             if (visible && exists)

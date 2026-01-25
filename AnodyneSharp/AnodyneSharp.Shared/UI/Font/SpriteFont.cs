@@ -30,7 +30,7 @@ namespace AnodyneSharp.UI.Font
             this.lineHeight = lineHeight;
             this.spaceWidth = spaceWidth;
 
-            texture = ResourceManager.GetTexture(textureName, true);
+            texture = ResourceManager.GetTexture(textureName);
             _characterRectangles = CreateRectangles(characterOrder);
 
             this.color = color;

@@ -1,4 +1,5 @@
 ﻿using AnodyneSharp.Drawing.Spritesheet;
+using AnodyneSharp.Resources;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -14,11 +15,11 @@ namespace AnodyneSharp.MapData.Tiles
 
         public Rectangle spriteRect;
 
-        public AnimatedTile(int[] frames, int framerate, Texture2D texture)
+        public AnimatedTile(int[] frames, int framerate, string texName)
         {
             _curAnim = new Anim("a", frames, framerate);
 
-            sprite = new Spritesheet(texture, 16, 16);
+            sprite = new Spritesheet(ResourceManager.GetTexHandle(texName), 16, 16);
         }
 
         public void UpdateAnimation()

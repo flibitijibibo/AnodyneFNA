@@ -57,7 +57,7 @@ namespace AnodyneSharp.States.MenuSubstates
             _yesLabel = new UILabel(new Vector2(x, y), true, DialogueManager.GetDialogue("misc", "any", "checkpoint", 1));
             _noLabel = new UILabel(new Vector2(x + 56, y), true, DialogueManager.GetDialogue("misc", "any", "checkpoint", 2));
 
-            _mapSheet = new Spritesheet(ResourceManager.GetTexture("minimap_tiles",true,true),7,7);
+            _mapSheet = new Spritesheet(ResourceManager.GetTexHandle("minimap_tiles", true), 7,7);
         }
 
         public override void GetControl()

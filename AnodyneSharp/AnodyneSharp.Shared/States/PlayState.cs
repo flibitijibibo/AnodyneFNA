@@ -162,11 +162,11 @@ namespace AnodyneSharp.States
         {
             base.Create();
 
-            _header = ResourceManager.GetTexture(UiHeader, true);
+            _header = ResourceManager.GetTexture(UiHeader);
 
-            _equippedBroomBorder = ResourceManager.GetTexture("frame_icon", true);
+            _equippedBroomBorder = ResourceManager.GetTexture("frame_icon");
 
-            _miniminimap = new Spritesheet(ResourceManager.GetTexture("mini_minimap_tiles", true), 5, 5);
+            _miniminimap = new Spritesheet(ResourceManager.GetTexHandle("mini_minimap_tiles",true), 5, 5);
 
             GlobalState.WARP = true;
             Warp();
@@ -443,16 +443,7 @@ namespace AnodyneSharp.States
             if (GlobalState.ForceTextureReload)
             {
                 GlobalState.ForceTextureReload = false;
-
-                _player.Reset(false);
-                _player.ReloadTexture();
-                _map.ReloadTexture();
-
-                foreach (var item in _gridEntities)
-                {
-                    item.ReloadTexture();
-                }
-
+                ResourceManager.ReloadRandomizableTextures();
             }
 
             GlobalState.ENEMIES_KILLED = _groups.KilledEnemies();
@@ -846,7 +837,7 @@ namespace AnodyneSharp.States
                     break;
             }
 
-            _equippedBroomIcon = ResourceManager.GetTexture("hud" + tex, true);
+            _equippedBroomIcon = ResourceManager.GetTexture("hud" + tex);
         }
 
 
@@ -887,12 +878,6 @@ namespace AnodyneSharp.States
 
 
                 UpdateBroomIcon();
-
-                if (GlobalState.GameMode != GameMode.Normal)
-                {
-                    _map.ReloadTexture();
-                }
-
 
                 GlobalState.RefreshKeyCount = true;
             }

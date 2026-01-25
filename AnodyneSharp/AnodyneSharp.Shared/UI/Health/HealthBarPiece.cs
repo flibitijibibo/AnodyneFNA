@@ -29,6 +29,7 @@ namespace AnodyneSharp.UI
         public HealthBarPiece(Vector2 pos, bool full)
             :base(pos, GetSprite(), DrawOrder.UI_OBJECTS)
         {
+            SetTexture("health_piece",BOX_WIDTH, BOX_HEIGHT); //Disable chaos mode
             Play(full ? "full" : "empty");
         }
     }

@@ -96,7 +96,7 @@ namespace AnodyneSharp.Entities.Interactive.Npc.RunningTradeNPCs
         bool _checked = false;
         Vector2 _startPos;
 
-        public ShopItem(Vector2 pos, int frame) : base(pos,new StaticSpriteRenderer("fields_npcs",16,16, frame),Drawing.DrawOrder.BG_ENTITIES)
+        public ShopItem(Vector2 pos, int frame) : base(pos,new StaticSpriteRenderer("fields_npcs", 16, 16, frame), Drawing.DrawOrder.BG_ENTITIES)
         {
             _startPos = pos;
             immovable = true;

@@ -157,11 +157,6 @@ namespace AnodyneSharp.Entities
             return sprite.SetTexture(textureName, frameWidth, frameHeight, ignoreChaos, allowFailure);
         }
 
-        public virtual void ReloadTexture(bool ignoreChaos = false)
-        {
-            sprite?.ReloadTexture(ignoreChaos);
-        }
-
         public static Facing FacingFromTouching(Touching t)
         {
             return t switch

@@ -31,7 +31,7 @@ namespace AnodyneSharp.Entities.Decorations
 
         public DeathFadeIn(Color color)
         {
-            fadeIn = ResourceManager.GetTexture("deathFadeIn", true);
+            fadeIn = ResourceManager.GetTexture("deathFadeIn");
             this.color = color;
             Opacity = 0;
         }

@@ -24,7 +24,7 @@ namespace AnodyneSharp.UI.PauseMenu.Config
 
         public CheckBox(Vector2 position, bool current, MenuStyle style, DrawOrder layer = DrawOrder.AUDIO_SLIDER)
         {
-            _box = new Spritesheet(ResourceManager.GetTexture("checkbox", true), 11, 11);
+            _box = new Spritesheet(ResourceManager.GetTexHandle("checkbox", true), 11, 11);
 
             _pos = position;
 

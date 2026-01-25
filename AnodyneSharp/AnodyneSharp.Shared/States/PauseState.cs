@@ -55,7 +55,7 @@ namespace AnodyneSharp.States
 
         public PauseState()
         {
-            _bg = ResourceManager.GetTexture("menu_bg", true);
+            _bg = ResourceManager.GetTexture("menu_bg");
             _selector = new PauseMenuSelector(new Vector2(0, 30));
 
             _lastState = _state;
