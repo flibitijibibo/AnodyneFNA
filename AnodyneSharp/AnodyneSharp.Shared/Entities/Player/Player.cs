@@ -70,7 +70,7 @@ namespace AnodyneSharp.Entities
 
         public PlayerState state;
         internal bool invincible;
-        private const float INVINCIBLE_MAX = 0.5f;
+        private const float INVINCIBLE_MAX = 0.8f;
         private float invincibility_time = 0;
 
         private bool Do_bump => bump_timer > 0;
