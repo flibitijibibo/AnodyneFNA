@@ -17,6 +17,7 @@ using AnodyneSharp.States.MainMenu;
 using AnodyneSharp.UI;
 using AnodyneSharp.UI.Font;
 using AnodyneSharp.Utilities;
+using Microsoft.Extensions.FileSystemGlobbing.Internal.PathSegments;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -775,15 +776,21 @@ namespace AnodyneSharp.States
             if (!GlobalState.CanChangeBroom)
             {
                 broomType = broomType == BroomType.Transformer ? BroomType.Normal : BroomType.Transformer;
+                //Make the next loop pick whichever broom we have, needs to be one we actually have(loop will find the broom type we do have for Normal, Transformer or any broom for Transformer)
+                //If we don't have the regular broom, setting it directly to BroomType.Normal won't work since the setter will reject it before reaching the CanChangeBroom check.
+                broomType = (BroomType)((int)broomType - 1);
+                nextBroom = true;
             }
-            else
+            
+            var types = Enum.GetValues<BroomType>();
+            var current = (int)broomType;
+            do
             {
-                do
-                {
-                    broomType += nextBroom ? 1 : -1;
-                    broomType = (BroomType)(((int)broomType + (int)BroomType.Transformer + 1) % ((int)BroomType.Transformer + 1));
-                } while (!GlobalState.inventory.HasBroomType(broomType));
-            }
+                current += nextBroom ? 1 : -1;
+                current = (current + types.Length) % types.Length; //Loop around both len+1 and -1 properly, this just ends up skipping over None anyway with HasBroomType returning false for None
+            } while (!GlobalState.inventory.HasBroomType(types[current]));
+            broomType = types[current];
+            
 
             SetBroom(broomType);
 

@@ -52,6 +52,10 @@ namespace AnodyneSharp.Entities.Gadget.Treasures
                     GlobalState.inventory.HasTransformer = true;
                     break;
             }
+            if (GlobalState.inventory.EquippedBroom == BroomType.NONE)
+            {
+                GlobalState.inventory.EquippedBroom = _type;
+            }
         }
     }
 }
