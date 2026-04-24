@@ -5,6 +5,7 @@ using AnodyneSharp.Drawing.Effects;
 using AnodyneSharp.Entities;
 using AnodyneSharp.Entities.Gadget;
 using AnodyneSharp.Input;
+using AnodyneSharp.Modding;
 using AnodyneSharp.Registry;
 using AnodyneSharp.Resources;
 using AnodyneSharp.Resources.Loading;
@@ -30,21 +31,11 @@ namespace AnodyneSharp
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
-    public class AnodyneGame : Game
+    public class AnodyneGame : Game, IStateSetter
     {
-        public enum GameState
-        {
-            TitleScreen,
-            MainMenu,
-            Intro,
-            Game,
-            Credits
-        }
-
         GraphicsDeviceManager graphics;
 
-        State _currentState;
-        Camera _camera;
+        public State CurrentState { get; private set; }
 
         private UILabel _fpsLabel;
 
@@ -56,7 +47,11 @@ namespace AnodyneSharp
             graphics.PreparingDeviceSettings += OnPreparingDeviceSettings;
             Content.RootDirectory = "Content";
 
-            _currentState = null;
+            CurrentState = null;
+
+            GlobalState.GameState = this;
+
+            ModLoader.Initialize();
 
             // Don't apply changes yet, the GDM will do this for us at Initialize()
             InitGraphics(false);
@@ -92,8 +87,6 @@ namespace AnodyneSharp
             InitGraphics();
 #endif
 
-            _camera = new Camera();
-
             SpriteDrawer.Initialize(graphics.GraphicsDevice);
 
             GlobalState.ResetValues();
@@ -104,11 +97,9 @@ namespace AnodyneSharp
 
             _fpsLabel = new UILabel(new Vector2(0, GameConstants.HEADER_HEIGHT), false, "", Color.LightBlue);
 
-            GlobalState.darkness.SetCamera(_camera);
-
             Window.Title = "Anodyne";
 
-            SetState(GameState.TitleScreen);
+            SetState<TitleState>();
         }
 
         /// <summary>
@@ -138,7 +129,6 @@ namespace AnodyneSharp
             {
                 effect.Load(Content, graphics.GraphicsDevice);
             }
-
         }
 
         /// <summary>
@@ -162,9 +152,7 @@ namespace AnodyneSharp
                 return;
             }
 
-            _currentState.Update();
-
-            _camera.Update();
+            CurrentState.Update();
 
             foreach (var effect in GlobalState.AllEffects.Where(e => e.Active()))
             {
@@ -200,6 +188,11 @@ namespace AnodyneSharp
                 InitGraphics();
                 GlobalState.ResolutionDirty = false;
             }
+
+            foreach (IMod mod in ModLoader.mods)
+            {
+                mod.Update();
+            }
         }
 
         /// <summary>
@@ -220,19 +213,14 @@ namespace AnodyneSharp
             {
                 Cheatz.Cheatz.ToggleFuckItMode();
             }
-
-            if (KeyInput.JustPressedKey(Keys.P))
-            {
-                SetState(GameState.Credits);
-            }
 #endif
 
-            SpriteDrawer.BeginDraw(_camera);
-            _currentState.Draw();
+            SpriteDrawer.BeginDraw();
+            CurrentState.Draw();
             SpriteDrawer.EndDraw();
 
             SpriteDrawer.BeginGUIDraw();
-            _currentState.DrawUI();
+            CurrentState.DrawUI();
 
             if (GlobalState.ShowFPS)
             {
@@ -244,28 +232,16 @@ namespace AnodyneSharp
             SpriteDrawer.Render();
         }
 
-        private void SetState(GameState state)
+        public void SetState<T>() where T : State, new()
         {
             foreach (var effect in GlobalState.AllEffects)
             {
                 effect.Deactivate();
             }
 
-            _currentState = state switch
-            {
-                GameState.TitleScreen => new TitleState(),
-                GameState.MainMenu => new MainMenuState(),
-                GameState.Intro => new IntroState(),
-                GameState.Game => new PlayState(_camera),
-                GameState.Credits => new CreditsState(),
-                _ => null
-            };
+            CurrentState = new T();
 
-            if (_currentState != null)
-            {
-                _currentState.Create();
-                _currentState.ChangeStateEvent = SetState;
-            }
+            CurrentState.Create();
         }
 
         private void InitGraphics(bool applyChanges = true)

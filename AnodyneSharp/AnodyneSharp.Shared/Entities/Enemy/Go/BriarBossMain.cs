@@ -19,6 +19,14 @@ namespace AnodyneSharp.Entities.Enemy.Go
     [NamedEntity("Shadow_Briar", null, 5)]
     public class BriarBossMain : Entity
     {
+        public const string FireballDamageDealer = "Briar Fireball";
+        public const string GateDamageDealer = "Briar thorn gate";
+        public const string BodyDamageDealer = "Briar body";
+        public const string ThornDamageDealer = "Briar thorn";
+        public const string BulletDamageDealer = "Briar bullet";
+        public const string IceDamageDealer = "Briar ice crystal";
+
+
         Vector2 tl;
         ThornGate gate;
         VolumeEvent volume;
@@ -220,7 +228,7 @@ namespace AnodyneSharp.Entities.Enemy.Go
     }
 
     [Collision(typeof(Player))]
-    internal class ThornGate : Entity
+    public class ThornGate : Entity
     {
         public ThornGate(Vector2 pos) : base(pos, new AnimatedSpriteRenderer("briar_ground_thorn", 32, 16, new Anim("move", new int[] { 6, 7, 8 }, 6)), Drawing.DrawOrder.ENTITIES)
         {
@@ -231,7 +239,7 @@ namespace AnodyneSharp.Entities.Enemy.Go
         {
             base.Collided(other);
             Separate(this, other);
-            (other as Player).ReceiveDamage(1);
+            (other as Player).ReceiveDamage(1, BriarBossMain.GateDamageDealer);
         }
     }
 }

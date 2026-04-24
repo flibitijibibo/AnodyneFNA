@@ -33,7 +33,7 @@ namespace AnodyneSharp.UI.PauseMenu
 
             SetFrame(0);
 
-            _equipIcon = ResourceManager.GetTexture("equipped_icon", true);
+            _equipIcon = ResourceManager.GetTexture("equipped_icon");
         }
 
         public override void Draw()

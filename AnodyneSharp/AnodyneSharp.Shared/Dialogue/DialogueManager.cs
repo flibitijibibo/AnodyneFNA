@@ -3,6 +3,7 @@ using AnodyneSharp.Entities.Gadget;
 using AnodyneSharp.Input;
 using AnodyneSharp.Logging;
 using AnodyneSharp.Registry;
+using AnodyneSharp.Utilities;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
@@ -139,9 +140,7 @@ namespace AnodyneSharp.Dialogue
 
         public static void Reload()
         {
-            var assembly = Assembly.GetExecutingAssembly();
-
-            string path = $"{assembly.GetName().Name}.{DialogueFilePath}_{Enum.GetName(GlobalState.CurrentLanguage.GetType(), GlobalState.CurrentLanguage)}.txt";
+            string path = $"{DialogueFilePath}_{Enum.GetName(GlobalState.CurrentLanguage.GetType(), GlobalState.CurrentLanguage)}.txt";
 
             ParseState state = ParseState.START;
 
@@ -156,7 +155,7 @@ namespace AnodyneSharp.Dialogue
             int? loopID = null;
             bool alignTop = false;
 
-            using Stream stream = assembly.GetManifestResourceStream(path);
+            using Stream stream = AssemblyReaderUtil.GetStream(path);
             using StreamReader reader = new StreamReader(stream);
             while (!reader.EndOfStream)
             {

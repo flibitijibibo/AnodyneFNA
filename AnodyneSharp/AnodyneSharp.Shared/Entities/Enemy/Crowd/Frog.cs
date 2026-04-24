@@ -14,8 +14,10 @@ using System.Text;
 namespace AnodyneSharp.Entities.Enemy.Crowd
 {
     [NamedEntity, Enemy, Collision(typeof(Player), typeof(Broom))]
-    class Frog : HealthDropper
+    public class Frog : HealthDropper
     {
+        public const string DamageDealer = "Frog";
+        public const string BulletDamageDealer = "Frog bullet";
         public static AnimatedSpriteRenderer GetSprite()
         {
             Anim[] anims;
@@ -115,7 +117,7 @@ namespace AnodyneSharp.Entities.Enemy.Crowd
             }
             else if (other is Player p && p.state != PlayerState.AIR)
             {
-                p.ReceiveDamage(1);
+                p.ReceiveDamage(1, DamageDealer);
             }
         }
 
@@ -137,7 +139,7 @@ namespace AnodyneSharp.Entities.Enemy.Crowd
         }
 
         [Collision(typeof(Player))]
-        private class BurstBullet : Entity
+        public class BurstBullet : Entity
         {
             Parabola_Thing parabola;
             int _multiplier;
@@ -208,7 +210,7 @@ namespace AnodyneSharp.Entities.Enemy.Crowd
             {
                 if (other is Player p && offset.Y <= 8 && velocity != Vector2.Zero)
                 {
-                    p.ReceiveDamage(1);
+                    p.ReceiveDamage(1, BulletDamageDealer);
                 }
             }
         }

@@ -66,7 +66,7 @@ namespace AnodyneSharp.Registry
 
             public override string ToString()
             {
-                return JsonSerializer.Serialize<Save>(this, serializerOptions);
+                return JsonSerializer.Serialize(this, serializerOptions);
             }
 
             public static Save FromString(string s)
@@ -75,15 +75,15 @@ namespace AnodyneSharp.Registry
             }
         }
 
-        static public int CurrentSaveGame = 0;
+        static public string CurrentSaveGame = "1";
 
         public static string serialized_quicksave = null;
         public static CheckPoint quicksave_checkpoint = null;
 
-        public static void SaveGame(int? id = null)
+        public static void SaveGame(string id = null)
         {
             UpdateItemRate();
-            new Save().SaveTo(id ?? CurrentSaveGame);
+            new Save().SaveTo(int.Parse(id ?? CurrentSaveGame) - 1);
         }
 
         public static void LoadSave(Save s)
@@ -302,6 +302,8 @@ namespace AnodyneSharp.Registry
         public static int ENEMIES_KILLED;
         public static int PUZZLES_SOLVED;
 
+        public static IStateSetter GameState;
+
         public static Action<Entity> SpawnEntity;
 
         public static Action<GameEvent> FireEvent;
@@ -394,6 +396,8 @@ namespace AnodyneSharp.Registry
                 RefreshMaxHealth = true;
             }
         }
+
+        public static string DamageDealer = "";
 
         private static int _curHealth = 6;
         private static int _maxHealth = 6;

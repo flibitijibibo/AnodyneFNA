@@ -19,6 +19,9 @@ namespace AnodyneSharp.Entities.Enemy.Hotel.Boss
     {
         EnemyMarker death_marker = new();
 
+        public const string DamageDealer = "Manager Land Phase";
+        public const string BulletDamageDealer = "Manager Land bullet";
+
         int health = 6;
 
         bool broom_hit = false;
@@ -317,7 +320,7 @@ namespace AnodyneSharp.Entities.Enemy.Hotel.Boss
             }
             else if (other is Player p)
             {
-                p.ReceiveDamage(1);
+                p.ReceiveDamage(1, DamageDealer);
             }
         }
 
@@ -329,7 +332,7 @@ namespace AnodyneSharp.Entities.Enemy.Hotel.Boss
         }
 
         [Collision(typeof(Player))]
-        private class Bullet : Entity
+        public class Bullet : Entity
         {
 
             Parabola_Thing parabola;
@@ -388,12 +391,12 @@ namespace AnodyneSharp.Entities.Enemy.Hotel.Boss
             public override void Collided(Entity other)
             {
                 if (offset.Y < 7)
-                    ((Player)other).ReceiveDamage(1);
+                    ((Player)other).ReceiveDamage(1, BulletDamageDealer);
             }
         }
 
         [Collision(typeof(Player))]
-        private class BulletSplash : Entity
+        public class BulletSplash : Entity
         {
             Parabola_Thing parabola;
 

@@ -17,7 +17,6 @@ namespace AnodyneSharp.Entities.Base.Rendering
         void Draw(SpriteBatch batch, Vector2 position, float scale, int y_push, float rotation, float opacity, SpriteEffects flip);
         void SetFrame(int index);
         bool PlayAnim(string name, bool force = false, int? newFramerate = null);
-        void ReloadTexture(bool ignoreChaos = false);
         bool SetTexture(string textureName, int width, int height, bool ignoreChaos, bool allowFailure);
         void Update();
     }

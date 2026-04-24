@@ -7,10 +7,12 @@ using System.Text;
 namespace AnodyneSharp.Entities.Enemy.Redcave
 {
     [NamedEntity, Collision(typeof(Player))]
-    class Four_Shooter : Entity
+    public class Four_Shooter : Entity
     {
         const float tm = 1.5f;
         float timer = tm;
+
+        public const string DamageDealer = "Four shooter bullet";
 
         EntityPool<Bullet> bullets = new(12, () => new());
 
@@ -64,7 +66,7 @@ namespace AnodyneSharp.Entities.Enemy.Redcave
         }
 
         [Collision(typeof(Player),MapCollision = true)]
-        class Bullet : Entity
+        public class Bullet : Entity
         {
             public static AnimatedSpriteRenderer GetSprite() => new("f_four_shooter_bullet", 8, 8,
                 new Anim("move", new int[] { 0, 1 },12),
@@ -106,7 +108,7 @@ namespace AnodyneSharp.Entities.Enemy.Redcave
                 base.Collided(other);
                 if(other is Player p && p.state != PlayerState.AIR && CurAnimName != "explode")
                 {
-                    p.ReceiveDamage(1);
+                    p.ReceiveDamage(1, DamageDealer);
                     Pop();
                 }
                 

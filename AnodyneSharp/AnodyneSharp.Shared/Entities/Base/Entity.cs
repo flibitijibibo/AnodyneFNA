@@ -28,7 +28,7 @@ namespace AnodyneSharp.Entities
         public Facing facing;
 
         public ISpriteRenderer sprite;
-        
+
         public string CurAnimName => sprite.CurAnimName;
         public bool AnimFinished => sprite.AnimFinished;
         public int FrameIndex => sprite.FrameIndex;
@@ -61,7 +61,7 @@ namespace AnodyneSharp.Entities
             }
         }
 
-        public Entity(Vector2 pos, int w=0, int h=0) : base(pos,w,h)
+        public Entity(Vector2 pos, int w = 0, int h = 0) : base(pos, w, h)
         {
             visible = false;
         }
@@ -78,18 +78,18 @@ namespace AnodyneSharp.Entities
             sprite = new StaticSpriteRenderer(textureName, frameWidth, frameHeight, 0, new Layer(layer, this));
         }
 
-        public Entity(Vector2 pos, string textureName, int frameWidth, int frameHeight, ILayerType layer) 
-            : base(pos,frameWidth, frameHeight)
+        public Entity(Vector2 pos, string textureName, int frameWidth, int frameHeight, ILayerType layer)
+            : base(pos, frameWidth, frameHeight)
         {
-            sprite = new StaticSpriteRenderer(textureName,frameWidth, frameHeight, 0, layer);
+            sprite = new StaticSpriteRenderer(textureName, frameWidth, frameHeight, 0, layer);
         }
 
-        public Entity(Vector2 pos, ISpriteRenderer sprite) : base(pos,sprite.Width,sprite.Height)
+        public Entity(Vector2 pos, ISpriteRenderer sprite) : base(pos, sprite.Width, sprite.Height)
         {
             this.sprite = sprite;
         }
 
-        public Entity(Vector2 pos, ISpriteRenderer sprite, DrawOrder layer) : base(pos,sprite.Width,sprite.Height)
+        public Entity(Vector2 pos, ISpriteRenderer sprite, DrawOrder layer) : base(pos, sprite.Width, sprite.Height)
         {
             this.sprite = sprite;
             sprite.Layer = new Layer(layer, this);
@@ -155,11 +155,6 @@ namespace AnodyneSharp.Entities
                 return true;
             }
             return sprite.SetTexture(textureName, frameWidth, frameHeight, ignoreChaos, allowFailure);
-        }
-
-        public virtual void ReloadTexture(bool ignoreChaos = false)
-        {
-            sprite.ReloadTexture(ignoreChaos);
         }
 
         public static Facing FacingFromTouching(Touching t)

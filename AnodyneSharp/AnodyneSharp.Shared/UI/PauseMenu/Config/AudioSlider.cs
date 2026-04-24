@@ -46,9 +46,9 @@ namespace AnodyneSharp.UI.PauseMenu.Config
             layer = drawOrder;
             start = current;
 
-            _slider = new Spritesheet(ResourceManager.GetTexture("volume_bar", true), 60, 12);
-            _sliderInside = ResourceManager.GetTexture("volume_bar_inside", true);
-            _sliderBg = ResourceManager.GetTexture("volume_bar_bg", true);
+            _slider = new Spritesheet(ResourceManager.GetTexHandle("volume_bar", true), 60, 12);
+            _sliderInside = ResourceManager.GetTexture("volume_bar_inside");
+            _sliderBg = ResourceManager.GetTexture("volume_bar_bg");
 
             _style = style;
         }

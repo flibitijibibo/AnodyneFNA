@@ -17,115 +17,30 @@ namespace AnodyneSharp.States.MainMenu
 {
     public class MainMenuState : State
     {
-        private enum MenuState
-        {
-            Save1,
-            Save2,
-            Save3,
-            Settings,
-            Quit,
-            Anodyne2
-        }
+        private static int _state = 0;
 
-        private static MenuState _menuState;
-
-        private UILabel _versionLabel;
-        private UILabel _save1Label;
-        private UILabel _save2Label;
-        private UILabel _save3Label;
-        private UILabel _settingsLabel;
-        private UILabel _quitLabel;
-        private UILabel _anodyne2Label;
+        List<(UILabel label, Func<Substate> create)> substates;
 
         private UILabel _inputLabel;
 
         private MenuSelector _selector;
-        private MenuState _lastState;
-
-        private FileSubstate[] files;
+        private int _lastState = _state;
 
         private bool _inSubstate;
 
         private Substate _substate;
 
-        private IState _state;
-
-        private bool isNewSave;
-
         private float xOffset;
 
         public MainMenuState()
         {
-            files = Enumerable.Range(0, 3).Select((i) => new FileSubstate(i)).ToArray();
-
             _selector = new MenuSelector();
             _selector.Play("enabledRight");
 
-            _lastState = _menuState;
-
             UpdateEntities = false;
 
-            _state = new StateMachineBuilder()
-                .State("Normal")
-                    .Enter((state) =>
-                    {
-                        SetLabels();
-                        StateChanged();
-                    })
-                    .Update((state, t) =>
-                    {
-                        if (!_inSubstate && KeyInput.JustPressedRebindableKey(KeyFunctions.Cancel))
-                        {
-                            SoundManager.PlayPitchedSoundEffect("pause_sound", -0.1f);
-                            ChangeStateEvent(AnodyneGame.GameState.TitleScreen);
-                        }
-                        else if (!_inSubstate)
-                        {
-                            BrowseInput();
-                        }
-                        else
-                        {
-                            _substate.HandleInput();
-                        }
-
-                        if (_lastState != _menuState)
-                        {
-                            StateChanged();
-                        }
-                    })
-                    .Condition(() => _substate.Exit, (state) =>
-                    {
-                        if (_substate is FileSubstate s)
-                        {
-                            if (s.LoadedSave)
-                            {
-                                SoundManager.PlaySoundEffect("menu_select");
-                                isNewSave = s.NewSave;
-                                _state.ChangeState("FadeOut");
-
-                                return;
-                            }
-                            else if (s.RefreshSaves)
-                            {
-                                files = Enumerable.Range(0, 3).Select((i) => new FileSubstate(i)).ToArray();
-                            }
-
-                        }
-
-                        _inSubstate = false;
-                        _substate.Exit = false;
-                        _selector.Play("enabledRight");
-
-                    })
-                    .End()
-                    .State("FadeOut")
-                        .Update((state, t) => GlobalState.black_overlay.ChangeAlpha(0.72f))
-                        .Condition(() => GlobalState.black_overlay.alpha == 1, (state) => ChangeStateEvent(isNewSave ? AnodyneGame.GameState.Intro : AnodyneGame.GameState.Game))
-                    .End()
-                .Build();
-
-            _state.ChangeState("Normal");
-
+            SetLabels();
+            StateChanged();
         }
 
         public override void Update()
@@ -136,11 +51,6 @@ namespace AnodyneSharp.States.MainMenu
             {
                 GlobalState.RefreshLabels = false;
                 SetLabels();
-
-                foreach (var state in files)
-                {
-                    state.SetLabels();
-                }
             }
 
             if (KeyInput.ControllerModeChanged)
@@ -153,7 +63,30 @@ namespace AnodyneSharp.States.MainMenu
 
             _substate.Update();
 
-            _state.Update(GameTimes.DeltaTime);
+            if (!_inSubstate && KeyInput.JustPressedRebindableKey(KeyFunctions.Cancel))
+            {
+                SoundManager.PlayPitchedSoundEffect("pause_sound", -0.1f);
+                GlobalState.GameState.SetState<TitleState>();
+            }
+            else if (!_inSubstate)
+            {
+                BrowseInput();
+            }
+            else
+            {
+                _substate.HandleInput();
+                if (_substate.Exit)
+                {
+                    _inSubstate = false;
+                    _substate.Exit = false;
+                    _selector.Play("enabledRight");
+                }
+            }
+
+            if (_lastState != _state)
+            {
+                StateChanged();
+            }
         }
 
 
@@ -163,13 +96,10 @@ namespace AnodyneSharp.States.MainMenu
 
             _selector.Draw();
 
-            _versionLabel.Draw();
-            _save1Label.Draw();
-            _save2Label.Draw();
-            _save3Label.Draw();
-            _settingsLabel.Draw();
-            _quitLabel.Draw();
-            _anodyne2Label?.Draw();
+            foreach (var (label, _) in substates)
+            {
+                label.Draw();
+            }
 
             _inputLabel.Draw();
 
@@ -181,81 +111,41 @@ namespace AnodyneSharp.States.MainMenu
             if (KeyInput.JustPressedRebindableKey(KeyFunctions.Accept) || (KeyInput.JustPressedRebindableKey(KeyFunctions.Right) && Achievements.WasInit))
             {
                 SoundManager.PlaySoundEffect("menu_select");
-                if (_menuState == MenuState.Quit)
-                {
-                    // Special case: Right on Quit goes to Anodyne2
-                    if (Achievements.WasInit && KeyInput.JustPressedRebindableKey(KeyFunctions.Right))
-                    {
-                        _menuState++;
-                    }
-                    else
-                    {
-                        GlobalState.ClosingGame = true;
-                    }
-                }
-                else if (_menuState == MenuState.Anodyne2)
-                {
-                    Achievements.OpenSequelStorePage();
-                }
-                else
-                {
-                    _inSubstate = true;
-                    _selector.Play("disabledRight");
-                    _substate.GetControl();
-                }
-            }
-            else if (KeyInput.JustPressedRebindableKey(KeyFunctions.Left))
-            {
-                if (_menuState == MenuState.Anodyne2)
-                {
-                    _menuState--;
-                }
+                _inSubstate = true;
+                _selector.Play("disabledRight");
+                _substate.GetControl();
             }
             else if (KeyInput.JustPressedRebindableKey(KeyFunctions.Up))
             {
-                SoundManager.PlaySoundEffect("menu_move");
-                if (_menuState != MenuState.Save1)
+                if (_state == 0)
                 {
-                    _menuState--;
+                    SoundManager.PlaySoundEffect("menu_move");
+                    return;
                 }
+
+                SoundManager.PlaySoundEffect("menu_move");
+                _state--;
             }
             else if (KeyInput.JustPressedRebindableKey(KeyFunctions.Down))
             {
+                if (_state == substates.Count-1)
+                {
+                    SoundManager.PlaySoundEffect("menu_move");
+                    return;
+                }
+
                 SoundManager.PlaySoundEffect("menu_move");
-                if (_menuState < MenuState.Quit)
-                {
-                    _menuState++;
-                }
-                else if (_menuState == MenuState.Quit && Achievements.WasInit)
-                {
-                    _menuState++;
-                }
+                _state++;
             }
         }
 
 
         private void StateChanged()
         {
-            _lastState = _menuState;
-            _selector.Position = new Vector2(2 + xOffset, 34 + (int)_menuState * 16);
-            if (_menuState == MenuState.Quit)
-            {
-                _selector.Position.Y += 8 * 7; // This matches the position set in SetLabels below
-            }
-            else if (_menuState == MenuState.Anodyne2)
-            {
-                _selector.Position.X = 80;
-                _selector.Position.Y += 8 * 5;
-            }
+            _lastState = _state;
+            _selector.Position = new Vector2(2 + xOffset, 34 + _state * 16);
 
-            _substate = _menuState switch
-            {
-                MenuState.Save1 => files[0],
-                MenuState.Save2 => files[1],
-                MenuState.Save3 => files[2],
-                MenuState.Settings => new ConfigSubstate(true),
-                _ => new Substate(),
-            };
+            _substate = substates[_state].create();
         }
 
         private void SetLabels()
@@ -274,23 +164,7 @@ namespace AnodyneSharp.States.MainMenu
 
             Color color = new Color(116, 140, 144);
 
-            string save = "";  /*DialogueManager.GetDialogue("misc", "any", "title", 24);*/
-
-
-            _versionLabel = new UILabel(new Vector2(x, startY - yStep), false, "v1.11", color);
-            _save1Label = new UILabel(new Vector2(x, startY), false, save + 1, color);
-            _save2Label = new UILabel(new Vector2(x, startY + yStep), false, save + 2, color);
-            _save3Label = new UILabel(new Vector2(x, startY + yStep * 2), false, save + 3, color);
-            _settingsLabel = new UILabel(new Vector2(x, startY + yStep * 3), false, DialogueManager.GetDialogue("misc", "any", "config", 0), color);
-            _quitLabel = new UILabel(new Vector2(x, startY + yStep * 7.5f), false, DialogueManager.GetDialogue("misc", "any", "save", 6), color);
-            if (Achievements.WasInit)
-            {
-                _anodyne2Label = new UILabel(new Vector2(87f, startY + yStep * 7.5f), false, "Anodyne 2", color);
-                if (GlobalState.CurrentLanguage == Language.IT || GlobalState.CurrentLanguage == Language.ES || GlobalState.CurrentLanguage == Language.ZH_CN)
-                {
-                    _anodyne2Label = new UILabel(new Vector2(100f, startY + yStep * 7.5f), false, "Ano2", color);
-                }
-            }
+            substates = GetLabels().Select((state, index) => (new UILabel(new(x, startY + yStep * index), false, state.name, color), state.create)).ToList();
 
             Vector2 inputPos = Vector2.Zero;
             if (GlobalState.CurrentLanguage == Language.ZH_CN)
@@ -306,6 +180,21 @@ namespace AnodyneSharp.States.MainMenu
                 }
             }
             _inputLabel = new UILabel(inputPos, false, $"{DialogueManager.GetDialogue("misc", "any", "secrets", 14)} {DialogueManager.GetDialogue("misc", "any", "secrets", 15)}", color);
+        }
+
+        private List<(string name, Func<Substate> create)> GetLabels()
+        {
+            List<(string name, Func<Substate> create)> ret = new()
+            {
+                ("1", () => new FileSubstate(0)),
+                ("2", () => new FileSubstate(1)),
+                ("3", () => new FileSubstate(2)),
+                (DialogueManager.GetDialogue("misc", "any", "config", 0), () => new ConfigSubstate(true)),
+            };
+
+            Modding.ModLoader.mods.ForEach(mod => mod.ChangeMainMenu(ref ret));
+
+            return ret;
         }
     }
 }

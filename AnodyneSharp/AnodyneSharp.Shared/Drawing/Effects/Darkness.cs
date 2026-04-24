@@ -23,7 +23,6 @@ namespace AnodyneSharp.Drawing.Effects
         Effect blend;
         bool hard_light = false;
 
-        Camera camera;
         List<Light> lights = new List<Light>();
 
         static readonly BlendState screenblend = new BlendState()
@@ -107,7 +106,7 @@ namespace AnodyneSharp.Drawing.Effects
 
             if (lights.Count > 0)
             {
-                batch.Begin(SpriteSortMode.Immediate, blendState: screenblend, samplerState: SamplerState.PointClamp, transformMatrix: camera.Transform);
+                batch.Begin(SpriteSortMode.Immediate, blendState: screenblend, samplerState: SamplerState.PointClamp, transformMatrix: SpriteDrawer.Camera.Transform);
                 foreach (Light light in lights)
                 {
                     light.DrawLight();
@@ -153,14 +152,9 @@ namespace AnodyneSharp.Drawing.Effects
             alpha = 0;
         }
 
-        internal void SetCamera(Camera camera)
-        {
-            this.camera = camera;
-        }
-
         public bool SetTex(string texName)
         {
-            darkness = ResourceManager.GetTexture(texName, allowUnknown: true);
+            darkness = ResourceManager.GetTexture(texName, true);
             hard_light = texName.EndsWith("hardlight");
             return darkness != null;
         }

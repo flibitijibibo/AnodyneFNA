@@ -11,8 +11,9 @@ using System.Text;
 namespace AnodyneSharp.Entities.Enemy.Apartment
 {
     [NamedEntity, Enemy, Collision(typeof(Player),typeof(Broom),typeof(DashTrap))]
-    class Rat : HealthDropper
+    public class Rat : HealthDropper
     {
+        public const string DamageDealer = "Rat";
         Lookahead lookahead = new();
 
         public static AnimatedSpriteRenderer GetSprite(int o) => new("rat", 16, 16,
@@ -56,7 +57,7 @@ namespace AnodyneSharp.Entities.Enemy.Apartment
             {
                 if(new Rectangle(Hitbox.Left+4,Hitbox.Top+4,8,8).Intersects(p.Hitbox))
                 {
-                    p.ReceiveDamage(1);
+                    p.ReceiveDamage(1, DamageDealer);
                 }
             }
             else
@@ -84,7 +85,7 @@ namespace AnodyneSharp.Entities.Enemy.Apartment
         }
 
         [Collision(typeof(Dust), MapCollision = true)]
-        class Lookahead : Entity
+        public class Lookahead : Entity
         {
             public Lookahead() : base(Vector2.Zero,1,1)
             {

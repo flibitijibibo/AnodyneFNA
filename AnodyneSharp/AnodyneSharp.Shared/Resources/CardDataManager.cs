@@ -18,11 +18,7 @@ namespace AnodyneSharp.Resources
 
         public static void ReadCardData()
         {
-            var assembly = Assembly.GetExecutingAssembly();
-
-            string path = $"{Assembly.GetExecutingAssembly().GetName().Name}.{CardDataPath}";
-
-            using (Stream stream = assembly.GetManifestResourceStream(path))
+            using (Stream stream = AssemblyReaderUtil.GetStream(CardDataPath))
             {
                 using (StreamReader reader = new StreamReader(stream))
                 {

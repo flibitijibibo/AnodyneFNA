@@ -141,6 +141,7 @@ namespace AnodyneSharp.Entities.Events
         public SavingIcon() : base(new Vector2(GameConstants.SCREEN_WIDTH_IN_PIXELS / 2 - 32, 20), new AnimatedSpriteRenderer("autosave_icon", 64, 16,
             new Anim("a", new int[] { 0, 1, 2, 3, 4, 5 },8)), DrawOrder.TEXT)
         {
+            SetTexture("autosave_icon", 64, 16); //Disable chaos mode
             visible = false;
         }
 

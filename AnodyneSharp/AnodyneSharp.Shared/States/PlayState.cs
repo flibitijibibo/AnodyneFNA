@@ -13,9 +13,11 @@ using AnodyneSharp.MapData.Tiles;
 using AnodyneSharp.Registry;
 using AnodyneSharp.Resources;
 using AnodyneSharp.Sounds;
+using AnodyneSharp.States.MainMenu;
 using AnodyneSharp.UI;
 using AnodyneSharp.UI.Font;
 using AnodyneSharp.Utilities;
+using Microsoft.Extensions.FileSystemGlobbing.Internal.PathSegments;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -59,8 +61,6 @@ namespace AnodyneSharp.States
 
         private Player _player;
 
-        private Camera _camera;
-
         private Rectangle _gridBorders;
 
         private HealthBar _healthBar;
@@ -97,12 +97,10 @@ namespace AnodyneSharp.States
 
         private float QuickSaveTimer = 5f; //Prevents quick-save from being spammed after loading
 
-        public PlayState(Camera camera)
+        public PlayState()
         {
             _gridEntities = new List<Entity>();
             _oldEntities = new List<Entity>();
-
-            _camera = camera;
 
             _player = new Player();
             _healthBar = new HealthBar();
@@ -148,7 +146,7 @@ namespace AnodyneSharp.States
             GlobalState.LoadSave(s);
             GlobalState.PLAYER_WARP_TARGET = GlobalState.quicksave_checkpoint.Position;
             GlobalState.NEXT_MAP_NAME = GlobalState.quicksave_checkpoint.map;
-            ChangeStateEvent(AnodyneGame.GameState.Game);
+            GlobalState.GameState.SetState<PlayState>();
         }
 
         private void FireEvent(GameEvent e)
@@ -165,11 +163,11 @@ namespace AnodyneSharp.States
         {
             base.Create();
 
-            _header = ResourceManager.GetTexture(UiHeader, true);
+            _header = ResourceManager.GetTexture(UiHeader);
 
-            _equippedBroomBorder = ResourceManager.GetTexture("frame_icon", true);
+            _equippedBroomBorder = ResourceManager.GetTexture("frame_icon");
 
-            _miniminimap = new Spritesheet(ResourceManager.GetTexture("mini_minimap_tiles", true), 5, 5);
+            _miniminimap = new Spritesheet(ResourceManager.GetTexHandle("mini_minimap_tiles",true), 5, 5);
 
             GlobalState.WARP = true;
             Warp();
@@ -184,11 +182,11 @@ namespace AnodyneSharp.States
             if (_childStates.All(s => s.DrawPlayState))
             {
                 if (_background != null)
-                    _background.Draw(_camera);
+                    _background.Draw();
                 if (_dec_over != null)
-                    _dec_over.Draw(_camera);
+                    _dec_over.Draw();
 
-                _map.Draw(_camera.Bounds);
+                _map.Draw(SpriteDrawer.Camera.Bounds);
 
                 _player.Draw();
 
@@ -369,13 +367,13 @@ namespace AnodyneSharp.States
 
             if (GlobalState.SetDialogueMode)
             {
-                _childStates.Add(new DialogueState(GlobalState.Dialogue));
+                GlobalState.SetSubstate(new DialogueState(GlobalState.Dialogue));
                 GlobalState.SetDialogueMode = false;
                 _player.BeIdle();
             }
             if (GlobalState.StartCutscene != null)
             {
-                _childStates.Add(new CutsceneState(_camera, GlobalState.StartCutscene) { ChangeStateEvent = ChangeStateEvent});
+                GlobalState.SetSubstate(new CutsceneState(GlobalState.StartCutscene));
                 GlobalState.StartCutscene = null;
             }
 
@@ -446,16 +444,7 @@ namespace AnodyneSharp.States
             if (GlobalState.ForceTextureReload)
             {
                 GlobalState.ForceTextureReload = false;
-
-                _player.Reset(false);
-                _player.ReloadTexture();
-                _map.ReloadTexture();
-
-                foreach (var item in _gridEntities)
-                {
-                    item.ReloadTexture();
-                }
-
+                ResourceManager.ReloadRandomizableTextures();
             }
 
             GlobalState.ENEMIES_KILLED = _groups.KilledEnemies();
@@ -509,7 +498,7 @@ namespace AnodyneSharp.States
             if (GlobalState.ToTitle)
             {
                 GlobalState.ToTitle = false;
-                ChangeStateEvent(AnodyneGame.GameState.TitleScreen);
+                GlobalState.GameState.SetState<TitleState>();
 
                 GlobalState.CURRENT_MAP_NAME = "";
                 return;
@@ -517,7 +506,7 @@ namespace AnodyneSharp.States
 
             if (KeyInput.JustPressedRebindableKey(KeyFunctions.Pause) && !GlobalState.disable_menu)
             {
-                _childStates.Add(new PauseState() { ChangeStateEvent = ChangeStateEvent });
+                GlobalState.SetSubstate(new PauseState());
                 SoundManager.PlaySoundEffect("pause_sound");
                 return;
             }
@@ -671,11 +660,11 @@ namespace AnodyneSharp.States
         {
             if (GlobalState.FUCK_IT_MODE_ON)
             {
-                _camera.GoTo(_gridBorders.X, _gridBorders.Y);
+                SpriteDrawer.Camera.GoTo(_gridBorders.X, _gridBorders.Y);
                 return false;
             }
 
-            return !_camera.GoTowards(new(_gridBorders.X, _gridBorders.Y), Scroll_Speed);
+            return !SpriteDrawer.Camera.GoTowards(new(_gridBorders.X, _gridBorders.Y), Scroll_Speed);
         }
 
 #if DEBUG
@@ -735,11 +724,11 @@ namespace AnodyneSharp.States
 
             if (KeyInput.JustPressedKey(Keys.OemPlus))
             {
-                _camera.Zoom += 0.1f;
+                SpriteDrawer.Camera.Zoom += 0.1f;
             }
-            else if (KeyInput.JustPressedKey(Keys.OemMinus) && _camera.Zoom > 0)
+            else if (KeyInput.JustPressedKey(Keys.OemMinus) && SpriteDrawer.Camera.Zoom > 0)
             {
-                _camera.Zoom -= 0.1f;
+                SpriteDrawer.Camera.Zoom -= 0.1f;
             }
 
             if (GlobalState.MovingCamera)
@@ -777,7 +766,7 @@ namespace AnodyneSharp.States
 #endif
         private void SwitchBroom(bool nextBroom)
         {
-            if (!GlobalState.inventory.HasBroom)
+            if (!GlobalState.inventory.HasAnyBroom)
             {
                 return;
             }
@@ -787,15 +776,21 @@ namespace AnodyneSharp.States
             if (!GlobalState.CanChangeBroom)
             {
                 broomType = broomType == BroomType.Transformer ? BroomType.Normal : BroomType.Transformer;
+                //Make the next loop pick whichever broom we have, needs to be one we actually have(loop will find the broom type we do have for Normal, Transformer or any broom for Transformer)
+                //If we don't have the regular broom, setting it directly to BroomType.Normal won't work since the setter will reject it before reaching the CanChangeBroom check.
+                broomType = (BroomType)((int)broomType - 1);
+                nextBroom = true;
             }
-            else
+            
+            var types = (BroomType[]) Enum.GetValues(typeof(BroomType));
+            var current = (int)broomType;
+            do
             {
-                do
-                {
-                    broomType += nextBroom ? 1 : -1;
-                    broomType = (BroomType)(((int)broomType + (int)BroomType.Transformer + 1) % ((int)BroomType.Transformer + 1));
-                } while (!GlobalState.inventory.HasBroomType(broomType));
-            }
+                current += nextBroom ? 1 : -1;
+                current = (current + types.Length) % types.Length; //Loop around both len+1 and -1 properly, this just ends up skipping over None anyway with HasBroomType returning false for None
+            } while (!GlobalState.inventory.HasBroomType(types[current]));
+            broomType = types[current];
+            
 
             SetBroom(broomType);
 
@@ -818,7 +813,7 @@ namespace AnodyneSharp.States
             {
                 SoundManager.StopSong();
 
-                _childStates.Add(new DeathState(_player));
+                GlobalState.SetSubstate(new DeathState(_player));
             }
         }
 
@@ -849,7 +844,7 @@ namespace AnodyneSharp.States
                     break;
             }
 
-            _equippedBroomIcon = ResourceManager.GetTexture("hud" + tex, true);
+            _equippedBroomIcon = ResourceManager.GetTexture("hud" + tex);
         }
 
 
@@ -891,12 +886,6 @@ namespace AnodyneSharp.States
 
                 UpdateBroomIcon();
 
-                if (GlobalState.GameMode != GameMode.Normal)
-                {
-                    _map.ReloadTexture();
-                }
-
-
                 GlobalState.RefreshKeyCount = true;
             }
 
@@ -915,7 +904,7 @@ namespace AnodyneSharp.States
 
             _player.Reset();
 
-            _camera.GoTo(roomPos);
+            SpriteDrawer.Camera.GoTo(roomPos);
 
             UpdateScreenBorders();
 

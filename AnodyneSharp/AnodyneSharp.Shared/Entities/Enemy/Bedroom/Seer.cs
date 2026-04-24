@@ -18,6 +18,10 @@ namespace AnodyneSharp.Entities.Enemy.Bedroom
     [NamedEntity("Sun_Guy"), Enemy, Collision(typeof(Player), typeof(Broom))]
     public class Seer : Entity
     {
+        public const string DamageDealer = "Seer";
+        public const string OrbDamageDealer = "Seer Orb";
+        public const string WaveDamageDealer = "Seer Wave";
+
         Player _player;
         EntityPreset _preset;
 
@@ -349,7 +353,7 @@ namespace AnodyneSharp.Entities.Enemy.Bedroom
         {
             if (other is Player p && opacity == 1f)
             {
-                p.ReceiveDamage(1);
+                p.ReceiveDamage(1, DamageDealer);
             }
             else if (other is Broom && !_flickering && _health > 0)
             {
@@ -364,7 +368,7 @@ namespace AnodyneSharp.Entities.Enemy.Bedroom
     }
 
     [Collision(typeof(Player))]
-    class SeerOrb : Entity
+    public class SeerOrb : Entity
     {
         public float radius;
         public float rotation_speed;
@@ -382,13 +386,13 @@ namespace AnodyneSharp.Entities.Enemy.Bedroom
         public override void Collided(Entity other)
         {
             if (opacity == 1f)
-                (other as Player).ReceiveDamage(1);
+                (other as Player).ReceiveDamage(1, Seer.OrbDamageDealer);
         }
 
     }
 
     [Collision(typeof(Player), typeof(Dust))]
-    class SeerWave : Entity
+    public class SeerWave : Entity
     {
         public bool End = false;
 
@@ -418,7 +422,7 @@ namespace AnodyneSharp.Entities.Enemy.Bedroom
         {
             if (other is Player p && !End && opacity == 1f)
             {
-                p.ReceiveDamage(1);
+                p.ReceiveDamage(1, Seer.WaveDamageDealer);
                 if (velocity == Vector2.Zero)
                 {
                     exists = false;

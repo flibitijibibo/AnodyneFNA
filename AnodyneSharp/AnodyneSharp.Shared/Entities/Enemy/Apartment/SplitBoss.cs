@@ -15,8 +15,10 @@ using System.Text;
 namespace AnodyneSharp.Entities.Enemy.Apartment
 {
     [Collision(typeof(Player))]
-    class BaseSplitBoss : Entity
+    public class BaseSplitBoss : Entity
     {
+        public const string DamageDealer = "Watcher";
+        public const string BulletDamageDealer = "Watcher bullet";
         public bool damage_player = false;
 
         public static AnimatedSpriteRenderer GetSprite() => new("splitboss", 24, 32,
@@ -43,7 +45,7 @@ namespace AnodyneSharp.Entities.Enemy.Apartment
             base.Collided(other);
             if (other is Player p && damage_player)
             {
-                p.ReceiveDamage(1);
+                p.ReceiveDamage(1, DamageDealer);
             }
         }
 
@@ -62,7 +64,7 @@ namespace AnodyneSharp.Entities.Enemy.Apartment
     }
 
     [NamedEntity("Splitboss"), Enemy, Collision(typeof(Broom)), Events(typeof(StartScreenTransition), typeof(StartWarp))]
-    class SplitBoss : BaseSplitBoss
+    public class SplitBoss : BaseSplitBoss
     {
         Player player;
         EntityPreset _preset;
@@ -559,7 +561,7 @@ namespace AnodyneSharp.Entities.Enemy.Apartment
         }
 
         [Events(typeof(StartWarp), typeof(StartScreenTransition))]
-        class FadeOutGameScreenFade : Entity
+        public class FadeOutGameScreenFade : Entity
         {
             public FadeOutGameScreenFade() : base(Vector2.Zero)
             {
@@ -580,7 +582,7 @@ namespace AnodyneSharp.Entities.Enemy.Apartment
         }
 
         [Collision(typeof(Player))]
-        class Bullet : Entity
+        public class Bullet : Entity
         {
             bool active = false;
 
@@ -620,7 +622,7 @@ namespace AnodyneSharp.Entities.Enemy.Apartment
                 base.Collided(other);
                 if (other is Player p && p.state != PlayerState.AIR && active)
                 {
-                    p.ReceiveDamage(1);
+                    p.ReceiveDamage(1, BulletDamageDealer);
                 }
             }
 
@@ -646,7 +648,7 @@ namespace AnodyneSharp.Entities.Enemy.Apartment
         }
     }
 
-    class Copy : BaseSplitBoss
+    public class Copy : BaseSplitBoss
     {
         public Copy(bool right) : base(Vector2.Zero)
         {

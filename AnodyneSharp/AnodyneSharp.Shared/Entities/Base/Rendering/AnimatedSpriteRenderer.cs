@@ -32,7 +32,7 @@ namespace AnodyneSharp.Entities.Base.Rendering
         public AnimatedSpriteRenderer(string textureName, int frameWidth, int frameHeight, ILayerType layer, params Anim[] animations)
         {
             this.textureName = textureName;
-            sprite = new(ResourceManager.GetTexture(textureName), frameWidth, frameHeight);
+            sprite = new(ResourceManager.GetTexHandle(textureName), frameWidth, frameHeight);
             this.animations = animations.ToDictionary(a => a.name);
             _curAnim = animations[0];
             this.Layer = layer;
@@ -40,7 +40,7 @@ namespace AnodyneSharp.Entities.Base.Rendering
         public AnimatedSpriteRenderer(string textureName, int frameWidth, int frameHeight, params Anim[] animations)
         {
             this.textureName = textureName;
-            sprite = new(ResourceManager.GetTexture(textureName), frameWidth, frameHeight);
+            sprite = new(ResourceManager.GetTexHandle(textureName), frameWidth, frameHeight);
             this.animations = animations.ToDictionary(a => a.name);
             _curAnim = animations[0];
         }
@@ -70,13 +70,8 @@ namespace AnodyneSharp.Entities.Base.Rendering
         public bool SetTexture(string textureName, int width, int height, bool ignoreChaos, bool allowFailure)
         {
             this.textureName = textureName;
-            sprite = new Spritesheet(ResourceManager.GetTexture(textureName, ignoreChaos, allowFailure), width, height);
+            sprite = new Spritesheet(ResourceManager.GetTexHandle(textureName, ignoreChaos, allowFailure), width, height);
             return sprite.Tex != null;
-        }
-
-        public void ReloadTexture(bool ignoreChaos = false)
-        {
-            sprite = new(ResourceManager.GetTexture(textureName, ignoreChaos), sprite.Width, sprite.Height);
         }
 
         public void Draw(SpriteBatch batch, Vector2 position, float scale, int y_push, float rotation, float opacity, SpriteEffects flip)

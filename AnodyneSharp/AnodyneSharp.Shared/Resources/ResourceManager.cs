@@ -1,6 +1,8 @@
-﻿using AnodyneSharp.Logging;
+﻿using AnodyneSharp.Drawing;
+using AnodyneSharp.Logging;
 using AnodyneSharp.Registry;
 using AnodyneSharp.Sounds;
+using Microsoft.Extensions.FileSystemGlobbing;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -19,36 +21,28 @@ namespace AnodyneSharp.Resources
     public delegate List<FileInfo> GetFiles(string path);
     public static class ResourceManager
     {
-        public static GetDirectories GetDirectories;
-        public static GetFiles GetFiles;
+        public static string BaseDir;
 
         private static Dictionary<string, Texture2D> _textures = new();
+        private static Dictionary<string, TextureHandle> _randomizeabletextureHandles = new();
         private static Dictionary<string, string> _music = new();
         private static Dictionary<string, string> _ambience = new();
         private static Dictionary<string, SFXLimiter> _sfx = new();
 
         public static bool LoadResources(ContentManager content)
         {
-
-            DirectoryInfo[] directories = GetDirectories?.Invoke("Content");
-
-            LoadTextures(content, directories.First(d => d.Name == "textures"));
+            LoadTextures(content);
 #if !ANDROID
-            LoadMusic(content, directories.First(d => d.Name == "bgm"));
+            LoadMusic(content);
 #endif
-            LoadAmbience(content, directories.First(d => d.Name == "ambience"));
-            LoadSFX(content, directories.First(d => d.Name == "sfx"));
+            LoadAmbience(content);
+            LoadSFX(content);
 
             return true;
         }
 
-        public static Texture2D GetTexture(string textureName, bool forceCorrectTexture = false, bool allowUnknown = false)
+        public static Texture2D GetTexture(string textureName, bool allowUnknown = false)
         {
-            if (!forceCorrectTexture && GlobalState.GameMode != GameMode.Normal)
-            {
-                return _textures.Values.ElementAt(GlobalState.RNG.Next(_textures.Count));
-            }
-
             if (!_textures.ContainsKey(textureName))
             {
                 if (!allowUnknown)
@@ -59,6 +53,50 @@ namespace AnodyneSharp.Resources
             }
 
             return _textures[textureName];
+        }
+
+        public static TextureHandle GetTexHandle(string texName, bool ignoreChaos = false, bool allowUnknown = false)
+        {
+            if (!ignoreChaos && _randomizeabletextureHandles.TryGetValue(texName, out TextureHandle texHandle)) { return texHandle; }
+
+            // Make sure grabbing the texture initially fails if the name's not found
+            if (!_textures.TryGetValue(texName, out Texture2D res))
+            {
+                if (!allowUnknown)
+                {
+                    DebugLogger.AddWarning($"Texture file called {texName}.png not found!");
+                }
+                return null;
+            }
+            TextureHandle handle = new(res); // Load initial for initialization of properties that need to exist.
+            
+            if (!ignoreChaos)
+            {
+                if (GlobalState.GameMode != GameMode.Normal)
+                {
+                    handle.SetTex(_textures.Values.ElementAt(GlobalState.RNG.Next(_textures.Count)));
+                }
+                _randomizeabletextureHandles[texName] = handle;
+            }
+            return handle;
+        }
+
+        public static void ReloadRandomizableTextures()
+        {
+            foreach(KeyValuePair<string, TextureHandle> kvp in _randomizeabletextureHandles)
+            {
+                string key = kvp.Key;
+                TextureHandle val = kvp.Value;
+
+                if(GlobalState.GameMode != GameMode.Normal)
+                {
+                    val.SetTex(_textures.Values.ElementAt(GlobalState.RNG.Next(_textures.Count)));
+                }
+                else
+                {
+                    val.SetTex(_textures[key]);
+                }
+            }
         }
 
         public static string GetMusicPath(string musicName)
@@ -98,23 +136,29 @@ namespace AnodyneSharp.Resources
             return _sfx;
         }
 
-        private static void LoadTextures(ContentManager content, DirectoryInfo directory)
+        private static void LoadTextures(ContentManager content)
         {
-            List<FileInfo> files = GetChildFiles(directory);
-
-            foreach (FileInfo file in files)
+            foreach (FileInfo file in GetFiles("textures"))
             {
                 string key = Path.GetFileNameWithoutExtension(file.Name);
 
-                _textures[key] = content.Load<Texture2D>(GetFolderTree(file) + key);
+                try
+                {
+                    _textures[key] = content.Load<Texture2D>(GetFolderTree(file) + key);
+                }
+                catch (Exception)
+                {
+                    using (Stream fileIn = TitleContainer.OpenStream(file.FullName))
+                    {
+                        _textures[key] = Texture2D.FromStream(SpriteDrawer._spriteBatch.GraphicsDevice, fileIn);
+                    }
+                }
             }
         }
 
-        private static void LoadMusic(ContentManager content, DirectoryInfo directory)
+        private static void LoadMusic(ContentManager content)
         {
-            List<FileInfo> files = GetChildFiles(directory);
-
-            foreach (FileInfo file in files)
+            foreach (FileInfo file in GetFiles("bgm"))
             {
                 string key = Path.GetFileNameWithoutExtension(file.Name);
 
@@ -122,11 +166,9 @@ namespace AnodyneSharp.Resources
             }
         }
 
-        private static void LoadAmbience(ContentManager content, DirectoryInfo directory)
+        private static void LoadAmbience(ContentManager content)
         {
-            List<FileInfo> files = GetChildFiles(directory);
-
-            foreach (FileInfo file in files)
+            foreach (FileInfo file in GetFiles("ambience"))
             {
                 string key = Path.GetFileNameWithoutExtension(file.Name);
 
@@ -134,35 +176,26 @@ namespace AnodyneSharp.Resources
             }
         }
 
-        private static void LoadSFX(ContentManager content, DirectoryInfo directory)
+        private static void LoadSFX(ContentManager content)
         {
-            List<FileInfo> files = GetChildFiles(directory);
-
-            foreach (FileInfo file in files)
+            foreach (FileInfo file in GetFiles("sfx"))
             {
                 string key = Path.GetFileNameWithoutExtension(file.Name);
 
                 _ = int.TryParse(file.Directory.Name, out int limit);
 
-                _sfx[key] = new(content.Load<SoundEffect>(GetFolderTree(file) + key), limit);
+                try
+                {
+                    _sfx[key] = new(content.Load<SoundEffect>(GetFolderTree(file) + key), limit);
+                }
+                catch (Exception)
+                {
+                    using (Stream fileIn = TitleContainer.OpenStream(file.FullName))
+                    {
+                        _sfx[key] = new(SoundEffect.FromStream(fileIn), limit);
+                    }
+                }
             }
-        }
-
-        private static List<FileInfo> GetChildFiles(DirectoryInfo directory)
-        {
-            if (directory.Name.ToLower() == "old")
-            {
-                return new List<FileInfo>();
-            }
-
-            List<FileInfo> files = GetFiles(directory.FullName);
-
-            foreach (var child in GetDirectories(directory.FullName))
-            {
-                files.AddRange(GetChildFiles(child));
-            }
-
-            return files;
         }
 
         private static string GetFolderTree(FileInfo file)
@@ -177,6 +210,16 @@ namespace AnodyneSharp.Resources
             } while (curFolder.Name != "Content");
 
             return path;
+        }
+
+        private static IEnumerable<FileInfo> GetFiles(string dirName)
+        {
+            Matcher matcher = new();
+            matcher.AddInclude($"./Content/{dirName}/**");
+            matcher.AddExclude("./Content/**/old/");
+            matcher.AddInclude($"./Mods/*/Content/{dirName}/**");
+
+            return matcher.GetResultsInFullPath(BaseDir).Select(s => new FileInfo(s));
         }
     }
 }

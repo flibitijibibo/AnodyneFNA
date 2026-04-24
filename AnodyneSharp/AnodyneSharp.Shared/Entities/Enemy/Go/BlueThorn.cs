@@ -12,7 +12,7 @@ using System.Threading;
 
 namespace AnodyneSharp.Entities.Enemy.Go
 {
-    class BlueThorn : BigThorn
+    public class BlueThorn : BigThorn
     {
         FireEye shooter = new();
 
@@ -250,7 +250,7 @@ namespace AnodyneSharp.Entities.Enemy.Go
                 base.Collided(other);
                 if (other is Player p && p.state == PlayerState.GROUND)
                 {
-                    p.ReceiveDamage(1);
+                    p.ReceiveDamage(1, BriarBossMain.FireballDamageDealer);
                 }
                 else if (other is Dust d)
                 {

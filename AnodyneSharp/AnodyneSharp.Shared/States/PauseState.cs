@@ -5,6 +5,7 @@ using AnodyneSharp.Input;
 using AnodyneSharp.Registry;
 using AnodyneSharp.Resources;
 using AnodyneSharp.Sounds;
+using AnodyneSharp.States.MainMenu;
 using AnodyneSharp.States.MenuSubstates;
 using AnodyneSharp.UI;
 using AnodyneSharp.UI.PauseMenu;
@@ -13,6 +14,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace AnodyneSharp.States
@@ -39,7 +41,7 @@ namespace AnodyneSharp.States
 
         private Texture2D _bg;
 
-        List<(UILabel label, Type stateType)> substates;
+        List<(UILabel label, Func<Substate> create)> substates;
 
         private UILabel _playtimeLabel;
         private UILabel _inputLabel;
@@ -54,7 +56,7 @@ namespace AnodyneSharp.States
 
         public PauseState()
         {
-            _bg = ResourceManager.GetTexture("menu_bg", true);
+            _bg = ResourceManager.GetTexture("menu_bg");
             _selector = new PauseMenuSelector(new Vector2(0, 30));
 
             _lastState = _state;
@@ -116,11 +118,6 @@ namespace AnodyneSharp.States
                         GlobalState.screenShake.Resume();
                         return;
                     }
-
-                    if (_substate is SaveSubstate s && s.ReturnToTitle)
-                    {
-                        ChangeStateEvent(AnodyneGame.GameState.TitleScreen);
-                    }
                 }
             }
 
@@ -163,7 +160,7 @@ namespace AnodyneSharp.States
             }
             else
             {
-                _substate = (Substate)Activator.CreateInstance(substates[_state].stateType);
+                _substate = substates[_state].create();
             }
         }
 
@@ -221,19 +218,7 @@ namespace AnodyneSharp.States
             float startY = GameConstants.HEADER_HEIGHT - GameConstants.LineOffset + 11 + (GlobalState.CurrentLanguage == Language.ZH_CN ? 1 : 0);
             float yStep = (GameConstants.FONT_LINE_HEIGHT - GameConstants.LineOffset) * 2;
 
-            substates = new()
-            {
-                (new UILabel(new Vector2(x, startY), true, DialogueManager.GetDialogue("misc", "any", "map", 0)), typeof(MapSubstate)),
-                (new UILabel(new Vector2(x, startY + yStep), true, DialogueManager.GetDialogue("misc", "any", "items", 0)), typeof(EquipSubstate)),
-                (new UILabel(new Vector2(x, startY + yStep * 2), true, DialogueManager.GetDialogue("misc", "any", "cards", 0)), typeof(CardSubstate)),
-                (new UILabel(new Vector2(x, startY + yStep * 3), true, DialogueManager.GetDialogue("misc", "any", "save", 0)), typeof(SaveSubstate)),
-                (new UILabel(new Vector2(x, startY + yStep * 4), true, DialogueManager.GetDialogue("misc", "any", "config", 0)), typeof(ConfigSubstate)),
-            };
-
-            if (GlobalState.inventory.UnlockedSecretz)
-            {
-                substates.Add((new UILabel(new Vector2(x, startY + yStep * 5), true, "???"), typeof(SecretSubstate)));
-            }
+            substates = GetLabels().Select((state, index) => (new UILabel(new(x, startY + yStep * index), true, state.name), state.create)).ToList();
 
             _playtimeLabel = new UILabel(new Vector2(1, 154), true, "00:00:00", forceEnglish: true);
 
@@ -251,6 +236,27 @@ namespace AnodyneSharp.States
                 }
             }
             _inputLabel = new UILabel(inputPos, false, $"{DialogueManager.GetDialogue("misc", "any", "secrets", 14)} {DialogueManager.GetDialogue("misc", "any", "secrets", 15)}", new Color(143, 153, 176, 255));
+        }
+
+        private List<(string name, Func<Substate> create)> GetLabels()
+        {
+            List<(string name, Func<Substate> create)> ret = new()
+            {
+                (DialogueManager.GetDialogue("misc", "any", "map", 0), () => new MapSubstate()),
+                (DialogueManager.GetDialogue("misc", "any", "items", 0), () => new EquipSubstate()),
+                (DialogueManager.GetDialogue("misc", "any", "cards", 0), () => new CardSubstate()),
+                (DialogueManager.GetDialogue("misc", "any", "save", 0), () => new SaveSubstate()),
+                (DialogueManager.GetDialogue("misc", "any", "config", 0), () => new ConfigSubstate()),
+            };
+
+            if (GlobalState.inventory.UnlockedSecretz)
+            {
+                ret.Add(("???", () => new SecretSubstate()));
+            }
+
+            Modding.ModLoader.mods.ForEach(mod => mod.ChangePauseMenu(ref ret));
+
+            return ret;
         }
     }
 }

@@ -281,6 +281,7 @@
     <Compile Include="FSM\CollisionEvent.cs" />
     <Compile Include="UI\UIEntityInputSensitive.cs" />
     <Compile Include="Utilities\AssemblyReaderUtil.cs" />
+    <Compile Include="Utilities\EnumerableExtension.cs" />
     <Compile Include="Utilities\MapUtilities.cs" />
     <Compile Include="Utilities\CoroutineUtils.cs" />
     <Compile Include="Utilities\MathUtilities.cs" />
@@ -290,6 +291,7 @@
     <Compile Include="Resources\ContentWriter.cs" />
     <Compile Include="Resources\ContentLoader.cs" />
     <Compile Include="Resources\ResourceManager.cs" />
+    <Compile Include="Resources\TextureHandle.cs" />
     <Compile Include="Resources\Loading\InputConfigLoader.cs" />
     <Compile Include="Resources\Writing\InputConfigWriter.cs" />
     <Compile Include="MapData\MinimapTracker.cs" />
@@ -303,6 +305,8 @@
     <Compile Include="MapData\Tiles\CollissionData.cs" />
     <Compile Include="MapData\Tiles\TileData.cs" />
     <Compile Include="MapData\Tiles\Tile.cs" />
+    <Compile Include="Modding\IMod.cs" />
+    <Compile Include="Modding\ModLoader.cs" />
     <Compile Include="GameEvents\EntityEventRegistry.cs" />
     <Compile Include="GameEvents\Events.cs" />
     <Compile Include="GameEvents\EventsAttribute.cs" />
@@ -313,6 +317,7 @@
     <Compile Include="States\CreditsState.cs" />
     <Compile Include="States\PlayState.cs" />
     <Compile Include="States\CutsceneState.cs" />
+    <Compile Include="States\Base\IStateSetter.cs" />
     <Compile Include="States\Base\State.cs" />
     <Compile Include="States\MenuSubstates\ConfigSubstate.cs" />
     <Compile Include="States\MenuSubstates\ConfigSubstates\GraphicsMenu.cs" />

@@ -43,6 +43,8 @@ namespace AnodyneSharp.Entities
         public const string Player_reflection_Sprite = "young_player_reflection";
         public const string Broom_reflection_sprite = "broom_reflection";
 
+        public const string DrowningDamageDealer = "Drowned";
+
         private const float jump_period = 0.4f * 1.15f; //length of jump
 
         public static float FALL_TIMER_DEFAULT => (0.016f * 8 + 0.001f) * (GlobalState.settings.extended_coyote ? 2 : 1);
@@ -68,7 +70,7 @@ namespace AnodyneSharp.Entities
 
         public PlayerState state;
         internal bool invincible;
-        private const float INVINCIBLE_MAX = 0.5f;
+        private const float INVINCIBLE_MAX = 0.8f;
         private float invincibility_time = 0;
 
         private bool Do_bump => bump_timer > 0;
@@ -187,6 +189,7 @@ namespace AnodyneSharp.Entities
 
                 actions_disabled = false;
 
+                Solid = true;
                 isSlipping = false;
                 hasFallen = false;
                 justFell = false;
@@ -611,7 +614,7 @@ namespace AnodyneSharp.Entities
             {
                 y_push = 0;
                 Position = grid_entrance;
-                ReceiveDamage(1,knockback:false);
+                ReceiveDamage(1,DrowningDamageDealer,knockback:false);
             }
         }
 
@@ -845,12 +848,6 @@ namespace AnodyneSharp.Entities
             }
         }
 
-        public override void ReloadTexture(bool ignoreChaos = false)
-        {
-            base.ReloadTexture();
-            broom.ReloadTexture();
-        }
-
         private void GroundMovement()
         {
             Set_init_vel();
@@ -1010,7 +1007,7 @@ namespace AnodyneSharp.Entities
             };
         }
 
-        internal void ReceiveDamage(int amount, bool knockback = true, bool playSound = true)
+        internal void ReceiveDamage(int amount, string damageDealer, bool knockback = true, bool playSound = true)
         {
             if (!invincible && !hasFallen && !GlobalState.FUCK_IT_MODE_ON)
             {
@@ -1021,6 +1018,8 @@ namespace AnodyneSharp.Entities
                 {
                     SoundManager.PlaySoundEffect("player_hit_1");
                 }
+
+                GlobalState.DamageDealer = damageDealer;
 
                 if (GlobalState.CUR_HEALTH > 0)
                 {

@@ -105,7 +105,7 @@ namespace AnodyneSharp.Entities.Enemy.Go
         public override void Collided(Entity other)
         {
             other.Position.Y = Hitbox.Bottom;
-            (other as Player).ReceiveDamage(1);
+            (other as Player).ReceiveDamage(1, BriarBossMain.BodyDamageDealer);
         }
 
         public override IEnumerable<Entity> SubEntities()
@@ -114,7 +114,7 @@ namespace AnodyneSharp.Entities.Enemy.Go
         }
 
         [Collision(typeof(Player))]
-        class Thorn : Entity
+        public class Thorn : Entity
         {
             const int harmful_frame = 9;
             public Thorn() : base(Vector2.Zero, new AnimatedSpriteRenderer("briar_ground_thorn", 16, 16, new Anim("attack", new int[] { 0, 1, 2, 0, 3, 3, 3, 6, 7, 8, 9, 10, 9, 10, 9, 10, 8, 7, 6 }, 8, false)), Drawing.DrawOrder.ENTITIES)
@@ -141,12 +141,12 @@ namespace AnodyneSharp.Entities.Enemy.Go
                 base.Collided(other);
                 Player p = other as Player;
                 if (p.state == PlayerState.GROUND && Frame >= harmful_frame)
-                    p.ReceiveDamage(1);
+                    p.ReceiveDamage(1, BriarBossMain.ThornDamageDealer);
             }
         }
 
         [Collision(typeof(Player))]
-        class Bullet : Entity
+        public class Bullet : Entity
         {
             public Bullet() : base(Vector2.Zero, new AnimatedSpriteRenderer("briar_thorn_bullet", 16, 16, new Anim("move", new int[] { 0, 1 }, 10)), Drawing.DrawOrder.ENTITIES)
             {
@@ -173,7 +173,7 @@ namespace AnodyneSharp.Entities.Enemy.Go
                 base.Collided(other);
                 Player p = other as Player;
                 if (p.state == PlayerState.GROUND)
-                    p.ReceiveDamage(1);
+                    p.ReceiveDamage(1, BriarBossMain.BulletDamageDealer);
             }
         }
     }

@@ -16,14 +16,18 @@ using Microsoft.Xna.Framework.Graphics;
 namespace AnodyneSharp.Entities.Enemy.Circus
 {
     [NamedEntity("Circus_Folks", null, 2), Collision(typeof(Player), typeof(Broom), MapCollision = true), Enemy]
-    internal class CircusFolks : WalkAroundEntity
+    public class CircusFolks : WalkAroundEntity
     {
+        public const string DamageDealer = "CircusFolks";
+        public const string ArthurDamageDealer = "Arthur";
+        public const string JavieraDamageDealer = "Javiera";
+        public const string FlameDamageDealer = "CircusFolksFlame";
+
         private const int walkVel = 90;
         private const float walkTimerMax = 3.0f;
         private const int jumpVel = 100;
 
         private const int fallTimerMax = 2;
-
         private EntityPreset _preset;
         private Player _player;
         private Parabola_Thing _parabolaThing;
@@ -117,7 +121,7 @@ namespace AnodyneSharp.Entities.Enemy.Circus
 
             if (other is Player p)
             {
-                p.ReceiveDamage(1);
+                p.ReceiveDamage(1, DamageDealer);
             }
             else if (!_flickering && other is Broom)
             {
@@ -523,7 +527,7 @@ namespace AnodyneSharp.Entities.Enemy.Circus
         }
 
         [Collision(typeof(Player), typeof(Broom), MapCollision = true)]
-        class Arthur : Entity
+        public class Arthur : Entity
         {
             private const int throwVel = 120;
 
@@ -638,7 +642,7 @@ namespace AnodyneSharp.Entities.Enemy.Circus
                     }
                     else if (other is Player p && p.state == PlayerState.GROUND)
                     {
-                        p.ReceiveDamage(1);
+                        p.ReceiveDamage(1, ArthurDamageDealer);
                     }
                 }
             }
@@ -662,7 +666,7 @@ namespace AnodyneSharp.Entities.Enemy.Circus
         }
 
         [Collision(typeof(Player), typeof(Broom), typeof(Arthur), MapCollision = true)]
-        class Javiera : WalkAroundEntity
+        public class Javiera : WalkAroundEntity
         {
             private const float walkVel = 90 * 1.3f;
 
@@ -754,7 +758,7 @@ namespace AnodyneSharp.Entities.Enemy.Circus
                     }
                     else if (other is Player p && p.state == PlayerState.GROUND)
                     {
-                        p.ReceiveDamage(1);
+                        p.ReceiveDamage(1, JavieraDamageDealer);
                     }
                 }
             }
@@ -774,7 +778,7 @@ namespace AnodyneSharp.Entities.Enemy.Circus
         }
 
         [Collision(typeof(Player), typeof(Broom), MapCollision = true)]
-        class ShockWave : WalkAroundEntity
+        public class ShockWave : WalkAroundEntity
         {
             private const int swVel = 70;
 
@@ -833,7 +837,7 @@ namespace AnodyneSharp.Entities.Enemy.Circus
 
                 if (other is Player p && p.state == PlayerState.GROUND)
                 {
-                    p.ReceiveDamage(1);
+                    p.ReceiveDamage(1, FlameDamageDealer);
 
                     disappear = true;
                 }
@@ -853,7 +857,7 @@ namespace AnodyneSharp.Entities.Enemy.Circus
         }
     }
 
-    class WalkAroundEntity : Entity
+    public class WalkAroundEntity : Entity
     {
         public WalkAroundEntity(Vector2 pos, AnimatedSpriteRenderer render, DrawOrder layer) : base(pos, render, layer) { }
 

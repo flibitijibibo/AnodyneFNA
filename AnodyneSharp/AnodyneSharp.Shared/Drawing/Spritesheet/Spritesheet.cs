@@ -9,15 +9,17 @@ namespace AnodyneSharp.Drawing.Spritesheet
 {
     public class Spritesheet
     {
-        public Texture2D Tex { get; private set; }
+        TextureHandle tex;
+
+        public Texture2D Tex => tex?.Tex;
         public readonly int Width;
         public readonly int Height;
 
-        public int NumFrames => Tex.Width / Width * Tex.Height / Height;
+        public int NumFrames => tex.Width / Width * tex.Height / Height; //Using original size for tilesheet
 
-        public Spritesheet(Texture2D tex, int width, int height)
+        public Spritesheet(TextureHandle tex, int width, int height)
         {
-            Tex = tex;
+            this.tex = tex;
             Width = width;
             Height = height;
         }
@@ -34,11 +36,6 @@ namespace AnodyneSharp.Drawing.Spritesheet
             }
 
             return new Rectangle(indexX, indexY, Width, Height);
-        }
-
-        public void Reload(string name)
-        {
-            Tex = ResourceManager.GetTexture(name);
         }
     }
 }

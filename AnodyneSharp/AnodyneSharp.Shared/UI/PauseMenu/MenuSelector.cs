@@ -21,6 +21,7 @@ namespace AnodyneSharp.UI.PauseMenu
         public MenuSelector(DrawOrder layer = DrawOrder.SUBMENU_SELECTOR)
             : base(Vector2.Zero, GetSprite(), layer)
         {
+            SetTexture("arrows", 7, 7); //Disable chaos mode
         }
     }
 }

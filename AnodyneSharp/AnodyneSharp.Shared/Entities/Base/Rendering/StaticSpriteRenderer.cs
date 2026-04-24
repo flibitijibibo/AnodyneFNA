@@ -27,9 +27,10 @@ namespace AnodyneSharp.Entities.Base.Rendering
         public Color Color { get; set; } = Color.White;
         public ILayerType Layer { get; set; }
 
-        public StaticSpriteRenderer(string textureName, int frameWidth, int frameHeight, int frame = 0, ILayerType layer = null) {
+        public StaticSpriteRenderer(string textureName, int frameWidth, int frameHeight, int frame = 0, ILayerType layer = null, bool ignoreChaos = false)
+        {
             this.textureName = textureName;
-            sprite = new(ResourceManager.GetTexture(textureName),frameWidth,frameHeight);
+            sprite = new(ResourceManager.GetTexHandle(textureName, ignoreChaos), frameWidth,  frameHeight);
             curFrame = frame;
             Layer = layer;
         }
@@ -51,15 +52,10 @@ namespace AnodyneSharp.Entities.Base.Rendering
                 Layer.Z);
         }
 
-        public void ReloadTexture(bool ignoreChaos = false)
-        {
-            sprite = new(ResourceManager.GetTexture(textureName, ignoreChaos), sprite.Width, sprite.Height);
-        }
-
         public bool SetTexture(string textureName, int width, int height, bool ignoreChaos, bool allowFailure)
         {
             this.textureName = textureName;
-            sprite = new(ResourceManager.GetTexture(textureName,ignoreChaos,allowFailure), width, height);
+            sprite = new(ResourceManager.GetTexHandle(textureName, ignoreChaos, allowFailure), width, height);
             return sprite.Tex != null;
         }
 

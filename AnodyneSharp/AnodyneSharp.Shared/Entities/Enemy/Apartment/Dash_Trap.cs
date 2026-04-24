@@ -10,9 +10,11 @@ using System.Text;
 namespace AnodyneSharp.Entities.Enemy.Apartment
 {
     [Collision(typeof(Player), typeof(Dust), KeepOnScreen = true, MapCollision = true)]
-    abstract class DashTrap : Entity
+    public abstract class DashTrap : Entity
     {
         protected const float DashVel = 80;
+
+        public const string DamageDealer = "Dash Trap";
 
         public static AnimatedSpriteRenderer GetSprite()
         {
@@ -46,7 +48,7 @@ namespace AnodyneSharp.Entities.Enemy.Apartment
             {
                 if (p.state != PlayerState.AIR)
                 {
-                    p.ReceiveDamage(1);
+                    p.ReceiveDamage(1,DamageDealer);
                     OnPlayer();
                 }
             }
@@ -70,7 +72,7 @@ namespace AnodyneSharp.Entities.Enemy.Apartment
     }
 
     [NamedEntity("Dash_Trap", null, 1, 2)]
-    class BounceDashTrap : DashTrap
+    public class BounceDashTrap : DashTrap
     {
         public BounceDashTrap(EntityPreset preset, Player p) : base(preset)
         {
@@ -99,7 +101,7 @@ namespace AnodyneSharp.Entities.Enemy.Apartment
     }
 
     [NamedEntity("Dash_Trap", null, 0), Collision(typeof(DashTrap))]
-    class OnSightDashTrap : DashTrap
+    public class OnSightDashTrap : DashTrap
     {
         IState _state;
         Player _player;

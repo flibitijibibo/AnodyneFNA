@@ -3,6 +3,7 @@ using AnodyneSharp.Entities;
 using AnodyneSharp.Logging;
 using AnodyneSharp.Registry;
 using AnodyneSharp.Resources;
+using AnodyneSharp.Utilities;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -31,7 +32,7 @@ namespace AnodyneSharp.MapData.Tiles
     {
         public static Spritesheet GetTileset(string MapName)
         {
-            return new(ResourceManager.GetTexture($"{MapName.ToLower()}_tilemap", true), 16, 16);
+            return new(ResourceManager.GetTexHandle($"{MapName.ToLower()}_tilemap"), 16, 16);
         }
 
         public static void SetTileProperties(string mapName, Tile[] tiles)
@@ -53,14 +54,16 @@ namespace AnodyneSharp.MapData.Tiles
         {
             SortedList<int, AnimatedTile> animTiles = new SortedList<int, AnimatedTile>();
 
-            var assembly = Assembly.GetExecutingAssembly();
+            var assemblies = AppDomain.CurrentDomain.GetAssemblies();
 
-            foreach (var path in assembly.GetManifestResourceNames().Where(p => p.StartsWith($"{ assembly.GetName().Name}.Content.Maps.{map}.TileAnims")))
+            var asmpaths = assemblies.Where(asm => !asm.IsDynamic).SelectMany(asm => asm.GetManifestResourceNames().Where(p => p.StartsWith($"{asm.GetName().Name}.Content.Maps.{map}.TileAnims")).Select(p=>(asm,p)));
+
+            foreach (var (asm,path) in asmpaths)
             {
                 string[] texSplit = path.Split('.');
                 string texName = texSplit[texSplit.Length - 2];
 
-                using (Stream stream = assembly.GetManifestResourceStream(path))
+                using (Stream stream = AssemblyReaderUtil.GetStream(path.Replace(asm.GetName().Name+".", ""),asm))
                 {
                     using StreamReader reader = new StreamReader(stream);
 
@@ -73,7 +76,7 @@ namespace AnodyneSharp.MapData.Tiles
                         if (int.TryParse(values[0], out int frame) &&
                             int.TryParse(values[1], out int frameRate))
                         {
-                            animTiles.Add(frame, new AnimatedTile(frames, frameRate, ResourceManager.GetTexture(texName)));
+                            animTiles.Add(frame, new AnimatedTile(frames, frameRate, texName));
                         }
                     }
                 }
@@ -84,13 +87,11 @@ namespace AnodyneSharp.MapData.Tiles
 
         private static List<CollissionData> GetColData(string map)
         {
-            List<CollissionData> data = new List<CollissionData>();
+            List<CollissionData> data = new();
 
-            var assembly = Assembly.GetExecutingAssembly();
+            string path = $"Content.Maps.{map}.TileData.col";
 
-            string path = $"{assembly.GetName().Name}.Content.Maps.{map}.TileData.col";
-
-            using (Stream stream = assembly.GetManifestResourceStream(path))
+            using (Stream stream = AssemblyReaderUtil.GetStream(path))
             {
                 if (stream == null)
                 {

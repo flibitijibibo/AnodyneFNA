@@ -2,6 +2,7 @@
 using AnodyneSharp.Entities.Gadget.Doors;
 using AnodyneSharp.Logging;
 using AnodyneSharp.Registry;
+using AnodyneSharp.Utilities;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -26,21 +27,52 @@ namespace AnodyneSharp.Entities
         /// </summary>
         public static void Initialize()
         {
-            var assembly = Assembly.GetExecutingAssembly();
+            _entities = new();
+            _doorPairs = new();
+            _linkGroups = new();
 
-            string path = $"{assembly.GetName().Name}.{EntityFilePath}";
             string xml = "";
 
-            using (Stream stream = assembly.GetManifestResourceStream(path))
+            using (Stream stream = AssemblyReaderUtil.GetStream(EntityFilePath))
             {
-                using (StreamReader reader = new(stream))
-                {
-                    xml = reader.ReadToEnd();
-                }
+                using StreamReader reader = new(stream);
+                xml = reader.ReadToEnd();
             }
 
             ReadEntities(xml);
 
+        }
+
+        public static void SetAlive(Guid id,  bool isAlive)
+        {
+            if (State.TryGetValue(id, out EntityState s))
+            {
+                s.Alive = isAlive;
+                if(s.Alive == true && s.Activated == false)
+                {
+                    State.Remove(id);
+                }
+            }
+            else if(isAlive == false)
+            {
+                State.Add(id, new() { Alive = false });
+            }
+        }
+
+        public static void SetActive(Guid id, bool isActive)
+        {
+            if (State.TryGetValue(id, out EntityState s))
+            {
+                s.Activated = isActive;
+                if (s.Alive == true && s.Activated == false)
+                {
+                    State.Remove(id);
+                }
+            }
+            else if (isActive == true)
+            {
+                State.Add(id, new() { Activated = true });
+            }
         }
 
         public static List<EntityPreset> GetMapEntities(string mapName)
@@ -55,7 +87,7 @@ namespace AnodyneSharp.Entities
 
         public static List<EntityPreset> GetGridEntities(string mapName, Point grid)
         {
-            return GetMapEntities(mapName).Where(e => e.GridPosition == grid).ToList();
+            return GetMapEntities(mapName).Where(e => MapUtilities.GetRoomCoordinate(e.Position) == grid).ToList();
         }
 
         public static DoorMapPair GetLinkedDoor(EntityPreset door)
@@ -96,7 +128,7 @@ namespace AnodyneSharp.Entities
 
         private static void ReadEntities(string xml)
         {
-            var type_lookup = (from t in Assembly.GetExecutingAssembly().GetTypes()
+            var type_lookup = (from t in AppDomain.CurrentDomain.GetAssemblies().SelectMany(asm =>asm.GetTypes())
                                where t.IsDefined(typeof(NamedEntity), false)
                                group new { type = t, check = t.GetCustomAttribute<NamedEntity>() } by t.GetCustomAttribute<NamedEntity>().GetName(t)
                                ).ToDictionary(t => t.Key, t => t.ToList());
