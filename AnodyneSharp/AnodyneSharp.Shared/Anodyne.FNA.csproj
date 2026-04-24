@@ -581,6 +581,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\netframework\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Extensions.FileSystemGlobbing, Version=10.0.0.7, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\netframework\Microsoft.Extensions.FileSystemGlobbing.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <PackageReference Include="Microsoft.Net.Compilers.Toolset" Version="3.11.0">
       <PrivateAssets>all</PrivateAssets>
