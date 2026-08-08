@@ -1,15 +1,37 @@
 <Project Sdk="Microsoft.NET.Sdk">
-	<PropertyGroup>
-		<OutputType>Exe</OutputType>
-		<TargetFrameworks>net8.0</TargetFrameworks>
-	</PropertyGroup>
-	<PropertyGroup>
-		<EnableDefaultItems>false</EnableDefaultItems>
-		<RootNamespace>AnodyneSharp</RootNamespace>
-		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-		<AssemblyName>AnodyneSharp</AssemblyName>
-	</PropertyGroup>
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <RootNamespace>AnodyneSharp</RootNamespace>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <AssemblyName>AnodyneSharp</AssemblyName>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="!Exists('$(SolutionDir)NativeAOT_Console.targets')">
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="Exists('$(SolutionDir)NativeAOT_Console.targets')">
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <Target Condition="($(RuntimeIdentifier) == '' and $([MSBuild]::IsOSPlatform('Linux'))) or $(RuntimeIdentifier.StartsWith('linux'))" Name="RpathFix" AfterTargets="AfterBuild">
+    <Exec Command="patchelf --force-rpath --add-rpath '$ORIGIN/lib64' $(OutDir)/AnodyneSharp" />
+  </Target>
+
+  <Target Name="ExcludeFromBundle" BeforeTargets="GenerateSingleFileBundle" DependsOnTargets="PrepareForBundle">
+    <ItemGroup>
+      <FilesToBundle Remove="$(IntermediateOutputPath)AnodyneSharp.dll" />
+      <FilesToBundle Remove="$(IntermediateOutputPath)FNA.dll" />
+    </ItemGroup>
+  </Target>
+  <Target Name="RestoreToBundle" AfterTargets="GenerateSingleFileBundle">
+    <Copy SourceFiles="$(OutDir)AnodyneSharp.dll" DestinationFolder="$(PublishDir)" />
+    <Copy SourceFiles="$(OutDir)FNA.dll" DestinationFolder="$(PublishDir)" />
+  </Target>
+
   <ItemGroup>
     <Compile Include="..\..\Fluent-State-Machine\State.cs" />
     <Compile Include="..\..\Fluent-State-Machine\StateBuilder.cs" />
@@ -238,6 +260,7 @@
     <Compile Include="FSM\CollisionEvent.cs" />
     <Compile Include="UI\UIEntityInputSensitive.cs" />
     <Compile Include="Utilities\AssemblyReaderUtil.cs" />
+    <Compile Include="Utilities\EnumerableExtension.cs" />
     <Compile Include="Utilities\MapUtilities.cs" />
     <Compile Include="Utilities\CoroutineUtils.cs" />
     <Compile Include="Utilities\MathUtilities.cs" />
@@ -247,6 +270,7 @@
     <Compile Include="Resources\ContentWriter.cs" />
     <Compile Include="Resources\ContentLoader.cs" />
     <Compile Include="Resources\ResourceManager.cs" />
+    <Compile Include="Resources\TextureHandle.cs" />
     <Compile Include="Resources\Loading\InputConfigLoader.cs" />
     <Compile Include="Resources\Writing\InputConfigWriter.cs" />
     <Compile Include="MapData\MinimapTracker.cs" />
@@ -260,6 +284,8 @@
     <Compile Include="MapData\Tiles\CollissionData.cs" />
     <Compile Include="MapData\Tiles\TileData.cs" />
     <Compile Include="MapData\Tiles\Tile.cs" />
+    <Compile Include="Modding\IMod.cs" />
+    <Compile Include="Modding\ModLoader.cs" />
     <Compile Include="GameEvents\EntityEventRegistry.cs" />
     <Compile Include="GameEvents\Events.cs" />
     <Compile Include="GameEvents\EventsAttribute.cs" />
@@ -270,6 +296,7 @@
     <Compile Include="States\CreditsState.cs" />
     <Compile Include="States\PlayState.cs" />
     <Compile Include="States\CutsceneState.cs" />
+    <Compile Include="States\Base\IStateSetter.cs" />
     <Compile Include="States\Base\State.cs" />
     <Compile Include="States\MenuSubstates\ConfigSubstate.cs" />
     <Compile Include="States\MenuSubstates\ConfigSubstates\GraphicsMenu.cs" />
@@ -498,8 +525,17 @@
     <EmbeddedResource Include="Content\Maps\BOSSRUSH\BG2.csv" />
     <EmbeddedResource Include="Content\Maps\BOSSRUSH\Swapper.dat" />
   </ItemGroup>
-	<ItemGroup>
-		<ProjectReference Include="..\..\..\FNA\FNA.Core.csproj" />
-	</ItemGroup>
-	<Import Project="$(SolutionDir)NativeAOT_Console.targets" Condition="Exists('$(SolutionDir)NativeAOT_Console.targets')" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\FNA\FNA.Core.csproj">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </ProjectReference>
+    <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="8.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <RdXmlFile Include="$(ProjectDir)rd.xml" />
+    <DirectPInvoke Include="SDL3" />
+    <DirectPInvoke Include="FNA3D" />
+    <DirectPInvoke Include="FAudio" />
+  </ItemGroup>
+  <Import Project="$(SolutionDir)NativeAOT_Console.targets" Condition="Exists('$(SolutionDir)NativeAOT_Console.targets')" />
 </Project>
