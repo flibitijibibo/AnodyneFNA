@@ -8,6 +8,7 @@
     <AssemblyName>AnodyneSharp</AssemblyName>
     <PublishSingleFile>true</PublishSingleFile>
     <SelfContained>true</SelfContained>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
 
   <PropertyGroup Condition="!Exists('$(SolutionDir)NativeAOT_Console.targets')">
